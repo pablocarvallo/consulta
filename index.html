@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Consulta</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Consulta">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f2f4f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#05070c" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg?v=1">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=1">
+<script>
+  (function () {
+    var p = {}; try { p = JSON.parse(localStorage.getItem('con27.prefs')) || {}; } catch (e) {}
+    var oscuro = p.tema === 'oscuro' || (p.tema !== 'claro' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.setAttribute('data-theme', oscuro ? 'dark' : 'light');
+  })();
+</script>
+<style>
+/*D27:TOKENS:START*/
+/* Domésticas 27 — tokens (generado de tokens.json del sistema de diseño). Tema con data-theme="light" | "dark" en <html>. */
+:root,[data-theme="light"]{--fondo:#f2f4f8;--superficie:#ffffff;--superficie-2:#f7f8fb;--vidrio:rgba(255,255,255,0.58);--vidrio-tintado:rgba(255,255,255,0.88);--vidrio-brillo:rgba(255,255,255,0.95);--vidrio-borde:rgba(10,18,40,0.12);--tinta:#0b1220;--tinta-2:#556074;--tinta-3:#8a93a6;--separador:rgba(11,18,32,0.09);--relleno:rgba(118,128,150,0.14);--finanzas-texto:#1f5eff;--finanzas-relleno:#1f5eff;--finanzas-sobre:#ffffff;--finanzas-hi:#2f62fa;--finanzas-lo:#1436b4;--finanzas-brillo:rgba(47,98,250,0.2);--casa-texto:#0a7c76;--casa-relleno:#0a827a;--casa-sobre:#ffffff;--casa-hi:#0a827a;--casa-lo:#065a55;--casa-brillo:rgba(16,163,155,0.2);--noche-texto:#5a4bda;--noche-relleno:#5a4bda;--noche-sobre:#ffffff;--noche-hi:#6a5cf0;--noche-lo:#3a2bb8;--noche-brillo:rgba(106,92,240,0.18);--reloj-rojo:#e5484d;--consulta-texto:#b45309;--consulta-relleno:#f5a00f;--consulta-sobre:#1a1205;--consulta-hi:#ffb547;--consulta-lo:#f59e0b;--consulta-brillo:rgba(245,158,11,0.2);--juegos-texto:#2a2e37;--juegos-relleno:#2a2e37;--juegos-sobre:#ffffff;--juegos-hi:#3a3f4a;--juegos-lo:#15171c;--juegos-brillo:rgba(42,46,55,0.1);--positivo:#0e7a42;--negativo:#d92d3a;--aviso:#9a5b00;--aviso-relleno:#ffb224;--sombra-vidrio:inset 0 1px 0 rgba(255,255,255,0.9), 0 0 0 0.5px rgba(10,18,40,0.12), 0 10px 30px rgba(10,18,40,0.1);--sombra-flotante:inset 0 1px 0 rgba(255,255,255,0.95), 0 0 0 0.5px rgba(10,18,40,0.14), 0 18px 40px rgba(10,18,40,0.18);--sombra-heroe:inset 0 1px 0 rgba(255,255,255,0.35), 0 16px 36px rgba(20,54,180,0.22)}
+[data-theme="dark"]{--fondo:#05070c;--superficie:#121826;--superficie-2:#1a2131;--vidrio:rgba(30,37,54,0.52);--vidrio-tintado:rgba(20,25,37,0.9);--vidrio-brillo:rgba(255,255,255,0.3);--vidrio-borde:rgba(0,0,0,0.6);--tinta:#f2f5fb;--tinta-2:#a3adc2;--tinta-3:#6e7891;--separador:rgba(255,255,255,0.1);--relleno:rgba(150,160,185,0.18);--finanzas-texto:#5b8bff;--finanzas-brillo:rgba(91,139,255,0.26);--casa-texto:#4fd6cc;--casa-brillo:rgba(79,214,204,0.2);--noche-texto:#9c92ff;--noche-brillo:rgba(156,146,255,0.18);--consulta-texto:#ffb547;--consulta-brillo:rgba(255,181,71,0.16);--juegos-texto:#e8eaee;--juegos-relleno:#e8eaee;--juegos-sobre:#0b1220;--juegos-brillo:rgba(232,234,238,0.08);--positivo:#3dd68c;--negativo:#ff6b6b;--aviso:#ffb224;--sombra-vidrio:inset 0 1px 0 rgba(255,255,255,0.18), 0 0 0 0.5px rgba(0,0,0,0.6), 0 12px 32px rgba(0,0,0,0.45);--sombra-flotante:inset 0 1px 0 rgba(255,255,255,0.22), 0 0 0 0.5px rgba(0,0,0,0.7), 0 18px 44px rgba(0,0,0,0.6);--sombra-heroe:inset 0 1px 0 rgba(255,255,255,0.25), 0 16px 40px rgba(0,0,0,0.5)}
+:root{--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--radius-s:10px;--radius-m:16px;--radius-tarjeta:26px;--radius-heroe:32px;--radius-icono:23%;--radius-capsula:999px;--desenfoque-vidrio:28px;--saturacion-vidrio:180%;--desenfoque-barra:20px;--font-sans:-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;--font-rounded:ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif}
+/*D27:TOKENS:END*/
+/*D27:COMP:START*/
+/* Domésticas 27 — componentes. Lee las variables de tokens.css (--fondo, --vidrio, --finanzas-texto…). */
+
+/* ---------- Acento por app ---------- */
+.d-app, [data-app] {
+  --acento: var(--finanzas-texto); --acento-relleno: var(--finanzas-relleno); --acento-sobre: var(--finanzas-sobre);
+  --acento-hi: var(--finanzas-hi); --acento-lo: var(--finanzas-lo); --acento-brillo: var(--finanzas-brillo);
+  --material: var(--vidrio);
+}
+[data-app="casa"] { --acento: var(--casa-texto); --acento-relleno: var(--casa-relleno); --acento-sobre: var(--casa-sobre); --acento-hi: var(--casa-hi); --acento-lo: var(--casa-lo); --acento-brillo: var(--casa-brillo); }
+[data-app="noche"] { --acento: var(--noche-texto); --acento-relleno: var(--noche-relleno); --acento-sobre: var(--noche-sobre); --acento-hi: var(--noche-hi); --acento-lo: var(--noche-lo); --acento-brillo: var(--noche-brillo); }
+[data-app="consulta"] { --acento: var(--consulta-texto); --acento-relleno: var(--consulta-relleno); --acento-sobre: var(--consulta-sobre); --acento-hi: var(--consulta-hi); --acento-lo: var(--consulta-lo); --acento-brillo: var(--consulta-brillo); }
+[data-app="juegos"] { --acento: var(--juegos-texto); --acento-relleno: var(--juegos-relleno); --acento-sobre: var(--juegos-sobre); --acento-hi: var(--juegos-hi); --acento-lo: var(--juegos-lo); --acento-brillo: var(--juegos-brillo); }
+
+/* Intensidad del vidrio, como el control de iOS 27: «claro» (por defecto) o «tintado». */
+[data-vidrio="tintado"] { --material: var(--vidrio-tintado); }
+
+/* ---------- Lienzo de la app ---------- */
+.d-app {
+  min-height: 100%;
+  color: var(--tinta);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(120% 55% at 0% -8%, var(--acento-brillo), transparent 62%),
+    radial-gradient(80% 45% at 105% 4%, var(--acento-brillo), transparent 58%),
+    var(--fondo);
+}
+
+/* ---------- Material de vidrio ---------- */
+.d-vidrio {
+  position: relative;
+  background: var(--material, var(--vidrio));
+  -webkit-backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio));
+  backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio));
+  border-radius: var(--radius-tarjeta);
+  box-shadow: var(--sombra-vidrio);
+}
+/* Borde de luz: reflejo arriba a la izquierda y abajo a la derecha. */
+.d-vidrio::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(155deg, var(--vidrio-brillo), transparent 34%, transparent 70%, var(--vidrio-brillo));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: .75;
+}
+@media (prefers-reduced-transparency: reduce) {
+  .d-vidrio, .d-barra, .d-cabecera--fija, .d-boton--vidrio, .d-boton-circular { background: var(--superficie); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+  .d-vidrio, .d-barra { background: var(--superficie); box-shadow: 0 0 0 1px var(--tinta-2); }
+}
+
+/* ---------- Barra superior ---------- */
+.d-cabecera { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-3); padding: var(--space-2) var(--space-4) var(--space-2); }
+.d-cabecera h1 { margin: 0; font: 700 34px/41px var(--font-sans); letter-spacing: -0.4px; }
+.d-cabecera .d-antetitulo { display: block; font: 600 13px/18px var(--font-sans); color: var(--tinta-2); }
+.d-cabecera .d-acciones { display: flex; gap: var(--space-2); }
+/* Al pasar contenido por debajo: barra uniforme y esmerilada (comportamiento de iOS 27). */
+.d-cabecera--fija {
+  position: sticky; top: 0; z-index: 5; align-items: center;
+  background: linear-gradient(to bottom, var(--material, var(--vidrio)) 60%, transparent);
+  -webkit-backdrop-filter: blur(var(--desenfoque-barra)) saturate(var(--saturacion-vidrio));
+  backdrop-filter: blur(var(--desenfoque-barra)) saturate(var(--saturacion-vidrio));
+}
+.d-cabecera--fija h1 { font-size: 17px; line-height: 22px; letter-spacing: 0; font-weight: 600; }
+
+/* ---------- Botones ---------- */
+.d-boton {
+  appearance: none; border: 0; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: 50px; padding: 0 var(--space-6); border-radius: var(--radius-capsula);
+  font: 600 17px/22px var(--font-sans); color: var(--acento-sobre); background: var(--acento-relleno);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 8px 20px -8px var(--acento-relleno);
+  transition: transform .18s cubic-bezier(.3,.7,.4,1.4);
+}
+.d-boton:active { transform: scale(.96); }
+.d-boton--vidrio { color: var(--acento); background: var(--material, var(--vidrio)); box-shadow: var(--sombra-vidrio);
+  -webkit-backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio)); backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio)); }
+.d-boton--discreto { color: var(--acento); background: var(--relleno); box-shadow: none; }
+.d-boton--ancho { width: 100%; }
+.d-boton-circular {
+  appearance: none; border: 0; cursor: pointer; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  color: var(--tinta); background: var(--material, var(--vidrio)); box-shadow: var(--sombra-vidrio);
+  -webkit-backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio)); backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio));
+}
+.d-boton-circular svg, .d-boton svg { width: 20px; height: 20px; }
+.d-boton-circular--acento { color: var(--acento-sobre); background: var(--acento-relleno); }
+.d-boton:focus-visible, .d-boton-circular:focus-visible, .d-barra button:focus-visible { outline: 3px solid var(--acento); outline-offset: 2px; }
+
+/* ---------- Tarjeta principal ---------- */
+.d-heroe {
+  position: relative; overflow: hidden; border-radius: var(--radius-heroe); padding: var(--space-5);
+  color: var(--acento-sobre);
+  background: linear-gradient(150deg, var(--acento-hi), var(--acento-lo));
+  box-shadow: var(--sombra-heroe);
+}
+.d-heroe::after { /* brillo de vidrio en la esquina */
+  content: ""; position: absolute; width: 220px; height: 220px; right: -70px; top: -90px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 65%, rgba(255,255,255,.34), rgba(255,255,255,0) 62%); pointer-events: none;
+}
+.d-heroe .d-etiqueta { font: 600 13px/18px var(--font-sans); opacity: .92; }
+.d-heroe .d-cifra-grande { display: block; margin-top: var(--space-1); font: 700 44px/48px var(--font-rounded); letter-spacing: -0.5px; font-variant-numeric: tabular-nums; }
+.d-heroe .d-pie { display: flex; gap: var(--space-4); margin-top: var(--space-4); font: 400 15px/20px var(--font-sans); }
+.d-heroe .d-pie b { display: block; font: 600 17px/22px var(--font-rounded); }
+.d-heroe .d-barra-avance { height: 6px; margin-top: var(--space-4); border-radius: 3px; background: rgba(255,255,255,.28); overflow: hidden; }
+.d-heroe .d-barra-avance i { display: block; height: 100%; border-radius: 3px; background: currentColor; }
+
+/* ---------- Lista agrupada ---------- */
+.d-seccion { margin: var(--space-6) var(--space-4) var(--space-2); display: flex; justify-content: space-between; align-items: baseline; }
+.d-seccion h2 { margin: 0; font: 700 22px/28px var(--font-sans); }
+.d-seccion a { color: var(--acento); font: 400 17px/22px var(--font-sans); text-decoration: none; }
+.d-lista { margin: 0 var(--space-4); padding: 0; list-style: none; overflow: hidden; }
+.d-fila { display: flex; align-items: center; gap: var(--space-3); min-height: 44px; padding: var(--space-3) var(--space-4); position: relative; }
+.d-fila + .d-fila::before { content: ""; position: absolute; top: 0; left: 58px; right: 0; height: 0.5px; background: var(--separador); }
+.d-fila .d-cuadro { flex: none; width: 30px; height: 30px; border-radius: var(--radius-s); display: grid; place-items: center; color: #fff; background: linear-gradient(150deg, var(--acento-hi), var(--acento-lo)); box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }
+.d-fila .d-cuadro svg { width: 18px; height: 18px; }
+.d-fila .d-texto { flex: 1; min-width: 0; }
+.d-fila .d-texto strong { display: block; font: 400 17px/22px var(--font-sans); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.d-fila .d-texto span { display: block; font: 400 15px/20px var(--font-sans); color: var(--tinta-2); }
+.d-fila .d-valor { font: 600 17px/22px var(--font-rounded); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.d-valor--positivo { color: var(--positivo); }
+.d-valor--negativo { color: var(--negativo); }
+
+/* ---------- Control segmentado ---------- */
+.d-segmentos { display: inline-flex; padding: 3px; gap: 2px; border-radius: var(--radius-capsula); background: var(--relleno); }
+.d-segmentos button { appearance: none; border: 0; cursor: pointer; padding: 7px 16px; border-radius: var(--radius-capsula); background: transparent; color: var(--tinta); font: 600 13px/18px var(--font-sans); }
+.d-segmentos button[aria-pressed="true"] { background: var(--superficie); box-shadow: 0 0 0 .5px var(--vidrio-borde), 0 3px 8px rgba(10,18,40,.12), inset 0 1px 0 var(--vidrio-brillo); }
+
+/* ---------- Barra de pestañas flotante ---------- */
+.d-barra-pie { position: sticky; bottom: 0; display: flex; gap: var(--space-2); align-items: center; padding: var(--space-3) var(--space-4) calc(var(--space-5) + env(safe-area-inset-bottom)); }
+.d-barra {
+  flex: 1; display: flex; padding: 4px; border-radius: var(--radius-capsula);
+  background: var(--material, var(--vidrio)); box-shadow: var(--sombra-flotante);
+  -webkit-backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio)); backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio));
+}
+.d-barra button { appearance: none; border: 0; cursor: pointer; flex: 1; display: grid; justify-items: center; gap: 1px; padding: 6px 0 5px; border-radius: var(--radius-capsula); background: transparent; color: var(--tinta); font: 600 10px/12px var(--font-sans); }
+.d-barra button svg { width: 24px; height: 24px; }
+.d-barra button[aria-current="page"] { color: var(--acento); background: var(--relleno); box-shadow: inset 0 1px 0 var(--vidrio-brillo); }
+.d-barra-pie .d-boton-circular { width: 56px; height: 56px; box-shadow: var(--sombra-flotante); }
+
+/* ---------- Anillo de ciclo (gas, filtro, cepillos, cápsula) ---------- */
+.d-anillo { --avance: .6; --color: var(--acento); width: 64px; height: 64px; position: relative; display: grid; place-items: center; }
+.d-anillo svg { position: absolute; inset: 0; transform: rotate(-90deg); }
+.d-anillo .d-pista { stroke: var(--relleno); }
+.d-anillo .d-arco { stroke: var(--color); stroke-linecap: round; stroke-dasharray: calc(var(--avance) * 163.4) 163.4; }
+.d-anillo b { font: 600 17px/20px var(--font-rounded); }
+.d-anillo--aviso { --color: var(--aviso-relleno); }
+.d-anillo--vencido { --color: var(--negativo); }
+
+/* ---------- Chips y avisos ---------- */
+.d-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--radius-capsula); font: 600 12px/16px var(--font-sans); background: var(--relleno); color: var(--tinta-2); }
+.d-chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.d-chip--aviso { color: var(--aviso); }
+.d-chip--negativo { color: var(--negativo); }
+.d-chip--positivo { color: var(--positivo); }
+.d-aviso { display: flex; gap: var(--space-3); align-items: center; padding: var(--space-3) var(--space-4); border-radius: var(--radius-tarjeta); box-shadow: var(--sombra-flotante);
+  background: var(--material, var(--vidrio)); -webkit-backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio)); backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio)); }
+.d-aviso .d-punto { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--aviso-relleno); box-shadow: 0 0 0 4px color-mix(in srgb, var(--aviso-relleno) 25%, transparent); }
+.d-aviso strong { display: block; font: 600 15px/20px var(--font-sans); }
+.d-aviso span { display: block; font: 400 13px/18px var(--font-sans); color: var(--tinta-2); }
+
+/* ---------- Movimiento ---------- */
+@media (prefers-reduced-motion: reduce) { .d-boton { transition: none; } }
+/*D27:COMP:END*/
+/*APP:START*/
+/* Consulta: Indicadores, Lecturas, Cartelera y Ajustes. Los componentes d-* son del sistema Domésticas 27 (diseno27/
+   del repositorio casa); aquí van solo las piezas propias (c-*), las mismas de Casa y Finanzas más las de los gráficos. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; touch-action: pan-x pan-y; background: var(--fondo); }
+body { margin: 0; min-height: 100vh; }
+button, input, textarea { font: inherit; color: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+[hidden] { display: none !important; }
+.d-app { min-height: 100vh; --c-serie: var(--acento); }
+[data-theme="dark"] .d-app { --c-serie: var(--acento-relleno); }
+.d-cabecera { padding-top: calc(env(safe-area-inset-top) + 14px); }
+.c-contenido { padding-bottom: calc(130px + env(safe-area-inset-bottom)); }
+
+/* Barra superior compacta: aparece al desplazar, como en iOS 27 */
+.c-barra-sup { position: fixed; top: 0; left: 0; right: 0; z-index: 20; padding: calc(env(safe-area-inset-top) + 11px) 16px 11px; text-align: center;
+  font: 600 17px/22px var(--font-sans); background: var(--material, var(--vidrio)); box-shadow: 0 .5px 0 var(--separador);
+  -webkit-backdrop-filter: blur(var(--desenfoque-barra)) saturate(var(--saturacion-vidrio)); backdrop-filter: blur(var(--desenfoque-barra)) saturate(var(--saturacion-vidrio));
+  opacity: 0; pointer-events: none; transition: opacity .2s; }
+.c-barra-sup.ver { opacity: 1; }
+
+/* Barra de pestañas fija */
+.c-pie { position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; }
+.c-desvanecer { position: fixed; left: 0; right: 0; bottom: 0; height: calc(120px + env(safe-area-inset-bottom)); z-index: 14; pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--fondo) 62%); }
+.c-pie .d-barra-pie { position: static; }
+
+/* Texto suelto */
+.c-texto { margin: 12px 20px 0; font: 400 15px/21px var(--font-sans); color: var(--tinta-2); }
+.c-texto b { color: var(--tinta); font-weight: 600; }
+.c-nota { margin: 8px 20px 0; font: 400 13px/18px var(--font-sans); color: var(--tinta-2); }
+.c-estado { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 22px 16px 0; font: 400 13px/18px var(--font-sans); color: var(--tinta-2); text-align: center; }
+.c-punto { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--positivo); }
+.c-punto--aviso { background: var(--aviso-relleno); }
+
+/* Filas */
+.d-lista > li { list-style: none; position: relative; }
+.d-lista > li + li::before { content: ""; position: absolute; top: 0; left: 58px; right: 0; height: .5px; background: var(--separador); z-index: 1; }
+.d-lista > li > .d-fila::before { display: none; }
+.c-fila { appearance: none; border: 0; background: transparent; width: 100%; text-align: left; cursor: pointer; }
+.c-fila:active { background: var(--relleno); }
+.d-fila .c-chev { flex: none; color: var(--tinta-3); width: 18px; height: 18px; }
+.c-tabla > li + li::before, .c-tabla > .d-fila + .d-fila::before { left: 16px; }
+.c-tabla .d-texto strong { font-size: 15px; line-height: 20px; }
+.c-tabla .d-valor { font-size: 15px; line-height: 20px; }
+.c-tarjeta { margin: 0 16px; padding: 4px 16px 16px; }
+.c-ajuste-seg { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+
+/* Indicador destacado */
+.c-heroe { appearance: none; border: 0; display: block; width: calc(100% - 32px); text-align: left; cursor: pointer; font: inherit; margin: 8px 16px 0; transition: transform .16s ease; }
+.c-heroe:active { transform: scale(.985); }
+.c-heroe .d-cifra-grande { white-space: nowrap; font-size: clamp(36px, 11.2vw, 44px); }
+.c-heroe .d-pie { flex-wrap: wrap; row-gap: 10px; column-gap: 20px; }
+.c-heroe .d-pie b { white-space: nowrap; }
+.c-heroe--vacio .d-cifra-grande { opacity: .7; }
+
+/* Gráfico de la portada */
+.c-grafico-tarjeta { margin: 0 16px; padding: 12px 14px 12px; }
+.c-grafico-tarjeta .d-segmentos { display: flex; margin-bottom: 8px; }
+.c-grafico-tarjeta .d-segmentos button { flex: 1; }
+.c-grafico-pie { display: flex; justify-content: space-between; gap: 8px; margin-top: 4px; font: 400 12px/16px var(--font-sans); color: var(--tinta-2); }
+.c-grafico-pie b { color: var(--tinta); font-weight: 600; font-variant-numeric: tabular-nums; }
+.c-grafico-pie span { white-space: nowrap; }
+
+/* Tarjetas de indicadores */
+.c-rejilla { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 12px 16px 0; }
+.c-tile { appearance: none; border: 0; text-align: left; cursor: pointer; padding: 14px; display: flex; flex-direction: column; gap: 2px; min-height: 152px; color: var(--tinta); font: inherit; transition: transform .16s ease; }
+.c-tile:active { transform: scale(.97); }
+.c-tile--ancha { grid-column: 1 / -1; min-height: 0; }
+.c-tile-etq { font: 600 13px/18px var(--font-sans); color: var(--tinta-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c-tile-val { margin-top: 2px; font: 600 24px/28px var(--font-rounded); letter-spacing: -0.3px; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c-tile-val--largo { font-size: clamp(19px, 5.6vw, 22px); }
+.c-tile-val--vacio { color: var(--tinta-3); }
+.c-tile-cap { font: 400 12px/16px var(--font-sans); color: var(--tinta-2); }
+.c-tile-delta { font: 600 12px/16px var(--font-sans); color: var(--tinta-2); }
+.c-tile-spark { margin-top: auto; padding-top: 10px; }
+.c-tile-spark svg { display: block; width: 100%; height: 34px; overflow: visible; }
+.c-tile-fila { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; }
+.c-tile-fila > span:first-child { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.c-tile-fila .c-tile-spark { flex: 0 0 42%; padding: 0 0 4px; }
+.c-spark-l { fill: none; stroke: color-mix(in srgb, var(--c-serie) 55%, transparent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.c-spark-b { fill: color-mix(in srgb, var(--c-serie) 38%, transparent); }
+.c-spark-hoy { fill: var(--c-serie); }
+.c-spark-punto { fill: var(--c-serie); stroke: var(--superficie); stroke-width: 2; }
+
+/* Gráfico */
+.c-grafico { position: relative; touch-action: pan-y; transition: opacity .2s ease; -webkit-user-select: none; user-select: none; }
+.c-grafico.ocupado { opacity: .45; }
+.c-grafico svg { display: block; width: 100%; height: auto; overflow: visible; }
+.c-grafico .grid-l { stroke: var(--separador); stroke-width: 1; shape-rendering: crispEdges; }
+.c-grafico .zero { stroke: var(--tinta-3); stroke-width: 1; shape-rendering: crispEdges; }
+.c-grafico .ax { fill: var(--tinta-3); font: 400 11px var(--font-sans); font-variant-numeric: tabular-nums; }
+.c-grafico .ln { fill: none; stroke: var(--c-serie); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.c-grafico .ar { fill: var(--c-serie); fill-opacity: .1; stroke: none; }
+.c-grafico .br { fill: var(--c-serie); transition: opacity .12s ease; }
+.c-grafico.encima .br { opacity: .4; }
+.c-grafico.encima .br.on { opacity: 1; }
+.c-grafico .dot { fill: var(--c-serie); stroke: var(--superficie); stroke-width: 2; }
+.c-grafico .xh { stroke: var(--tinta-3); stroke-width: 1; shape-rendering: crispEdges; }
+.c-grafico .vacio { fill: var(--tinta-2); font: 400 14px var(--font-sans); }
+.c-tip { position: absolute; z-index: 2; transform: translateX(-50%); pointer-events: none; white-space: nowrap; padding: 6px 10px; border-radius: 12px;
+  background: var(--superficie); box-shadow: 0 0 0 .5px var(--vidrio-borde), 0 6px 18px rgba(10, 18, 40, .16); }
+.c-tip b { display: block; font: 700 15px/19px var(--font-rounded); font-variant-numeric: tabular-nums; }
+.c-tip small { display: block; font: 400 12px/16px var(--font-sans); color: var(--tinta-2); }
+
+/* Hojas */
+.c-fondo-hoja { position: fixed; inset: 0; z-index: 40; background: rgba(5, 8, 15, .38); opacity: 0; transition: opacity .25s; }
+.c-fondo-hoja.abierta { opacity: 1; }
+.c-hoja { position: fixed; left: 0; right: 0; bottom: 0; z-index: 41; max-height: 92vh; overflow: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+  border-radius: 32px 32px 0 0; padding: 6px 20px calc(24px + env(safe-area-inset-bottom));
+  background: var(--vidrio-tintado); box-shadow: var(--sombra-flotante);
+  -webkit-backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio)); backdrop-filter: blur(var(--desenfoque-vidrio)) saturate(var(--saturacion-vidrio));
+  transform: translateY(105%); transition: transform .38s cubic-bezier(.2, .9, .25, 1.06); }
+.c-hoja.abierta { transform: none; }
+.c-hoja::before { content: ""; display: block; width: 38px; height: 5px; border-radius: 3px; margin: 4px auto 6px; background: var(--tinta-3); opacity: .5; }
+.c-hoja h2 { margin: 10px 0 2px; font: 700 22px/28px var(--font-sans); }
+.c-hoja h3 { margin: 22px 0 6px; font: 600 17px/22px var(--font-sans); }
+.c-hoja p { margin: 6px 0; font: 400 15px/21px var(--font-sans); color: var(--tinta-2); }
+.c-hoja p b { color: var(--tinta); }
+.c-hoja .c-sub { margin: 0; font-size: 14px; line-height: 19px; }
+.c-hoja .c-pista { font-size: 13px; line-height: 18px; margin-top: 12px; }
+.c-hoja .c-pila { display: grid; gap: 10px; margin-top: 18px; }
+.c-hoja .d-boton { width: 100%; }
+.c-hoja .d-lista { margin: 0; }
+.c-hoja .c-seg { display: flex; margin-top: 14px; }
+.c-hoja .c-seg button { flex: 1; padding: 8px 4px; min-width: 0; }
+.c-hoja .c-grafico { margin-top: 14px; }
+.c-grande { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin-top: 12px; }
+.c-grande b { font: 700 40px/44px var(--font-rounded); letter-spacing: -0.5px; font-variant-numeric: tabular-nums; }
+.c-grande span { font: 600 15px/20px var(--font-sans); color: var(--tinta-2); }
+.c-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 14px; }
+.c-stat { min-width: 0; padding: 10px; border-radius: 16px; background: var(--relleno); }
+.c-stat small { display: block; font: 600 12px/16px var(--font-sans); color: var(--tinta-2); }
+.c-stat b { display: block; margin-top: 2px; font: 700 15px/20px var(--font-rounded); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c-stat em { display: block; font: normal 400 12px/16px var(--font-sans); color: var(--tinta-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c-destacado { display: flex; align-items: center; gap: 8px; color: var(--acento) !important; font-weight: 600; }
+.c-destacado svg { flex: none; }
+
+/* Selección con chips */
+.c-chips { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 12px; }
+.c-chips input { position: absolute; opacity: 0; pointer-events: none; }
+.c-chips label { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: var(--radius-capsula); background: var(--relleno); font: 600 15px/20px var(--font-sans); cursor: pointer; }
+.c-chips input:checked + label { background: var(--acento-relleno); color: var(--acento-sobre); }
+.c-chips input:focus-visible + label { outline: 2px solid var(--acento); outline-offset: 2px; }
+
+/* Lo que llega en la próxima versión */
+.c-pronto { margin: 8px 16px 0; padding: 20px; }
+.c-pronto .d-cuadro { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center; color: #fff; background: linear-gradient(150deg, var(--acento-hi), var(--acento-lo)); }
+.c-pronto .d-cuadro svg { width: 24px; height: 24px; }
+.c-pronto h2 { margin: 14px 0 4px; font: 700 20px/25px var(--font-sans); }
+.c-pronto p { margin: 8px 0 0; font: 400 15px/21px var(--font-sans); color: var(--tinta-2); }
+.c-pronto p b { color: var(--tinta); font-weight: 600; }
+.c-pronto .d-boton { width: 100%; margin-top: 16px; }
+
+/* Botón que gira mientras actualiza */
+@keyframes c-girar { to { transform: rotate(360deg); } }
+.c-girando svg { animation: c-girar .9s linear infinite; }
+
+/* Aviso flotante */
+.c-toast { position: fixed; left: 16px; right: 16px; top: calc(env(safe-area-inset-top) + 10px); z-index: 60; transform: translateY(-160%); transition: transform .35s cubic-bezier(.2, .9, .25, 1.06); }
+.c-toast.ver { transform: none; }
+.c-toast.d-aviso { background: var(--vidrio-tintado); }
+.c-toast .d-punto { background: var(--positivo); box-shadow: 0 0 0 4px color-mix(in srgb, var(--positivo) 22%, transparent); }
+.c-toast--error .d-punto { background: var(--aviso-relleno); box-shadow: 0 0 0 4px color-mix(in srgb, var(--aviso-relleno) 25%, transparent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .c-hoja, .c-fondo-hoja, .c-toast, .c-barra-sup, .c-heroe, .c-tile { transition: none; }
+  .c-girando svg { animation: none; }
+}
+/*APP:END*/
+</style>
+</head>
+<body class="d-app" data-app="consulta">
+<div class="c-barra-sup" id="barraSup" aria-hidden="true"></div>
+<header class="d-cabecera" id="cabecera"></header>
+<main class="c-contenido" id="vista"></main>
+<div class="c-desvanecer" aria-hidden="true"></div>
+<div class="c-pie">
+  <nav class="d-barra-pie" aria-label="Secciones">
+    <div class="d-barra" id="pestanas"></div>
+  </nav>
+</div>
+<div class="c-fondo-hoja" id="fondoHoja" data-a="cerrar" hidden></div>
+<div class="c-hoja" id="hoja" role="dialog" aria-modal="true" hidden></div>
+<div class="c-toast d-aviso" id="toast" role="status" aria-live="polite"><span class="d-punto"></span><div><strong id="toastT"></strong><span id="toastS"></span></div></div>
+
+<script type="module">
+import * as C from './calculos.js';
+
+const CL = { prefs: 'con27.prefs', ui: 'con27.ui', lectura: 'con27.lectura', dato: 'con27.ind:' };
+const LECTURAS = 'https://lecturas-beta.vercel.app';
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+function leerLS(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
+function guardarLS(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
+
+/* ---------- Iconos ---------- */
+const I = {
+  ayuda: '<circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.6"/><path d="M12 17h.01"/>',
+  barras: '<path d="M5 20V13M10 20V9M15 20v-5M20 20V5"/>',
+  libro: '<path d="M5 4.5h9.5A2.5 2.5 0 0 1 17 7v13H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H17"/>',
+  tv: '<rect x="3" y="5" width="18" height="12" rx="2.5"/><path d="M9 20h6"/>',
+  ajustes: '<path d="M19.11 9.96L21.42 10.17L21.42 13.83L19.11 14.04A7.4 7.4 0 0 1 18.47 15.59L19.96 17.37L17.37 19.96L15.59 18.47A7.4 7.4 0 0 1 14.04 19.11L13.83 21.42L10.17 21.42L9.96 19.11A7.4 7.4 0 0 1 8.41 18.47L6.63 19.96L4.04 17.37L5.53 15.59A7.4 7.4 0 0 1 4.89 14.04L2.58 13.83L2.58 10.17L4.89 9.96A7.4 7.4 0 0 1 5.53 8.41L4.04 6.63L6.63 4.04L8.41 5.53A7.4 7.4 0 0 1 9.96 4.89L10.17 2.58L13.83 2.58L14.04 4.89A7.4 7.4 0 0 1 15.59 5.53L17.37 4.04L19.96 6.63L18.47 8.41A7.4 7.4 0 0 1 19.11 9.96Z"/><circle cx="12" cy="12" r="3"/>',
+  recargar: '<path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4.2h-4.2"/>',
+  estrella: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/>',
+  enlace: '<path d="M14 5h5v5"/><path d="M19 5l-8 8"/><path d="M18 14v4.5A1.5 1.5 0 0 1 16.5 20h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/>',
+  nube: '<path d="M7 18h10a4 4 0 0 0 .7-7.94A6 6 0 0 0 6.1 9.6 4.2 4.2 0 0 0 7 18z"/>',
+};
+const ico = (n, t = 24, g = 2) => `<svg viewBox="0 0 24 24" width="${t}" height="${t}" fill="none" stroke="currentColor" stroke-width="${g}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
+
+/* ---------- Estado ---------- */
+let prefs = C.prefsIniciales(leerLS(CL.prefs, {}));
+let ui = Object.assign({ tab: 'indicadores' }, leerLS(CL.ui, {}));
+let hoja = null;
+const hoy = () => C.dayKey(new Date());
+function guardarPrefs() { guardarLS(CL.prefs, prefs); }
+
+/* ---------- Lectura de las fuentes, con copia en el iPhone ---------- */
+const S = {};              // S[código][año] = { t: leído, d: datos }
+const failed = {};         // fuentes que no se pudieron leer en la última actualización
+const FRESCO = 6 * 3600 * 1000;   // los años recientes se vuelven a leer cada 6 horas
+function cached(code, year) {
+  if (!S[code]) S[code] = {};
+  if (!(year in S[code])) S[code][year] = leerLS(CL.dato + code + ':' + year, null);
+  return S[code][year];
+}
+function keep(code, year, d) {
+  const e = { t: Date.now(), d };
+  S[code][year] = e;
+  if (!guardarLS(CL.dato + code + ':' + year, e)) { podar(); guardarLS(CL.dato + code + ':' + year, e); }
+}
+// Si se llena el almacenamiento, se borran los años más antiguos (se vuelven a leer si hacen falta)
+function podar() {
+  const ks = [];
+  for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k && k.indexOf(CL.dato) === 0) ks.push(k); }
+  ks.sort((a, b) => +a.split(':').pop() - +b.split(':').pop());
+  ks.slice(0, Math.ceil(ks.length / 3)).forEach((k) => { try { localStorage.removeItem(k); } catch (e) {} });
+}
+function isFresh(e, year) {
+  if (!e) return false;
+  const cur = new Date().getFullYear();
+  // Los años cerrados se leen una sola vez; el año anterior y el actual, cada 6 horas (el Imacec se revisa)
+  return year !== 'all' && year < cur - 1 ? e.t > C.utcOf(year + 1 + '-02-15') : Date.now() - e.t < FRESCO;
+}
+async function fetchJSON(url, wait) {
+  const ctl = typeof AbortController === 'function' ? new AbortController() : null;
+  const t = ctl ? setTimeout(() => ctl.abort(), wait || 20000) : 0;
+  try {
+    const r = await fetch(url, { cache: 'no-store', signal: ctl ? ctl.signal : undefined });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return await r.json();
+  } finally { clearTimeout(t); }
+}
+// Se prueba primero la fuente que respondió la última vez y, si falla, la otra
+let apiFirst = 0, apiUsed = '';
+async function getMi(code, year) {
+  let last = null;
+  for (let n = 0; n < C.APIS.length; n++) {
+    const i = (apiFirst + n) % C.APIS.length, a = C.APIS[i];
+    try {
+      const d = C.leerMi(await fetchJSON(a.url + (C.API_CODE[code] || code) + '/' + year, a.wait));
+      apiFirst = i; apiUsed = a.name;
+      return d;
+    } catch (e) { last = e; }
+  }
+  throw last || new Error('red');
+}
+// Banco Central: directo del repositorio indicadores (siempre al día) y, si no se puede, desde su página
+async function getBcch(code) {
+  const urls = [C.BCCH_REPO + C.BCCH_FILES[code], C.BCCH_PAGINA + C.BCCH_FILES[code]];
+  let last = null;
+  for (const u of urls) { try { return C.leerBcch(await fetchJSON(u)); } catch (e) { last = e; } }
+  throw new Error(last && /404/.test(last.message) ? 'sin-datos' : 'red');
+}
+async function load(code, year, force) {
+  const e = cached(code, year);
+  if (e && !force && isFresh(e, year)) return e.d;
+  try {
+    const d = C.BCCH_FILES[code] ? await getBcch(code) : await getMi(code, year);
+    keep(code, year, d);
+    return d;
+  } catch (err) {
+    if (e) return e.d;          // sin conexión: lo último que se leyó
+    throw err;
+  }
+}
+// Hasta cuatro lecturas a la vez
+async function pool(tasks, n) {
+  let i = 0;
+  async function run() { while (i < tasks.length) { const k = i++; try { await tasks[k](); } catch (e) {} } }
+  await Promise.all(Array.from({ length: Math.min(n, tasks.length) }, run));
+}
+function yearsFor(range) { const cur = new Date().getFullYear(), ys = []; for (let y = cur - range; y <= cur; y++) ys.push(y); return ys; }
+async function ensure(inds, range, force) {
+  const tasks = [], cur = new Date().getFullYear(), codes = [];
+  inds.forEach((k) => { C.SOURCE[k].forEach((c) => { if (codes.indexOf(c) < 0) codes.push(c); }); });
+  codes.forEach((c) => {
+    if (C.BCCH_FILES[c]) { tasks.push(() => load(c, 'all', force).catch((e) => { failed[c] = (e && e.message) || 'red'; throw e; })); return; }
+    const ys = yearsFor(c === 'ipc' ? 1 : range + (c === 'uf' ? 1 : 0));   // del IPC de findic.cl basta lo reciente
+    if (c === 'uf' && new Date().getMonth() === 11) ys.push(cur + 1);   // en diciembre ya hay UF de enero
+    ys.forEach((y) => tasks.push(() => load(c, y, force && y >= cur - 1).catch((e) => { if (y >= cur - 1) failed[c] = (e && e.message) || 'red'; throw e; })));
+  });
+  codes.forEach((c) => { delete failed[c]; });
+  await pool(tasks, 4);
+}
+let cargando = false, ultimaLectura = +(leerLS(CL.lectura, 0) || 0);
+async function refresh(manual) {
+  if (cargando) return;
+  cargando = true; pintarRecarga();
+  await ensure(C.ORDER, 2, !!manual);
+  await ensure(['tpm'], 4, false);   // la TPM cambia poco: para saber desde cuándo rige, se miran más años
+  await ensure([prefs.grafico], prefs.range, false);
+  cargando = false;
+  ultimaLectura = Date.now(); guardarLS(CL.lectura, ultimaLectura);
+  render();
+  if (hoja && hoja.tipo === 'ind') repintarHoja();
+  const malas = Object.keys(failed).filter((c) => failed[c] !== 'sin-datos');
+  if (manual) avisar(malas.length ? 'Sin conexión' : 'Al día', malas.length ? 'Se muestra lo último que se leyó' : 'Datos leídos de nuevo', !!malas.length);
+}
+function pintarRecarga() { const b = document.querySelector('[data-a="recargar"]'); if (b) b.classList.toggle('c-girando', cargando); const e = $('estadoInd'); if (e) e.innerHTML = estadoTexto(); }
+
+/* ---------- Textos ---------- */
+function cuando(ms) {
+  const d = new Date(ms), k = C.dayKey(d), t = hoy(), y = C.dayKey(new Date(Date.now() - 86400000));
+  return (k === t ? 'hoy' : k === y ? 'ayer' : C.fmtDay(k)) + ', ' + C.pad(d.getHours()) + ':' + C.pad(d.getMinutes());
+}
+function faltaTexto(s) {
+  const f = failed[C.SOURCE[s.k][0]] || (s.k === 'petroleo' ? failed.wti : null);
+  if (C.IND[s.k].src === 'bcch' && f === 'sin-datos') return 'Llega con la próxima actualización desde el Banco Central.';
+  if (C.IND[s.k].src === 'bcch') return f ? 'No se pudo leer el dato del Banco Central.' : 'Leyendo…';
+  return f ? 'No se pudo leer findic.cl. Revisa la conexión.' : 'Leyendo…';
+}
+function estadoTexto() {
+  const malas = Object.keys(failed).filter((c) => failed[c] !== 'sin-datos');
+  const txt = cargando ? 'Actualizando…' : ultimaLectura ? 'Actualizado ' + cuando(ultimaLectura) + (apiUsed ? ' · ' + apiUsed : '') : 'Sin datos todavía';
+  const t2 = malas.length && !cargando && ultimaLectura ? 'Revisado ' + cuando(ultimaLectura) + ' · sin conexión' : txt;
+  return `<span class="c-punto${malas.length || !ultimaLectura ? ' c-punto--aviso' : ''}"></span>${esc(t2)}`;
+}
+
+/* ---------- Gráficos ---------- */
+// box: el contenedor .c-grafico; pts: [[fecha, valor]]; kind: line, step o bar; fmt y xfmt: textos del valor y la fecha
+function grafico(id) { return `<div class="c-grafico" id="${id}" tabindex="0" aria-label="Gráfico histórico"><div class="c-tip" hidden><b></b><small></small></div><svg></svg></div>`; }
+function dibujar(box, d, H) {
+  if (!box || !d) return;
+  const svg = box.querySelector('svg'), W = Math.max(260, Math.round(box.clientWidth || 340));
+  const L = 44, R = 8, T = 10, B = 24, pw = W - L - R, ph = H - T - B, pts = d.pts, kind = d.kind;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('width', W); svg.setAttribute('height', H);
+  if (!pts.length) { svg.innerHTML = '<text class="vacio" x="' + W / 2 + '" y="' + H / 2 + '" text-anchor="middle">Sin datos para este periodo</text>'; box._ch = null; return; }
+  svg.setAttribute('aria-label', 'De ' + d.fmt(pts[0][1]) + ' a ' + d.fmt(pts[pts.length - 1][1]));
+  const vals = pts.map((p) => p[1]);
+  let mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals);
+  if (kind === 'bar') { mn = Math.min(0, mn); mx = Math.max(0, mx); }
+  else { const p0 = (mx - mn) * 0.08 || Math.abs(mx) * 0.02 || 1; mn -= p0; mx += p0; }
+  const nt = C.niceTicks(mn, mx, 4), dec = C.stepDecimals(nt.step);
+  const y = (v) => T + ph * (1 - (v - nt.lo) / (nt.hi - nt.lo));
+  let h = '';
+  nt.ticks.forEach((v) => {
+    const yy = Math.round(y(v)) + 0.5;
+    h += '<line class="' + (v === 0 && kind === 'bar' ? 'zero' : 'grid-l') + '" x1="' + L + '" x2="' + (W - R) + '" y1="' + yy + '" y2="' + yy + '"/>';
+    h += '<text class="ax" x="' + (L - 8) + '" y="' + (yy + 4) + '" text-anchor="end">' + esc(d.ax(v, dec)) + '</text>';
+  });
+  const n = pts.length;
+  let xs;
+  if (kind === 'bar') {
+    const band = pw / n, gap = band >= 6 ? 2 : band * 0.25, w = Math.min(24, band - gap), z = y(0);
+    xs = pts.map((p, i) => L + band * i + band / 2);
+    pts.forEach((p, i) => {
+      const yy = y(p[1]), x0 = xs[i] - w / 2, r = Math.min(4, w / 2, Math.abs(yy - z));
+      const top = p[1] >= 0, a = top ? yy : z, b = top ? z : yy, hh = Math.max(0.5, b - a);
+      // extremo de datos redondeado, base recta
+      let dd = top
+        ? 'M' + x0 + ' ' + b + 'V' + (a + r) + 'Q' + x0 + ' ' + a + ' ' + (x0 + r) + ' ' + a + 'H' + (x0 + w - r) + 'Q' + (x0 + w) + ' ' + a + ' ' + (x0 + w) + ' ' + (a + r) + 'V' + b + 'Z'
+        : 'M' + x0 + ' ' + a + 'V' + (b - r) + 'Q' + x0 + ' ' + b + ' ' + (x0 + r) + ' ' + b + 'H' + (x0 + w - r) + 'Q' + (x0 + w) + ' ' + b + ' ' + (x0 + w) + ' ' + (b - r) + 'V' + a + 'Z';
+      if (hh <= 1) dd = 'M' + x0 + ' ' + (z - 0.5) + 'h' + w + 'v1h' + (-w) + 'Z';
+      h += '<path class="br" data-i="' + i + '" d="' + dd + '"/>';
+    });
+  } else {
+    const t0 = C.utcOf(pts[0][0]), t1 = C.utcOf(pts[n - 1][0]);
+    xs = pts.map((p) => L + pw * (t1 > t0 ? (C.utcOf(p[0]) - t0) / (t1 - t0) : 1));
+    let dd = '';
+    C.thin(pts.map((p, i) => [p[0], p[1], i]), kind).forEach((p, j) => {
+      const xx = xs[p[2]].toFixed(1), yy = y(p[1]).toFixed(1);
+      dd += !j ? 'M' + xx + ' ' + yy : kind === 'step' ? 'H' + xx + 'V' + yy : 'L' + xx + ' ' + yy;
+    });
+    h += '<path class="ar" d="' + dd + 'V' + (T + ph).toFixed(1) + 'H' + xs[0].toFixed(1) + 'Z"/>';
+    h += '<path class="ln" d="' + dd + '"/>';
+    h += '<circle class="dot" cx="' + xs[n - 1].toFixed(1) + '" cy="' + y(pts[n - 1][1]).toFixed(1) + '" r="4"/>';
+  }
+  // Eje de tiempo: años en rangos largos, meses en un año
+  const dias = (C.utcOf(pts[n - 1][0]) - C.utcOf(pts[0][0])) / 86400000, maxLab = Math.max(3, Math.floor(pw / 46)), marks = [];
+  pts.forEach((p, i) => {
+    const mo = +p[0].slice(5, 7), prev = pts[i - 1];
+    if (dias > 500) { if (prev && prev[0].slice(0, 4) !== p[0].slice(0, 4)) marks.push({ i, t: p[0].slice(0, 4) }); }
+    else if (!prev || prev[0].slice(0, 7) !== p[0].slice(0, 7)) marks.push({ i, t: mo === 1 ? p[0].slice(0, 4) : C.MES[mo - 1] });
+  });
+  const every = Math.max(1, Math.ceil(marks.length / maxLab));
+  marks.forEach((m, j) => {
+    if (j % every) return;
+    const xx = xs[m.i];
+    if (xx < L + 10 || xx > W - R - 10) return;
+    h += '<text class="ax" x="' + xx.toFixed(1) + '" y="' + (H - 5) + '" text-anchor="middle">' + m.t + '</text>';
+  });
+  h += '<line class="xh" x1="0" x2="0" y1="' + T + '" y2="' + (T + ph) + '" visibility="hidden"/>';
+  if (kind !== 'bar') h += '<circle class="dot xd" r="5" cx="0" cy="0" visibility="hidden"/>';
+  svg.innerHTML = h;
+  box._ch = { pts, xs, y, kind, fmt: d.fmt, xfmt: d.xfmt, W, i: -1 };
+}
+function marcar(box, i) {
+  const c = box && box._ch;
+  if (!c) return;
+  i = Math.max(0, Math.min(c.pts.length - 1, i)); c.i = i;
+  const p = c.pts[i], xx = c.xs[i], tip = box.querySelector('.c-tip'), xh = box.querySelector('.xh'), xd = box.querySelector('.xd');
+  box.classList.add('encima');
+  xh.setAttribute('x1', xx); xh.setAttribute('x2', xx); xh.setAttribute('visibility', 'visible');
+  if (xd) { xd.setAttribute('cx', xx); xd.setAttribute('cy', c.y(p[1])); xd.setAttribute('visibility', 'visible'); }
+  box.querySelectorAll('.br.on').forEach((b) => b.classList.remove('on'));
+  const bar = box.querySelector('.br[data-i="' + i + '"]'); if (bar) bar.classList.add('on');
+  tip.querySelector('b').textContent = c.fmt(p[1]);
+  tip.querySelector('small').textContent = c.xfmt(p[0]);
+  tip.hidden = false;
+  // La etiqueta va arriba del gráfico, o abajo si el punto está en la parte alta
+  const esc0 = box.clientWidth / c.W, mitad = tip.offsetWidth / 2, py = c.y(p[1]) * esc0;
+  tip.style.left = Math.max(mitad, Math.min(box.clientWidth - mitad, xx * esc0)) + 'px';
+  tip.style.top = (py < box.clientHeight * 0.45 ? box.clientHeight - 28 * esc0 - tip.offsetHeight : 2) + 'px';
+}
+function soltar(box) {
+  if (!box || !box._ch) return;
+  box.classList.remove('encima');
+  box.querySelector('.c-tip').hidden = true;
+  box.querySelector('.xh').setAttribute('visibility', 'hidden');
+  const xd = box.querySelector('.xd'); if (xd) xd.setAttribute('visibility', 'hidden');
+  box._ch.i = -1;
+}
+function cercano(box, clientX) {
+  const c = box && box._ch;
+  if (!c) return -1;
+  const r = box.getBoundingClientRect(), x = (clientX - r.left) * (c.W / r.width);
+  let lo = 0, hi = c.xs.length - 1;
+  while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (c.xs[mid] < x) lo = mid; else hi = mid; }
+  return Math.abs(c.xs[lo] - x) <= Math.abs(c.xs[hi] - x) ? lo : hi;
+}
+
+/* ---------- Indicadores ---------- */
+const resumen = (k) => C.summary(S, k, prefs, hoy());
+function vistaIndicadores() {
+  const s = resumen(prefs.hero);
+  let html = `<button class="d-heroe c-heroe${s.v ? '' : ' c-heroe--vacio'}" data-a="detalle" data-k="${s.k}"><span class="d-etiqueta">${esc(s.hero + (s.v && s.heroCap ? ' · ' + s.heroCap : ''))}</span>`;
+  if (!s.v) html += `<span class="d-cifra-grande">${cargando || !ultimaLectura ? '…' : 'Sin datos'}</span><div class="d-pie"><div>${esc(faltaTexto(s))}</div></div>`;
+  else html += `<span class="d-cifra-grande">${s.val}</span>` + (s.lines.length ? `<div class="d-pie">${s.lines.map((x) => `<div>${esc(x.l)}<b>${esc(x.v)}</b></div>`).join('')}</div>` : '');
+  html += '</button>';
+  // Gráfico de la portada
+  const g = prefs.grafico, d = C.detail(S, g, prefs, hoy()), st = C.stats(d, prefs.range);
+  html += `<div class="d-seccion"><h2>${esc(C.IND[g].name)}</h2><a href="#" data-a="detalle" data-k="${g}">Detalle</a></div>`;
+  html += `<div class="d-vidrio c-grafico-tarjeta">${segmentos('range', C.RANGOS.map((r) => [r, r === 1 ? '1 año' : r + ' años']), prefs.range, 'Periodo del gráfico')}${grafico('graficoPortada')}` +
+    (st ? `<div class="c-grafico-pie"><span>Mín. <b>${esc(st.min.v)}</b></span><span>Máx. <b>${esc(st.max.v)}</b></span>${st.cambio ? `<span>Cambio <b>${esc(st.cambio.v)}</b></span>` : `<span>Prom. <b>${esc(st.promedio.v)}</b></span>`}</div>` : '') + '</div>';
+  // Tarjetas del resto
+  const lista = C.ORDER.filter((k) => k !== prefs.hero && k !== g);
+  html += '<div class="c-rejilla">' + lista.map((k, i) => tarjeta(resumen(k), i === lista.length - 1 && lista.length % 2 === 1)).join('') + '</div>';
+  return html + `<p class="c-estado" id="estadoInd">${estadoTexto()}</p>`;
+}
+function tarjeta(s, ancha) {
+  let dentro;
+  if (!s.v) dentro = `<span class="c-tile-val c-tile-val--vacio">${failed[C.SOURCE[s.k][0]] ? '—' : '…'}</span><span class="c-tile-cap">${esc(faltaTexto(s))}</span>`;
+  else {
+    const primera = s.lines.filter((x) => !x.heroOnly)[0];
+    const texto = `<span class="c-tile-val${!ancha && s.val.length >= 11 ? ' c-tile-val--largo' : ''}">${s.val}</span><span class="c-tile-cap">${esc(s.cap)}</span>` + (primera ? `<span class="c-tile-delta">${esc(primera.t)}</span>` : '');
+    const spark = `<span class="c-tile-spark">${s.spark ? C.sparkSVG(s.spark[0], s.spark[1]) : ''}</span>`;
+    dentro = ancha ? `<span class="c-tile-fila"><span>${texto}</span>${spark}</span>` : texto + spark;
+  }
+  return `<button class="d-vidrio c-tile${ancha ? ' c-tile--ancha' : ''}" data-a="detalle" data-k="${s.k}"><span class="c-tile-etq">${esc(s.label)}</span>${dentro}</button>`;
+}
+function segmentos(nombre, ops, val, etq) {
+  return `<div class="d-segmentos c-seg" role="group" aria-label="${esc(etq)}">${ops.map(([v, t]) => `<button data-a="seg" data-seg="${nombre}" data-v="${v}" aria-pressed="${String(v) === String(val)}">${esc(t)}</button>`).join('')}</div>`;
+}
+
+/* ---------- Lecturas y Cartelera (próxima versión) ---------- */
+function vistaPronto(cual) {
+  if (cual === 'lecturas') {
+    return `<section class="d-vidrio c-pronto"><span class="d-cuadro">${ico('libro')}</span><h2>Lecturas llega en la próxima versión</h2>` +
+      '<p>Aquí van a estar el desafío del año, lo que estás leyendo, <b>Quiero leer</b> y el buscador de Goodreads.</p>' +
+      '<p>Mientras tanto, sigue usando la app <b>Lecturas</b>. Sus datos vienen de Goodreads, así que también se puede abrir en Safari.</p>' +
+      `<button class="d-boton d-boton--discreto" data-a="abrir" data-url="${LECTURAS}">${ico('enlace', 20)}Abrir Lecturas en Safari</button></section>`;
+  }
+  return `<section class="d-vidrio c-pronto"><span class="d-cuadro">${ico('tv')}</span><h2>Cartelera llega en la próxima versión</h2>` +
+    '<p>Aquí van a estar <b>Quiero ver</b>, <b>Vistos</b> y la búsqueda con las plataformas de cada título, con las listas guardadas en GitHub (hoy viven solo en el iPhone).</p>' +
+    '<p>Mientras tanto, sigue usando la app <b>Cartelera</b> de la pantalla de inicio. Cuando llegue, la traes aquí con su respaldo.</p></section>';
+}
+
+/* ---------- Ajustes ---------- */
+const chips = (nombre, ops, val) => `<div class="c-chips">${ops.map(([v, t]) => `<input type="radio" name="${nombre}" id="${nombre}-${v}" value="${v}"${String(val) === String(v) ? ' checked' : ''}><label for="${nombre}-${v}">${t}</label>`).join('')}</div>`;
+const corto = (k) => esc(C.IND[k].short || C.IND[k].name);
+function vistaAjustes() {
+  let html = '<div class="d-seccion"><h2>Destacado arriba</h2></div><div class="d-vidrio c-tarjeta">' + chips('hero', C.ORDER.map((k) => [k, corto(k)]), prefs.hero) + '</div>';
+  html += '<div class="d-seccion"><h2>Gráfico de la portada</h2></div><div class="d-vidrio c-tarjeta">' + chips('grafico', C.ORDER.map((k) => [k, corto(k)]), prefs.grafico) + '</div>';
+  const seg = (k, op) => `<div class="d-segmentos" role="group">${op.map(([v, t]) => `<button data-a="pref" data-k="${k}" data-v="${v}" aria-pressed="${prefs[k] === v}">${t}</button>`).join('')}</div>`;
+  html += '<div class="d-seccion"><h2>Apariencia</h2></div><ul class="d-lista d-vidrio">' +
+    `<li class="d-fila c-ajuste-seg"><span class="d-texto"><strong>Tema</strong></span>${seg('tema', [['auto', 'Automático'], ['claro', 'Claro'], ['oscuro', 'Oscuro']])}</li>` +
+    `<li class="d-fila c-ajuste-seg"><span class="d-texto"><strong>Vidrio</strong></span>${seg('vidrio', [['claro', 'Claro'], ['tintado', 'Tintado']])}</li></ul>`;
+  const D = C.ipcOfficial(S, hoy());
+  let at = 0;
+  Object.keys(C.BCCH_FILES).forEach((c) => { const e = S[c] && S[c].all, x = e && e.d && e.d.at ? Date.parse(e.d.at) : 0; if (x > at) at = x; });
+  const kv = (a, b) => `<li class="d-fila"><span class="d-texto"><strong>${a}</strong></span><span class="d-valor" style="font-weight:400;font-family:var(--font-sans);color:var(--tinta-2)">${b}</span></li>`;
+  html += '<div class="d-seccion"><h2>Fuentes</h2></div><ul class="d-lista d-vidrio c-tabla">' +
+    kv('UF, dólar, TPM, Imacec y cobre', esc(apiUsed || 'findic.cl')) + kv('IPC', D ? 'Banco Central (INE)' : esc(apiUsed || 'findic.cl')) + kv('Imacec mensual y petróleo', 'Banco Central') + '</ul>' +
+    '<p class="c-nota">Si findic.cl no responde, se usa mindicador.cl, que entrega los mismos datos. Los del Banco Central los trae tres veces al día una tarea de GitHub del repositorio indicadores' +
+    (at ? '; cambiaron por última vez ' + esc(cuando(at)) : '') + '. Todo queda guardado en este iPhone para verlo sin conexión.</p>';
+  return html + `<p class="c-estado">Consulta ${C.VERSION} · Domésticas 27</p>`;
+}
+
+/* ---------- Hojas ---------- */
+const SUB = { uf: 'Unidad de fomento, valor diario', dolar: 'Tipo de cambio observado del Banco Central', ipc: 'Índice de Precios al Consumidor, variación', tpm: 'Banco Central de Chile',
+  imacec: 'Índice mensual de actividad económica', cobre: 'Cobre refinado en la Bolsa de Metales de Londres, dólares por libra', petroleo: 'Dólares por barril' };
+function hojaIndicador(k) {
+  const h0 = hoy(), v = C.view(S, k, prefs, h0);
+  let h = `<h2>${esc(C.IND[k].name)}</h2><p class="c-sub">${esc(SUB[k])}</p>`;
+  if (v) {
+    let big = '', cap = '';
+    if (k === 'uf') { big = C.pesos(v.v); cap = 'hoy'; }
+    if (k === 'dolar') { big = C.pesos(v.v); cap = C.fmtDay(v.date, true); }
+    if (k === 'ipc') { big = C.pct(v.v); cap = C.fmtMonth(v.date, true) + (v.y12 != null ? ' · 12 meses ' + C.pct(v.y12) : ''); }
+    if (k === 'tpm') { big = C.pct(v.v, 2); cap = v.change ? 'desde el ' + C.fmtDay(v.change.date, true) : ''; }
+    if (k === 'imacec') {
+      if (prefs.imacec === 'm') { big = v.mLast ? C.signed(v.mLast[1], 1, C.PCT) : '—'; cap = v.mLast ? C.fmtMonth(v.mLast[0], true) + ' · respecto del mes anterior' : 'sin dato mensual'; }
+      else { big = C.pct(v.v); cap = C.fmtMonth(v.date, true) + ' · en 12 meses'; }
+    }
+    if (k === 'cobre') { big = C.usd(v.v); cap = C.fmtDay(v.date, true) + ' · por libra'; }
+    if (k === 'petroleo') {
+      const s = C.bcchSeries(S, prefs.crudo, +h0.slice(0, 4) - 1), a = s[s.length - 1];
+      big = a ? C.usd(a[1]) : '—';
+      cap = a ? (C.bcchMonthly(S, prefs.crudo) ? C.fmtMonth(a[0], true) + ' · Brent, promedio mensual' : C.fmtDay(a[0], true) + ' · ' + (prefs.crudo === 'wti' ? 'WTI' : 'Brent') + ', por barril') : 'sin datos';
+    }
+    h += `<div class="c-grande"><b>${big}</b><span>${esc(cap)}</span></div>`;
+  }
+  if (k === 'ipc') h += segmentos('ipc', [['12m', 'En 12 meses'], ['m', 'Mensual']], prefs.ipc, 'Variación');
+  if (k === 'imacec') h += segmentos('imacec', [['12m', 'En 12 meses'], ['m', 'Mensual']], prefs.imacec, 'Variación');
+  if (k === 'petroleo') h += segmentos('crudo', [['wti', 'WTI'], ['brent', 'Brent']], prefs.crudo, 'Crudo');
+  if (k === 'imacec' && prefs.imacec === 'm' && !C.bcchSeries(S, 'imacecde', 2000).length) {
+    h += '<p class="c-pista">' + (failed.imacecde === 'sin-datos' ? 'La variación mensual llega con la próxima actualización desde el Banco Central.' : failed.imacecde ? 'No se pudo leer el Imacec desestacionalizado.' : 'Leyendo el Imacec desestacionalizado…') + '</p>';
+  }
+  h += segmentos('range', C.RANGOS.map((r) => [r, r === 1 ? '1 año' : r + ' años']), prefs.range, 'Periodo del gráfico');
+  h += grafico('graficoHoja') + '<div class="c-stats" id="stats"></div><h3>Últimos valores</h3><ul class="d-lista d-vidrio c-tabla" id="recientes"></ul>';
+  const of = C.ipcOfficial(S, h0);
+  if (k === 'ipc') h += '<p class="c-pista">' + (of ? 'Cifras oficiales del INE, que el Banco Central publica el mismo día (el 8 de cada mes).'
+    : 'Aún no llegan las cifras oficiales del Banco Central: el IPC sale de findic.cl o se calcula con la UF, que se reajusta según el IPC del mes anterior.') + '</p>';
+  if (k === 'imacec') h += '<p class="c-pista">' + (prefs.imacec === 'm'
+    ? 'Variación respecto del mes anterior, calculada con la serie desestacionalizada del Banco Central. Esa serie se recalcula cada mes, así que los meses recientes pueden cambiar.'
+    : 'Variación respecto del mismo mes del año anterior. El Banco Central revisa las cifras de meses recientes.') + '</p>';
+  if (k === 'petroleo') h += '<p class="c-pista">WTI es la referencia de Estados Unidos; Brent, la del mar del Norte. El Banco Central publica el WTI día a día, con algunos días de atraso, y el Brent como promedio mensual.' +
+    (v && v.market && v.crudo === 'wti' ? ' El último valor del WTI es el precio de mercado del día (OilPriceAPI).' : '') + '</p>';
+  const bcch = k === 'petroleo' || (k === 'imacec' && prefs.imacec === 'm') || (k === 'ipc' && of);
+  h += '<p class="c-pista">Fuente: ' + (bcch ? 'Banco Central de Chile, API de la Base de Datos Estadísticos' + (k === 'ipc' ? ', con datos del INE' : '') : esc(apiUsed || 'findic.cl') + ', con datos del Banco Central' + (k === 'ipc' ? ' y el INE' : '')) + '.</p>';
+  h += '<div class="c-pila">';
+  h += prefs.hero === k ? `<p class="c-destacado">${ico('estrella', 18)}Destacado arriba en la portada</p>` : `<button class="d-boton d-boton--discreto" data-a="destacar" data-k="${k}">${ico('estrella', 20)}Destacar arriba</button>`;
+  if (prefs.grafico !== k) h += `<button class="d-boton d-boton--discreto" data-a="graficar" data-k="${k}">${ico('barras', 20)}Mostrar su gráfico en la portada</button>`;
+  return h + '<button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+}
+function llenarHoja() {
+  if (!hoja || hoja.tipo !== 'ind') return;
+  const k = hoja.k, d = C.detail(S, k, prefs, hoy());
+  dibujar($('graficoHoja'), d, 220);
+  const st = C.stats(d, prefs.range), el = $('stats'), rec = $('recientes');
+  if (el) el.innerHTML = !st ? '' : [['Mínimo', st.min], ['Máximo', st.max], st.cambio ? ['Cambio', st.cambio] : ['Promedio', st.promedio]]
+    .map(([t, x]) => `<div class="c-stat"><small>${t}</small><b>${esc(x.v)}</b><em>${esc(x.en)}</em></div>`).join('');
+  if (rec) {
+    const l = C.recientes(d);
+    rec.innerHTML = l.length ? l.map((p) => `<li class="d-fila"><span class="d-texto"><strong>${esc(d.xfmt(p[0]))}</strong></span><span class="d-valor">${esc(d.fmt(p[1]))}</span></li>`).join('')
+      : '<li class="d-fila"><span class="d-texto"><strong>Sin datos</strong></span></li>';
+  }
+}
+function hojaAyuda() {
+  return '<h2>Indicadores</h2>' +
+    '<p>Toca el destacado, el gráfico o una tarjeta para ver su historia de 1, 5 o 10 años. Al pasar el dedo sobre un gráfico se ve el valor de cada fecha.</p>' +
+    '<h3>Qué muestra cada uno</h3>' +
+    '<p><b>UF</b>: valor de hoy, variación en 12 meses y el último valor ya publicado. <b>Dólar observado</b> y <b>cobre</b>: el dato del día y el cambio respecto del día anterior. ' +
+    '<b>IPC</b>: variación mensual y en 12 meses. <b>TPM</b>: la tasa vigente, desde cuándo rige y la anterior. <b>Imacec</b>: variación en 12 meses y mensual (desestacionalizada). ' +
+    '<b>Petróleo</b>: WTI diario, con el Brent mensual como dato secundario.</p>' +
+    '<h3>Fuentes</h3>' +
+    '<p>UF, dólar, TPM, Imacec y cobre: findic.cl, con datos del Banco Central (si no responde, mindicador.cl). IPC: las cifras oficiales del INE que publica el Banco Central el 8 de cada mes; si aún no llegan, findic.cl, y como último respaldo se calcula con la UF. ' +
+    'Imacec mensual y petróleo: Banco Central, a través de la tarea de GitHub del repositorio indicadores.</p>' +
+    '<h3>Sin conexión</h3><p>Lo último que se leyó queda guardado en este iPhone. Los años cerrados se leen una vez; el actual y el anterior, cada 6 horas o al tocar Actualizar.</p>' +
+    '<div class="c-pila"><button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+}
+function contenidoHoja() { return hoja.tipo === 'ind' ? hojaIndicador(hoja.k) : hojaAyuda(); }
+function abrirHoja(tipo, extra) {
+  hoja = Object.assign({ tipo }, extra || {});
+  const el = $('hoja'), fondo = $('fondoHoja');
+  el.innerHTML = contenidoHoja();
+  el.hidden = false; fondo.hidden = false; el.scrollTop = 0;
+  llenarHoja();
+  requestAnimationFrame(() => requestAnimationFrame(() => { el.classList.add('abierta'); fondo.classList.add('abierta'); }));
+  if (tipo === 'ind') cambiarRango();
+}
+function repintarHoja() { if (!hoja) return; const el = $('hoja'), y = el.scrollTop; el.innerHTML = contenidoHoja(); llenarHoja(); el.scrollTop = y; }
+function cerrarHoja() {
+  const el = $('hoja'), fondo = $('fondoHoja');
+  if (el.hidden) return;
+  hoja = null;
+  el.classList.remove('abierta'); fondo.classList.remove('abierta');
+  setTimeout(() => { if (!hoja) { el.hidden = true; fondo.hidden = true; el.innerHTML = ''; } }, 320);
+}
+// Trae los años que falten para el rango elegido y vuelve a dibujar
+async function cambiarRango() {
+  const k = hoja && hoja.tipo === 'ind' ? hoja.k : null;
+  const cajas = [$('graficoPortada'), $('graficoHoja')].filter(Boolean);
+  cajas.forEach((b) => b.classList.add('ocupado'));
+  await ensure(k && k !== prefs.grafico ? [k, prefs.grafico] : [prefs.grafico], prefs.range, false);
+  if (ui.tab === 'indicadores') render();
+  if (hoja && hoja.tipo === 'ind' && hoja.k === k) llenarHoja();
+  [$('graficoPortada'), $('graficoHoja')].filter(Boolean).forEach((b) => b.classList.remove('ocupado'));
+}
+let tToast = 0;
+function avisar(titulo, sub, error) {
+  $('toastT').textContent = titulo; $('toastS').textContent = sub || '';
+  $('toast').classList.toggle('c-toast--error', !!error);
+  $('toast').classList.add('ver');
+  clearTimeout(tToast); tToast = setTimeout(() => $('toast').classList.remove('ver'), 2800);
+}
+
+/* ---------- Acciones ---------- */
+const ACCIONES = {
+  tab(el) { ui.tab = el.dataset.t; guardarLS(CL.ui, ui); window.scrollTo(0, 0); render(); },
+  detalle(el) { abrirHoja('ind', { k: el.dataset.k }); },
+  ayuda() { abrirHoja('ayuda'); },
+  cerrar() { cerrarHoja(); },
+  recargar() { refresh(true); },
+  abrir(el) { window.open(el.dataset.url, '_blank', 'noopener'); },
+  seg(el) {
+    const n = el.dataset.seg, v = el.dataset.v;
+    if (n === 'range') prefs.range = +v;
+    if (n === 'ipc') prefs.ipc = v;
+    if (n === 'imacec') prefs.imacec = v;
+    if (n === 'crudo') prefs.crudo = v === 'brent' ? 'brent' : 'wti';
+    guardarPrefs();
+    el.parentNode.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === el)));
+    if (hoja && n !== 'range') repintarHoja();   // cambia también la cifra grande y la nota
+    render();
+    if (hoja) llenarHoja();
+    cambiarRango();
+  },
+  destacar(el) {
+    prefs.hero = el.dataset.k; guardarPrefs(); render(); repintarHoja();
+    avisar('Ahora arriba', C.IND[prefs.hero].name);
+  },
+  graficar(el) {
+    prefs.grafico = el.dataset.k; guardarPrefs(); render(); repintarHoja();
+    avisar('Gráfico de la portada', C.IND[prefs.grafico].name);
+    cambiarRango();
+  },
+  pref(el) { prefs[el.dataset.k] = el.dataset.v; guardarPrefs(); aplicarPrefs(); render(); },
+};
+document.addEventListener('click', (ev) => {
+  const el = ev.target.closest('[data-a]');
+  if (!el) return;
+  if (el.tagName === 'A') ev.preventDefault();
+  const fn = ACCIONES[el.dataset.a];
+  if (fn) fn(el, ev);
+});
+document.addEventListener('change', (ev) => {
+  const t = ev.target;
+  if (t.name === 'hero' || t.name === 'grafico') {
+    prefs[t.name] = t.value; guardarPrefs();
+    avisar(t.name === 'hero' ? 'Ahora arriba' : 'Gráfico de la portada', C.IND[t.value].name);
+    if (t.name === 'grafico') ensure([t.value], prefs.range, false).then(() => { if (ui.tab === 'indicadores') render(); });
+  }
+});
+document.addEventListener('keydown', (ev) => {
+  if (ev.key === 'Escape') { cerrarHoja(); return; }
+  const box = document.activeElement && document.activeElement.closest && document.activeElement.closest('.c-grafico');
+  if (box && box._ch && (ev.key === 'ArrowLeft' || ev.key === 'ArrowRight')) {
+    ev.preventDefault();
+    marcar(box, (box._ch.i < 0 ? box._ch.pts.length - 1 : box._ch.i) + (ev.key === 'ArrowLeft' ? -1 : 1));
+  }
+});
+// Los gráficos responden al dedo: arrastrar de lado muestra el valor de cada fecha
+function alPuntero(e) {
+  const box = e.target.closest && e.target.closest('.c-grafico');
+  document.querySelectorAll('.c-grafico.encima').forEach((b) => { if (b !== box) soltar(b); });
+  if (box) { const i = cercano(box, e.clientX); if (i >= 0) marcar(box, i); }
+}
+document.addEventListener('pointermove', (e) => { if (e.pointerType !== 'mouse' || e.target.closest('.c-grafico')) alPuntero(e); });
+document.addEventListener('pointerdown', alPuntero);
+document.addEventListener('pointerout', (e) => { if (e.pointerType === 'mouse' && e.target.closest && e.target.closest('.c-grafico') && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest('.c-grafico'))) soltar(e.target.closest('.c-grafico')); });
+document.addEventListener('focusout', (e) => { if (e.target && e.target.classList && e.target.classList.contains('c-grafico')) soltar(e.target); });
+let rz = 0;
+window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { if (ui.tab === 'indicadores') render(); llenarHoja(); }, 150); });
+
+/* ---------- Pintar ---------- */
+const PESTANAS = [['indicadores', 'barras', 'Indicadores'], ['lecturas', 'libro', 'Lecturas'], ['cartelera', 'tv', 'Cartelera'], ['ajustes', 'ajustes', 'Ajustes']];
+function cabecera() {
+  const t = { indicadores: [C.fechaLarga(hoy()), 'Consulta'], lecturas: ['Goodreads', 'Lecturas'], cartelera: ['Series y películas', 'Cartelera'], ajustes: ['Consulta ' + C.VERSION, 'Ajustes'] }[ui.tab];
+  const acciones = ui.tab === 'indicadores'
+    ? `<button class="d-boton-circular${cargando ? ' c-girando' : ''}" data-a="recargar" aria-label="Actualizar">${ico('recargar', 20, 2.4)}</button><button class="d-boton-circular" data-a="ayuda" aria-label="Ayuda">${ico('ayuda', 20)}</button>` : '';
+  return `<div><span class="d-antetitulo">${esc(t[0])}</span><h1>${t[1]}</h1></div><div class="d-acciones">${acciones}</div>`;
+}
+function render() {
+  if (!PESTANAS.some((p) => p[0] === ui.tab)) ui.tab = 'indicadores';
+  $('cabecera').innerHTML = cabecera();
+  $('vista').innerHTML = ui.tab === 'indicadores' ? vistaIndicadores() : ui.tab === 'ajustes' ? vistaAjustes() : vistaPronto(ui.tab);
+  if (ui.tab === 'indicadores') dibujar($('graficoPortada'), C.detail(S, prefs.grafico, prefs, hoy()), 170);
+  $('barraSup').textContent = { indicadores: 'Consulta', lecturas: 'Lecturas', cartelera: 'Cartelera', ajustes: 'Ajustes' }[ui.tab];
+  $('pestanas').innerHTML = PESTANAS.map(([id, ic, t]) => `<button data-a="tab" data-t="${id}"${ui.tab === id ? ' aria-current="page"' : ''}>${ico(ic)}${t}</button>`).join('');
+}
+function aplicarPrefs() {
+  const oscuro = prefs.tema === 'oscuro' || (prefs.tema !== 'claro' && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.setAttribute('data-theme', oscuro ? 'dark' : 'light');
+  if (prefs.vidrio === 'tintado') document.body.setAttribute('data-vidrio', 'tintado'); else document.body.removeAttribute('data-vidrio');
+}
+
+// Actualización sin reinstalar (igual que Casa y Finanzas): una recarga por versión nueva
+async function buscarVersionNueva() {
+  try {
+    const t = await (await fetch('calculos.js?v=' + Date.now(), { cache: 'no-store' })).text();
+    const m = /VERSION = '([^']+)'/.exec(t);
+    if (!m || m[1] === C.VERSION || sessionStorage.getItem('con27.recargada') === m[1]) return;
+    const reg = navigator.serviceWorker && await navigator.serviceWorker.getRegistration();
+    if (reg) await reg.update().catch(() => {});
+    if (hoja) return;
+    sessionStorage.setItem('con27.recargada', m[1]);
+    location.reload();
+  } catch (e) {}
+}
+
+/* ---------- Arranque ---------- */
+// Primero lo guardado; luego, los datos nuevos
+(function () {
+  const cur = new Date().getFullYear();
+  ['uf', 'dolar', 'tpm', 'imacec', 'cobre', 'ipc'].forEach((c) => { for (let y = cur - 11; y <= cur + 1; y++) cached(c, y); });
+  Object.keys(C.BCCH_FILES).forEach((c) => cached(c, 'all'));
+})();
+aplicarPrefs();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', aplicarPrefs);
+render();
+refresh(false);
+buscarVersionNueva();
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible') return;
+  render(); if (hoja) llenarHoja();
+  if (Date.now() - ultimaLectura > 30 * 60000) refresh(false);
+  buscarVersionNueva();
+});
+setInterval(() => { if (document.visibilityState === 'visible' && !hoja && ui.tab !== 'indicadores') render(); }, 60000);
+let verBarra = false;
+window.addEventListener('scroll', () => { const v = window.scrollY > 46; if (v !== verBarra) { $('barraSup').classList.toggle('ver', v); verBarra = v; } }, { passive: true });
+['gesturestart', 'gesturechange', 'gestureend'].forEach((t) => document.addEventListener(t, (e) => e.preventDefault(), { passive: false }));
+document.addEventListener('touchmove', (e) => { if (e.touches && e.touches.length > 1) e.preventDefault(); }, { passive: false });
+if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>
