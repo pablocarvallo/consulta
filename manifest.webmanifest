@@ -1,7 +1,7 @@
 {
   "name": "Consulta",
   "short_name": "Consulta",
-  "description": "Indicadores de Chile con sus gráficos; luego, Lecturas y Cartelera.",
+  "description": "Indicadores de Chile y Cartelera de series y películas; luego, Lecturas.",
   "lang": "es-CL",
   "id": "./",
   "start_url": "./",

@@ -1,7 +1,7 @@
 // Consulta · cálculos sin pantalla (con pruebas en pruebas/). Indicadores: lectura de las fuentes, series derivadas
 // (IPC, Imacec mensual), resumen de cada indicador y datos de los gráficos. La lógica viene sin cambios de la app
 // Indicadores (pablocarvallo/indicadores); aquí recibe la fecha de hoy («AAAA-MM-DD») para poder probarla.
-export const VERSION = '1.0.0';
+export const VERSION = '1.1.0';
 
 export const MES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
 export const MESL = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];

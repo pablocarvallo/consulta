@@ -4,13 +4,12 @@ App de consulta del plan de 5 apps domésticas: **Indicadores**, **Lecturas** y 
 
 Se publica con GitHub Pages en https://pablocarvallo.github.io/consulta/.
 
-## Versión 1.0.0
+## Versiones
 
-- **Indicadores**: UF, dólar observado, IPC, TPM, Imacec, cobre y petróleo. Arriba el indicador destacado (por defecto la UF), luego el gráfico de la portada (por defecto el dólar, de 1, 5 o 10 años) y una tarjeta por cada uno de los demás, con su tendencia de 12 meses. Al tocar cualquiera se abre su detalle: gráfico histórico, mínimo, máximo, cambio del periodo y los últimos valores. El destacado y el gráfico de la portada se eligen en Ajustes o desde el detalle.
-- **Lecturas** y **Cartelera**: llegan en las próximas versiones. Mientras tanto se siguen usando sus apps.
-- **Ajustes**: destacado, gráfico de la portada, tema, vidrio y fuentes.
+- **1.1.0** (24 nov 2026): **Cartelera** dentro de Consulta. Quiero ver (con las plataformas en Chile y filtros por tipo y plataforma), Vistos por mes (con fecha, nota y lo traído del historial), búsqueda en TMDB y ficha de cada título. Las listas se guardan en `cartelera.json` del repositorio privado pablocarvallo/datos, a través de domesticas-api con la llave de este iPhone. Se traen las listas de la app Cartelera con su respaldo, y el historial de Netflix o Prime Video igual que antes. La clave de TMDB y las plataformas de cada título quedan solo en el iPhone.
+- **1.0.0** (24 nov 2026): **Indicadores**: UF, dólar observado, IPC, TPM, Imacec, cobre y petróleo. Arriba el indicador destacado (por defecto la UF), luego el gráfico de la portada (por defecto el dólar, de 1, 5 o 10 años) y una tarjeta por cada uno de los demás, con su tendencia de 12 meses. Al tocar cualquiera se abre su detalle. **Lecturas** llega en la próxima versión.
 
-La lógica de los indicadores es la de la app Indicadores, sin cambios, en `calculos.js` (con pruebas en `pruebas/`).
+La lógica de los indicadores es la de la app Indicadores, sin cambios, en `calculos.js`; la de Cartelera (cambios de las listas, respaldo y lectura del historial de Netflix y Prime Video), en `cartelera.js`. Las dos tienen pruebas en `pruebas/`.
 
 ## Fuentes
 
@@ -18,7 +17,13 @@ La lógica de los indicadores es la de la app Indicadores, sin cambios, en `calc
 - **IPC**: las cifras oficiales del INE que el Banco Central publica el 8 de cada mes; si aún no llegan, findic.cl; como último respaldo, se calcula con la UF.
 - **IPC oficial, Imacec desestacionalizado y petróleo (WTI diario, Brent mensual)**: Banco Central de Chile. Los trae tres veces al día la tarea «Datos del Banco Central» del repositorio [pablocarvallo/indicadores](https://github.com/pablocarvallo/indicadores) y Consulta los lee desde `raw.githubusercontent.com/pablocarvallo/indicadores/main/datos/`. Ese repositorio y su tarea deben seguir activos aunque se retire la app Indicadores.
 
-Lo último que se leyó queda guardado en el iPhone para verlo sin conexión. Consulta no guarda datos en GitHub en esta versión, así que no necesita llave.
+Lo último que se leyó queda guardado en el iPhone para verlo sin conexión.
+
+## Cartelera
+
+- **TMDB** entrega las fichas, la búsqueda y las plataformas (según JustWatch). La clave se pega en Ajustes → Cartelera → TMDB y queda solo en el iPhone.
+- **Listas en GitHub**: para guardarlas hay que conectar el iPhone en Ajustes → Conexión con GitHub, con un código de la tarea Llaves de pablocarvallo/datos (tipo dispositivo). Sin conexión, los cambios esperan en el iPhone.
+- **Desde la app Cartelera**: en Cartelera, Ajustes → Respaldo → Exportar; en Consulta, Ajustes → Cartelera → Traer respaldo. Los títulos que ya están no se cambian.
 
 ## Instalar en el iPhone
 
@@ -29,7 +34,7 @@ Las versiones nuevas llegan solas al abrir la app; no hace falta reinstalar.
 
 ## Desarrollo
 
-- Una sola página (`index.html`) más `calculos.js`. Sin dependencias externas.
+- Una sola página (`index.html`) más `calculos.js` y `cartelera.js`. Sin dependencias externas.
 - Diseño: los bloques `D27:TOKENS` y `D27:COMP` se copian desde `casa/diseno27/` con `casa/herramientas/aplicar-diseno27.py index.html`.
 - Pruebas: `TZ=America/Santiago node --test pruebas/*.test.js`.
 - Al publicar, subir `VERSION` en `calculos.js` y `CACHE` en `sw.js`.

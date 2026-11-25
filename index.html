@@ -357,6 +357,117 @@ button { -webkit-tap-highlight-color: transparent; }
 .c-toast .d-punto { background: var(--positivo); box-shadow: 0 0 0 4px color-mix(in srgb, var(--positivo) 22%, transparent); }
 .c-toast--error .d-punto { background: var(--aviso-relleno); box-shadow: 0 0 0 4px color-mix(in srgb, var(--aviso-relleno) 25%, transparent); }
 
+/* Campos y textos de formularios (los mismos de Finanzas) */
+.c-campo { display: block; margin: 14px 0 0; }
+.c-campo > span { display: block; margin: 0 0 6px 4px; font: 600 13px/18px var(--font-sans); color: var(--tinta-2); }
+.c-campo input[type="text"], .c-campo input[type="password"] {
+  display: block; width: 100%; min-height: 50px; border: 0; border-radius: 14px; background: var(--relleno); color: var(--tinta);
+  font: 400 17px/22px var(--font-sans); padding: 13px 14px; -webkit-appearance: none; appearance: none; text-align: left; }
+.c-campo input:focus { outline: 2px solid var(--acento); outline-offset: 1px; }
+.c-codigo { text-transform: uppercase; letter-spacing: 3px; font-family: var(--font-rounded) !important; font-size: 22px !important; text-align: center !important; }
+.c-error { margin: 10px 4px 0; font: 600 15px/20px var(--font-sans); color: var(--negativo) !important; }
+.c-ok { margin: 10px 4px 0; font: 600 15px/20px var(--font-sans); color: var(--positivo) !important; }
+.c-peligro { color: var(--negativo) !important; }
+.c-boton-peligro { background: transparent; color: var(--negativo); box-shadow: none; }
+.c-pasos { margin: 10px 20px 0; padding-left: 20px; font: 400 15px/21px var(--font-sans); color: var(--tinta-2); }
+.c-pasos li { margin-top: 6px; }
+.c-pasos b { color: var(--tinta); }
+.c-pasos a, .c-hoja a { color: var(--acento); text-decoration: none; }
+.c-pasos--hoja { margin: 6px 0 0; }
+.c-interruptor { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding: 12px 14px; border-radius: 14px; background: var(--relleno); font: 400 17px/22px var(--font-sans); }
+.c-interruptor input { width: 24px; height: 24px; accent-color: var(--acento-relleno); flex: none; }
+.c-archivo { position: relative; overflow: hidden; cursor: pointer; }
+.c-archivo input[type="file"] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; font-size: 0; }
+
+/* Cartelera: búsqueda */
+.c-buscar { display: flex; align-items: center; gap: 12px; margin: 8px 16px 0; }
+.c-buscar-campo { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 12px; border-radius: var(--radius-capsula); cursor: text; }
+.c-buscar-campo > svg { flex: none; color: var(--tinta-2); }
+.c-buscar-campo input { flex: 1; min-width: 0; height: 100%; border: 0; background: transparent; font: 400 17px/22px var(--font-sans); color: var(--tinta); -webkit-appearance: none; appearance: none; outline: none; padding: 0; }
+.c-buscar-campo input::placeholder { color: var(--tinta-3); }
+.c-buscar-campo input::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
+.c-borrar { flex: none; appearance: none; border: 0; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--tinta-3); color: var(--superficie); padding: 0; cursor: pointer; }
+.c-cancelar { flex: none; appearance: none; border: 0; background: none; color: var(--acento); font: 400 17px/22px var(--font-sans); padding: 0; cursor: pointer; }
+.c-cart-seg { display: flex; margin: 14px 16px 0; }
+.c-cart-seg button { flex: 1; }
+.c-filtros { display: flex; align-items: center; gap: 8px; margin: 12px 0 0; padding: 0 16px 2px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.c-filtros::-webkit-scrollbar { display: none; }
+.c-filtros-sep { flex: none; width: 1px; height: 22px; background: var(--separador); }
+.c-filtro { flex: none; appearance: none; border: 0; display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 12px; border-radius: var(--radius-capsula); background: var(--relleno); color: var(--tinta); font: 600 14px/18px var(--font-sans); cursor: pointer; white-space: nowrap; }
+.c-filtro[aria-pressed="true"] { background: var(--acento-relleno); color: var(--acento-sobre); }
+.c-filtro small { font: 600 12px/16px var(--font-sans); opacity: .65; }
+.c-filtro .c-plogo { width: 20px; height: 20px; border-radius: 5px; margin-left: -6px; }
+
+/* Cartelera: filas con póster */
+.c-titulos { margin-top: 12px; }
+.c-titulos > li + li::before { left: 78px; }
+.c-titulos .d-fila { gap: 12px; padding-top: 10px; padding-bottom: 10px; min-height: 0; }
+.c-titulos .d-texto strong { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; white-space: normal; }
+.c-titulos .d-texto > span { white-space: normal; }
+.c-poster { flex: none; position: relative; width: 50px; height: 75px; border-radius: 9px; overflow: hidden; display: grid; place-items: center;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--acento-relleno) 30%, var(--relleno)), var(--relleno)); box-shadow: inset 0 0 0 .5px var(--vidrio-borde); }
+.c-poster img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.c-poster > span { padding: 4px; font: 600 9px/11px var(--font-sans); color: var(--tinta-2); text-align: center; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; word-break: break-word; }
+.c-logos { display: flex; align-items: center; gap: 4px; margin-top: 6px; }
+.c-logos-mas { font: 600 12px/16px var(--font-sans); color: var(--tinta-2); margin-left: 2px; }
+.c-plogo { flex: none; position: relative; width: 22px; height: 22px; border-radius: 6px; overflow: hidden; display: grid; place-items: center; background: #262a33; color: #fff; }
+.c-plogo b { font: 700 8px/1 var(--font-sans); letter-spacing: -.2px; }
+.c-plogo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.c-estrellas { display: inline-flex; gap: 1px; margin-top: 5px; color: var(--acento); }
+.c-res { position: relative; }
+.c-res > .d-fila { padding-right: 64px; }
+.c-res > .c-mas, .c-res .c-acciones { position: absolute; right: 12px; top: 50%; margin-top: -19px; z-index: 2; }
+.c-res--dos > .d-fila { padding-right: 104px; }
+.c-acciones { display: flex; gap: 8px; }
+.c-mas { appearance: none; border: 0; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--relleno); color: var(--acento); cursor: pointer; padding: 0; }
+.c-mas.on { background: var(--acento-relleno); color: var(--acento-sobre); }
+.c-mas--gris { color: var(--tinta-2); }
+.c-mas:active { transform: scale(.92); }
+.c-vacio { margin: 32px 28px 0; text-align: center; color: var(--tinta-2); font: 400 15px/21px var(--font-sans); }
+.c-vacio b { display: block; margin-bottom: 4px; color: var(--tinta); font: 600 17px/22px var(--font-sans); }
+.c-vacio .d-boton { margin-top: 16px; }
+.c-banda { appearance: none; border: 0; display: flex; align-items: center; gap: 12px; width: calc(100% - 32px); margin: 12px 16px 0; padding: 12px 14px; text-align: left; color: var(--tinta); font: inherit; cursor: pointer; }
+.c-banda .d-cuadro { flex: none; width: 30px; height: 30px; border-radius: var(--radius-s); display: grid; place-items: center; color: #fff; background: linear-gradient(150deg, var(--acento-hi), var(--acento-lo)); }
+.c-banda .d-texto { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.c-banda .d-texto strong { font: 600 15px/20px var(--font-sans); }
+.c-banda .d-texto > span { font: 400 13px/18px var(--font-sans); color: var(--tinta-2); }
+.c-banda .c-chev { flex: none; color: var(--tinta-3); }
+.c-banda-fija { cursor: default; margin-top: 8px; }
+.c-avance { display: block; height: 6px; margin-top: 8px; border-radius: 3px; background: var(--relleno); overflow: hidden; }
+.c-avance i { display: block; height: 100%; border-radius: 3px; background: var(--acento-relleno); transition: width .3s ease; }
+.c-avance--grande { height: 8px; margin: 12px 0 4px; }
+.c-mas-fila { display: grid; margin: 14px 16px 0; }
+
+/* Cartelera: ficha */
+.c-ficha { display: flex; gap: 16px; align-items: flex-start; margin-top: 8px; }
+.c-ficha .c-poster { width: 108px; height: 162px; border-radius: 14px; box-shadow: var(--sombra-vidrio); }
+.c-ficha .c-poster > span { font-size: 12px; line-height: 15px; -webkit-line-clamp: 7; padding: 8px; }
+.c-ficha-txt { min-width: 0; padding-top: 4px; }
+.c-ficha-txt h2 { margin: 2px 0 4px !important; }
+.c-ante { font: 600 13px/18px var(--font-sans); color: var(--tinta-2); }
+.c-puntaje { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; font: 600 14px/18px var(--font-sans); color: var(--tinta-2); }
+.c-puntaje svg { color: var(--acento); }
+.c-plat-g { margin: 10px 0 0 !important; font: 600 13px/18px var(--font-sans) !important; color: var(--tinta-2); }
+.c-plats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.c-plat { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 4px 12px 4px 4px; border-radius: var(--radius-capsula); background: var(--relleno); font: 600 14px/18px var(--font-sans); }
+.c-plat .c-plogo { width: 28px; height: 28px; border-radius: 50%; }
+.c-visto { margin-top: 16px !important; }
+[data-theme="dark"] .c-fecha { color-scheme: dark; }
+.c-fecha { flex: none; border: 0; border-radius: 10px; background: var(--relleno); color: var(--tinta); padding: 6px 10px; font: 400 17px/22px var(--font-sans); -webkit-appearance: none; appearance: none; min-height: 36px; }
+.c-notas { display: flex; gap: 2px; }
+.c-notas button { appearance: none; border: 0; background: none; padding: 2px; color: var(--tinta-3); opacity: .55; cursor: pointer; }
+.c-notas button.on { color: var(--acento); opacity: 1; }
+.c-resumen-nf { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.c-resumen-nf div { padding: 12px 14px; border-radius: 16px; background: var(--relleno); }
+.c-resumen-nf b { display: block; font: 700 28px/32px var(--font-rounded); font-variant-numeric: tabular-nums; }
+.c-resumen-nf span { font: 400 13px/18px var(--font-sans); color: var(--tinta-2); }
+.c-hoja .c-titulos { margin-top: 8px; }
+.c-hoja label.d-boton { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.d-fila .d-texto .c-logos { display: flex; }
+.d-fila .d-texto .c-plogo { display: grid; color: #fff; font: inherit; }
+.d-fila .d-texto .c-logos-mas { display: inline; font: 600 12px/16px var(--font-sans); }
+.d-fila .d-texto .c-estrellas { display: inline-flex; color: var(--acento); }
+
 @media (prefers-reduced-motion: reduce) {
   .c-hoja, .c-fondo-hoja, .c-toast, .c-barra-sup, .c-heroe, .c-tile { transition: none; }
   .c-girando svg { animation: none; }
@@ -380,6 +491,7 @@ button { -webkit-tap-highlight-color: transparent; }
 
 <script type="module">
 import * as C from './calculos.js';
+import * as K from './cartelera.js';
 
 const CL = { prefs: 'con27.prefs', ui: 'con27.ui', lectura: 'con27.lectura', dato: 'con27.ind:' };
 const LECTURAS = 'https://lecturas-beta.vercel.app';
@@ -399,12 +511,21 @@ const I = {
   estrella: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/>',
   enlace: '<path d="M14 5h5v5"/><path d="M19 5l-8 8"/><path d="M18 14v4.5A1.5 1.5 0 0 1 16.5 20h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/>',
   nube: '<path d="M7 18h10a4 4 0 0 0 .7-7.94A6 6 0 0 0 6.1 9.6 4.2 4.2 0 0 0 7 18z"/>',
+  lupa: '<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/>',
+  cerrar: '<path d="M6 6l12 12M18 6L6 18"/>',
+  chev: '<path d="M9 5l7 7-7 7"/>',
+  mas: '<path d="M12 5v14M5 12h14"/>',
+  marca: '<path d="M7 3.5h10a1 1 0 0 1 1 1V20l-6-4-6 4V4.5a1 1 0 0 1 1-1z"/>',
+  check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  bandeja: '<path d="M4 13l2.5-8h11L20 13v6H4z"/><path d="M4 13h4.5l1.5 2.5h4l1.5-2.5H20"/>',
+  compartir: '<path d="M12 15V4M8 8l4-4 4 4"/><path d="M6 12v7.5h12V12"/>',
+  llave: '<circle cx="8" cy="15" r="3.5"/><path d="M10.5 12.5L19 4M16 7l2.5 2.5M14 9l2 2"/>',
 };
 const ico = (n, t = 24, g = 2) => `<svg viewBox="0 0 24 24" width="${t}" height="${t}" fill="none" stroke="currentColor" stroke-width="${g}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
 
 /* ---------- Estado ---------- */
 let prefs = C.prefsIniciales(leerLS(CL.prefs, {}));
-let ui = Object.assign({ tab: 'indicadores' }, leerLS(CL.ui, {}));
+let ui = Object.assign({ tab: 'indicadores', cartSub: 'want', cartTipo: 'all', cartProv: '', vistoTipo: 'all' }, leerLS(CL.ui, {}));
 let hoja = null;
 const hoy = () => C.dayKey(new Date());
 function guardarPrefs() { guardarLS(CL.prefs, prefs); }
@@ -668,16 +789,704 @@ function segmentos(nombre, ops, val, etq) {
 }
 
 /* ---------- Lecturas y Cartelera (próxima versión) ---------- */
-function vistaPronto(cual) {
-  if (cual === 'lecturas') {
-    return `<section class="d-vidrio c-pronto"><span class="d-cuadro">${ico('libro')}</span><h2>Lecturas llega en la próxima versión</h2>` +
-      '<p>Aquí van a estar el desafío del año, lo que estás leyendo, <b>Quiero leer</b> y el buscador de Goodreads.</p>' +
-      '<p>Mientras tanto, sigue usando la app <b>Lecturas</b>. Sus datos vienen de Goodreads, así que también se puede abrir en Safari.</p>' +
-      `<button class="d-boton d-boton--discreto" data-a="abrir" data-url="${LECTURAS}">${ico('enlace', 20)}Abrir Lecturas en Safari</button></section>`;
+function vistaPronto() {
+  return `<section class="d-vidrio c-pronto"><span class="d-cuadro">${ico('libro')}</span><h2>Lecturas llega en la próxima versión</h2>` +
+    '<p>Aquí van a estar el desafío del año, lo que estás leyendo, <b>Quiero leer</b> y el buscador de Goodreads.</p>' +
+    '<p>Mientras tanto, sigue usando la app <b>Lecturas</b>. Sus datos vienen de Goodreads, así que también se puede abrir en Safari.</p>' +
+    `<button class="d-boton d-boton--discreto" data-a="abrir" data-url="${LECTURAS}">${ico('enlace', 20)}Abrir Lecturas en Safari</button></section>`;
+}
+
+/* ---------- Cartelera: listas en GitHub a través de domesticas-api ---------- */
+const API = 'https://domesticas-api.vercel.app';
+const CK = { llave: 'con27.llave', datos: 'con27.datos', cola: 'con27.cola', sync: 'con27.sync', prov: 'con27.cart.prov', tmdb: 'con27.cart.tmdb', nf: 'con27.cart.nf' };
+let llave = leerLS(CK.llave, null);
+let srv = leerLS(CK.datos, {});            // { 'cartelera.json': { contenido, sha, leido } }
+let cola = leerLS(CK.cola, []);            // cambios por guardar
+let sync = leerLS(CK.sync, { at: 0 });
+let provs = leerLS(CK.prov, {});           // plataformas de cada título, solo en este iPhone: { k: { prov, at } }
+let tmdbKey = String(leerLS(CK.tmdb, '') || '');
+let nf = Object.assign({ queue: [], pending: [], stats: null, error: '', lote: [], loteN: 0 }, leerLS(CK.nf, {}));
+const fichas = {};      // títulos que aparecieron en una búsqueda: lo necesario para agregarlos
+const detalles = {};    // fichas completas de TMDB, en memoria
+let memo = null;
+// Lo guardado en GitHub más los cambios que aún no se guardan
+function cart() {
+  const s = srv[K.ARCHIVO], f = (s ? s.sha + '|' + s.leido : '') + '|' + cola.length + '|' + (cola.length ? cola[cola.length - 1].cambio.id : '');
+  if (memo && memo.f === f) return memo.d;
+  let d = s && s.contenido != null ? s.contenido : K.plantilla();
+  for (const p of cola) if (p.archivo === K.ARCHIVO) { try { d = K.aplicar(d, p.cambio); } catch (e) { /* un cambio que ya no aplica */ } }
+  memo = { f, d };
+  return d;
+}
+const itemDe = (k) => cart().items[k] || null;
+const baseDe = (k) => itemDe(k) || fichas[k] || detalles[k] || null;
+const provDe = (it) => (provs[K.keyOf(it)] || {}).prov || null;
+function guardarCola() { if (!guardarLS(CK.cola, cola)) avisar('Sin espacio en el iPhone', 'No se pudo guardar el cambio pendiente', true); }
+async function api(metodo, ruta, cuerpo) {
+  const r = await fetch(API + ruta, {
+    method: metodo, cache: 'no-store',
+    headers: Object.assign({ Authorization: 'Bearer ' + llave.llave }, cuerpo ? { 'Content-Type': 'application/json' } : {}),
+    body: cuerpo ? JSON.stringify(cuerpo) : undefined,
+  });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) { const e = new Error(d.error || 'Error ' + r.status); e.status = r.status; throw e; }
+  return d;
+}
+async function leerServidor() {
+  const d = await api('GET', '/api/datos?archivo=' + encodeURIComponent(K.ARCHIVO));
+  srv[K.ARCHIVO] = { contenido: d.contenido != null ? d.contenido : K.plantilla(), sha: d.sha || null, leido: Date.now() };
+}
+function hacer(cambio, mensaje) {
+  cambio.id = cambio.id || K.nuevoId();
+  try { K.aplicar(cart(), cambio); } catch (e) { avisar('No se pudo registrar', e.message, true); return false; }
+  cola.push({ archivo: K.ARCHIVO, cambio, mensaje });
+  guardarCola();
+  sincronizar(false);
+  return true;
+}
+let enCurso = null, otraVez = false;
+function sincronizar(releer) {
+  if (!llave) return Promise.resolve();
+  if (enCurso) { otraVez = true; return enCurso; }
+  enCurso = (async () => {
+    try {
+      if (releer || !srv[K.ARCHIVO] || !srv[K.ARCHIVO].leido) await leerServidor();
+      for (let intento = 0; cola.length && intento < 4; intento++) {
+        const lote = cola.slice();
+        let d = srv[K.ARCHIVO].contenido;
+        lote.forEach((p) => { try { d = K.aplicar(d, p.cambio); } catch (e) { /* ya no aplica: se descarta */ } });
+        const quitar = () => { const ids = lote.map((p) => p.cambio.id); cola = cola.filter((p) => !ids.includes(p.cambio.id)); guardarCola(); };
+        if (JSON.stringify(d) === JSON.stringify(srv[K.ARCHIVO].contenido)) { quitar(); continue; }
+        const mensaje = lote.length === 1 ? lote[0].mensaje : lote.length + ' cambios: ' + lote.map((p) => p.mensaje).slice(0, 4).join('; ');
+        try {
+          const r = await api('PUT', '/api/datos?archivo=' + encodeURIComponent(K.ARCHIVO), { contenido: d, sha: srv[K.ARCHIVO].sha, mensaje: 'Consulta · ' + mensaje });
+          srv[K.ARCHIVO] = { contenido: d, sha: r.sha, leido: Date.now() };
+          quitar();
+        } catch (e) {
+          if (e.status === 409) { await leerServidor(); continue; }
+          throw e;
+        }
+      }
+      guardarLS(CK.datos, srv);
+      sync = { at: Date.now() };
+    } catch (e) {
+      sync = { at: sync.at || 0, error: e.status === 401 ? 'La llave de este iPhone ya no es válida. Conéctalo de nuevo en Ajustes.' : e.status ? e.message : 'Sin conexión', status: e.status || 0 };
+    } finally {
+      guardarLS(CK.sync, sync);
+      enCurso = null; memo = null;
+      if (!hoja) render(); else if (hoja.tipo === 'tmdb' || hoja.tipo === 'nf') repintarHoja();
+      if (otraVez) { otraVez = false; sincronizar(false); }
+    }
+  })();
+  return enCurso;
+}
+function releerSiHaceFalta() {
+  const s = srv[K.ARCHIVO];
+  if (llave && (!s || Date.now() - (s.leido || 0) > 30000 || cola.length)) sincronizar(!s || Date.now() - (s.leido || 0) > 30000);
+}
+function hace(ms) {
+  const s = Math.round((Date.now() - ms) / 1000);
+  if (s < 60) return 'recién';
+  if (s < 3600) return 'hace ' + Math.round(s / 60) + ' min';
+  if (s < 86400) return 'hace ' + Math.round(s / 3600) + ' h';
+  return 'el ' + C.fmtDay(C.dayKey(new Date(ms)));
+}
+function estadoSync() {
+  let punto = '', txt;
+  if (!llave) { punto = 'aviso'; txt = cola.length ? C.plural(cola.length, '1 cambio', cola.length + ' cambios') + ' guardados solo en este iPhone · conéctalo en Ajustes' : 'Sin conectar a GitHub'; }
+  else if (sync.error) { punto = 'aviso'; txt = sync.error + (cola.length ? ' · ' + cola.length + ' ' + C.plural(cola.length, 'cambio', 'cambios') + ' por guardar' : ''); }
+  else if (cola.length) txt = 'Guardando ' + cola.length + ' ' + C.plural(cola.length, 'cambio', 'cambios') + '…';
+  else txt = sync.at ? 'Guardado en GitHub · ' + hace(sync.at) : 'Conectado a GitHub';
+  return `<p class="c-estado"><span class="c-punto${punto ? ' c-punto--aviso' : ''}"></span>${esc(txt)}</p>`;
+}
+
+/* ---------- Cartelera: TMDB ---------- */
+function falla(code, msg) { const e = new Error(msg); e.code = code; return e; }
+async function tmdb(path, params = {}, clave) {
+  const key = String(clave != null ? clave : tmdbKey).trim();
+  if (!key) throw falla('nokey', 'Falta la clave de TMDB. Agrégala en Ajustes.');
+  const url = new URL(K.TMDB_API + path);
+  url.searchParams.set('language', K.LANG);
+  for (const [a, b] of Object.entries(params)) url.searchParams.set(a, b);
+  const headers = { accept: 'application/json' };
+  if (key.length > 40) headers.Authorization = 'Bearer ' + key; else url.searchParams.set('api_key', key);
+  let res;
+  try { res = await fetch(url, { headers }); } catch (e) { throw falla('net', 'No hay conexión con TMDB. Revisa la señal e intenta de nuevo.'); }
+  if (res.status === 401) throw falla('auth', 'TMDB no aceptó la clave. Revísala en Ajustes.');
+  if (res.status === 404) throw falla('404', 'TMDB no tiene este título.');
+  if (res.status === 429) throw falla('rate', 'TMDB pidió esperar un momento.');
+  if (!res.ok) throw falla('http', 'TMDB respondió con un error (' + res.status + '). Intenta en un momento.');
+  return res.json();
+}
+const cargandoDet = {};
+async function cargarDetalle(k) {
+  if (detalles[k]) return detalles[k];
+  const [type, id] = k.split(':');
+  const r = await tmdb('/' + type + '/' + id, { append_to_response: 'watch/providers' });
+  let overview = r.overview || '';
+  if (!overview) { try { overview = (await tmdb('/' + type + '/' + id, { language: 'en-US' })).overview || ''; } catch (e) { /* sin sinopsis */ } }
+  const extra = [];
+  if (type === 'movie' && r.runtime) extra.push(K.fmtRuntime(r.runtime));
+  if (type === 'tv') {
+    if (r.number_of_seasons) extra.push(r.number_of_seasons + ' ' + C.plural(r.number_of_seasons, 'temporada', 'temporadas'));
+    if (K.TV_STATUS[r.status]) extra.push(K.TV_STATUS[r.status]);
   }
-  return `<section class="d-vidrio c-pronto"><span class="d-cuadro">${ico('tv')}</span><h2>Cartelera llega en la próxima versión</h2>` +
-    '<p>Aquí van a estar <b>Quiero ver</b>, <b>Vistos</b> y la búsqueda con las plataformas de cada título, con las listas guardadas en GitHub (hoy viven solo en el iPhone).</p>' +
-    '<p>Mientras tanto, sigue usando la app <b>Cartelera</b> de la pantalla de inicio. Cuando llegue, la traes aquí con su respaldo.</p></section>';
+  const d = Object.assign(K.norm(r, type), { overview, genres: (r.genres || []).slice(0, 3).map((g) => g.name).join(', '), extra: extra.join(' · '), vote: r.vote_count > 20 ? r.vote_average : 0, prov: K.parseProv(r['watch/providers']) });
+  detalles[k] = d; fichas[k] = fichas[k] || K.tituloCorto(d);
+  provs[k] = { prov: d.prov, at: Date.now() }; guardarLS(CK.prov, provs);
+  // Si TMDB cambió el título o el póster de uno de la lista, se actualiza
+  const it = itemDe(k);
+  if (it && ((d.title && d.title !== it.title) || (d.poster && d.poster !== it.poster) || (d.year && d.year !== it.year))) hacer({ tipo: 'ficha', k, title: d.title, year: d.year, poster: d.poster }, 'Ficha de ' + d.title);
+  return d;
+}
+function pedirDetalle(k) {
+  if (detalles[k] || cargandoDet[k]) return;
+  cargandoDet[k] = { at: Date.now() };
+  cargarDetalle(k).then(() => { delete cargandoDet[k]; }, (e) => { cargandoDet[k] = { error: e.message }; })
+    .finally(() => { if (hoja && hoja.tipo === 'titulo' && hoja.k === k) repintarHoja(); else if (ui.tab === 'cartelera' && !hoja) pintarCart(); });
+}
+// Las plataformas de Quiero ver se revisan cada 3 días, de a 25 títulos
+let revisandoProv = false;
+async function revisarPlataformas() {
+  if (revisandoProv || !tmdbKey) return;
+  const viejos = K.itemsDe(cart(), 'want').filter((it) => { const p = provs[K.keyOf(it)]; return !p || Date.now() - p.at > K.PROV_TTL; }).slice(0, 25);
+  if (!viejos.length) return;
+  revisandoProv = true;
+  await pool(viejos.map((it) => async () => {
+    const k = K.keyOf(it);
+    try { provs[k] = { prov: K.parseProv(await tmdb('/' + it.type + '/' + it.id + '/watch/providers', {})), at: Date.now() }; } catch (e) { /* se reintenta en la próxima revisión */ }
+  }), 4);
+  revisandoProv = false;
+  guardarLS(CK.prov, provs);
+  if (ui.tab === 'cartelera' && !hoja) pintarCart();
+}
+
+/* ---------- Cartelera: búsqueda ---------- */
+const busq = { activo: false, q: '', res: null, cargando: false, error: '', pick: null, populares: null, errorPop: '' };
+let tBusq = 0, nBusq = 0;
+function buscar(q) {
+  busq.q = q; clearTimeout(tBusq);
+  if (!q.trim()) { busq.res = null; busq.error = ''; busq.cargando = false; pintarCart(); return; }
+  busq.cargando = true; pintarCart();
+  tBusq = setTimeout(async () => {
+    const n = ++nBusq;
+    try {
+      const r = await tmdb('/search/multi', { query: q.trim(), include_adult: 'false', page: '1' });
+      if (n !== nBusq) return;
+      busq.res = (r.results || []).filter((x) => x.media_type === 'movie' || x.media_type === 'tv').slice(0, 20).map((x) => { const b = K.norm(x); fichas[K.keyOf(b)] = b; return b; });
+      busq.error = '';
+    } catch (e) { if (n !== nBusq) return; busq.res = []; busq.error = e.message; }
+    busq.cargando = false; pintarCart();
+  }, 350);
+}
+async function cargarPopulares() {
+  if (busq.populares || busq.cargandoPop || !tmdbKey) return;
+  busq.cargandoPop = true;
+  try {
+    const r = await tmdb('/trending/all/week', {});
+    busq.populares = (r.results || []).filter((x) => x.media_type === 'movie' || x.media_type === 'tv').slice(0, 20).map((x) => { const b = K.norm(x); fichas[K.keyOf(b)] = b; return b; });
+    busq.errorPop = '';
+  } catch (e) { busq.errorPop = e.message; }
+  busq.cargandoPop = false;
+  pintarCart();
+}
+function cerrarBusqueda() {
+  busq.activo = false; busq.q = ''; busq.res = null; busq.error = ''; busq.pick = null; clearTimeout(tBusq); nBusq++;
+  const i = $('q'); if (i) { i.value = ''; i.blur(); }
+}
+
+/* ---------- Cartelera: piezas ---------- */
+const icoLleno = (n, t = 16) => `<svg viewBox="0 0 24 24" width="${t}" height="${t}" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
+const nfPlural = (n, a, b) => n.toLocaleString('es-CL') + ' ' + (n === 1 ? a : b);
+function posterHTML(b, size) {
+  const t = b.title || b.name || '';
+  return `<span class="c-poster">${b.poster ? `<img src="${K.TMDB_IMG}${size || 'w154'}${esc(b.poster)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">` : ''}<span>${esc(t)}</span></span>`;
+}
+const plogo = (p) => `<span class="c-plogo" title="${esc(p.n)}"><b>${esc(K.pinit(p.n))}</b>${p.l ? `<img src="${K.TMDB_IMG}w92${esc(p.l)}" alt="" loading="lazy" onerror="this.remove()">` : ''}</span>`;
+function logosHTML(list, max = 5) {
+  if (!list || !list.length) return '';
+  return `<span class="c-logos">${list.slice(0, max).map(plogo).join('')}${list.length > max ? `<span class="c-logos-mas">+${list.length - max}</span>` : ''}</span>`;
+}
+const estrellas = (n) => (n ? `<span class="c-estrellas" aria-label="${n} de 5">${Array.from({ length: n }, () => icoLleno('estrella', 13)).join('')}</span>` : '');
+function filaTitulo(it, sub, extra, accion) {
+  const k = K.keyOf(it);
+  return `<li${accion ? ' class="c-res"' : ''}><button class="d-fila c-fila" data-a="titulo" data-k="${esc(k)}">${posterHTML(it)}<span class="d-texto"><strong>${esc(it.title)}</strong><span>${esc(sub)}</span>${extra || ''}</span>${accion ? '' : `<span class="c-chev">${ico('chev', 18)}</span>`}</button>${accion || ''}</li>`;
+}
+const vacio = (t, s, boton) => `<div class="c-vacio"><b>${t}</b>${s ? esc(s) : ''}${boton || ''}</div>`;
+const mesTxt = (ym) => (ym ? C.cap1(C.MESL[+ym.slice(5, 7) - 1]) + ' ' + ym.slice(0, 4) : 'Sin fecha');
+const diaCorto = (k) => (k ? C.fmtDay(k, k.slice(0, 4) !== hoy().slice(0, 4)) : '');
+const nfMes = (s) => (s ? C.MES[+s.slice(5, 7) - 1] + ' ' + s.slice(0, 4) : '');
+const nfEtiqueta = (e) => e.name || 'Serie sin nombre en el archivo';
+function nfLinea(g) {
+  const p = [K.typeLbl(g.kind)];
+  if (g.kind === 'tv' && g.eps) p.push(nfPlural(g.eps, 'episodio', 'episodios'));
+  if (g.last) p.push(diaCorto(g.last));
+  return p.join(' · ');
+}
+
+/* ---------- Cartelera: pantalla ---------- */
+function vistaCartelera() {
+  return `<form class="c-buscar" id="cartForm" data-f="buscar" role="search"><label class="d-vidrio c-buscar-campo">${ico('lupa', 18, 2.2)}` +
+    `<input type="search" id="q" name="q" placeholder="Series y películas" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" value="${esc(busq.q)}">` +
+    `<button type="button" class="c-borrar" data-a="borrarBusqueda" aria-label="Borrar"${busq.q ? '' : ' hidden'}>${ico('cerrar', 12, 3)}</button></label>` +
+    `<button type="button" class="c-cancelar" data-a="cancelarBusqueda"${busq.activo ? '' : ' hidden'}>Cancelar</button></form><div id="cartOut">${cartOut()}</div>`;
+}
+function pintarCart() {
+  const out = $('cartOut');
+  if (!out || ui.tab !== 'cartelera') return;
+  out.innerHTML = cartOut();
+  const f = $('cartForm');
+  if (f) { f.querySelector('.c-cancelar').hidden = !busq.activo; f.querySelector('.c-borrar').hidden = !busq.q; }
+  $('cabecera').innerHTML = cabecera();
+}
+function cartOut() {
+  if (busq.activo) return vistaBusqueda();
+  const d = cart(), nq = K.itemsDe(d, 'want').length, nv = K.itemsDe(d, 'seen').length;
+  let h = bandas();
+  h += `<div class="d-segmentos c-cart-seg" role="group" aria-label="Lista">` +
+    [['want', 'Quiero ver', nq], ['seen', 'Vistos', nv]].map(([v, t, n]) => `<button data-a="seg" data-seg="cartSub" data-v="${v}" aria-pressed="${ui.cartSub === v}">${t}${n ? ' · ' + n.toLocaleString('es-CL') : ''}</button>`).join('') + '</div>';
+  h += ui.cartSub === 'seen' ? vistaVistos(d) : vistaQuiero(d);
+  return h + estadoSync();
+}
+// Avisos arriba de las listas: falta la clave, importación en curso o títulos sin identificar
+function bandas() {
+  let h = '';
+  if (!tmdbKey) h += `<button class="d-vidrio c-banda" data-a="tmdb"><span class="d-cuadro">${ico('llave', 18)}</span><span class="d-texto"><strong>Conecta TMDB</strong><span>Hace falta la clave para buscar títulos y ver sus plataformas.</span></span><span class="c-chev">${ico('chev', 18)}</span></button>`;
+  if (nf.queue.length) {
+    const total = (nf.stats && nf.stats.total) || nf.queue.length, hecho = total - nf.queue.length;
+    h += `<button class="d-vidrio c-banda" data-a="nf"><span class="d-cuadro">${ico('bandeja', 18)}</span><span class="d-texto"><strong>${nfOcupado ? 'Importando historial' : 'Importación en pausa'}</strong><span>${hecho.toLocaleString('es-CL')} de ${total.toLocaleString('es-CL')} títulos${nf.error ? ' · ' + esc(nf.error) : ''}</span><span class="c-avance"><i style="width:${Math.round(hecho / Math.max(1, total) * 100)}%"></i></span></span></button>`;
+  } else if (nf.pending.length && ui.cartSub === 'seen') {
+    h += `<button class="d-vidrio c-banda" data-a="nfPend"><span class="d-cuadro">${ico('lupa', 18)}</span><span class="d-texto"><strong>${nfPlural(nf.pending.length, 'título sin identificar', 'títulos sin identificar')}</strong><span>Del historial importado. Tócalo para elegir el correcto.</span></span><span class="c-chev">${ico('chev', 18)}</span></button>`;
+  }
+  return h;
+}
+const TIPOS = [['all', 'Todo'], ['movie', 'Películas'], ['tv', 'Series']];
+function vistaQuiero(d) {
+  const lista = K.itemsDe(d, 'want').sort(K.ordenQuiero);
+  if (!lista.length) return vacio('Nada en Quiero ver', 'Busca una serie o película arriba y toca + para agregarla.');
+  const f = K.filtrarQuiero(lista, provDe, ui.cartTipo, ui.cartProv);
+  let h = '<div class="c-filtros">' + TIPOS.map(([v, t]) => `<button class="c-filtro" data-a="seg" data-seg="cartTipo" data-v="${v}" aria-pressed="${ui.cartTipo === v}">${t}</button>`).join('');
+  if (f.provs.length) h += '<span class="c-filtros-sep" aria-hidden="true"></span>' + f.provs.map(({ p, c }) => `<button class="c-filtro" data-a="seg" data-seg="cartProv" data-v="${esc(p.n)}" aria-pressed="${f.prov === p.n}">${plogo(p)}${esc(p.n)}<small>${c}</small></button>`).join('');
+  h += '</div>';
+  if (!f.list.length) return h + vacio('Sin títulos con este filtro', '');
+  return h + '<ul class="d-lista d-vidrio c-titulos">' + f.list.map((it) => {
+    const st = K.streamOf(provDe(it));
+    const sub = [it.year, K.typeLbl(it.type)].filter(Boolean).join(' · ') + (provs[K.keyOf(it)] && !st.length ? ' · sin plataforma en Chile' : '');
+    return filaTitulo(it, sub, logosHTML(st));
+  }).join('') + '</ul>';
+}
+let limiteVistos = 60;
+function vistaVistos(d) {
+  const todos = K.itemsDe(d, 'seen');
+  if (!todos.length) return vacio('Todavía no hay vistos', 'Marca un título como visto o importa tu historial de Netflix o Prime Video en Ajustes.');
+  const lista = (ui.vistoTipo === 'all' ? todos : todos.filter((it) => it.type === ui.vistoTipo)).sort(K.ordenVistos);
+  const esteAno = todos.filter((it) => (it.seenAt || '').slice(0, 4) === hoy().slice(0, 4)).length;
+  let h = '<div class="c-filtros">' + TIPOS.map(([v, t]) => `<button class="c-filtro" data-a="seg" data-seg="vistoTipo" data-v="${v}" aria-pressed="${ui.vistoTipo === v}">${t}</button>`).join('') + '</div>';
+  if (esteAno) h += `<p class="c-nota">${nfPlural(esteAno, 'título visto', 'títulos vistos')} en ${hoy().slice(0, 4)}.</p>`;
+  if (!lista.length) return h + vacio('Sin títulos con este filtro', '');
+  K.porMes(lista.slice(0, limiteVistos)).forEach((g) => {
+    h += `<div class="d-seccion"><h2>${esc(mesTxt(g.ym))}</h2></div><ul class="d-lista d-vidrio c-titulos">` + g.items.map((it) => {
+      const sub = [K.typeLbl(it.type), it.type === 'tv' && it.nf && it.nf.eps ? nfPlural(it.nf.eps, 'episodio', 'episodios') : '', diaCorto(it.seenAt)].filter(Boolean).join(' · ');
+      return filaTitulo(it, sub, estrellas(it.rating));
+    }).join('') + '</ul>';
+  });
+  if (lista.length > limiteVistos) h += `<div class="c-mas-fila"><button class="d-boton d-boton--discreto" data-a="masVistos">Mostrar más (${(lista.length - limiteVistos).toLocaleString('es-CL')})</button></div>`;
+  return h;
+}
+function accionRes(b) {
+  const k = K.keyOf(b), it = itemDe(k);
+  if (busq.pick) return `<button class="c-mas" data-a="nfElegir" data-k="${esc(k)}" aria-label="Elegir ${esc(b.title)}">${ico('check', 20, 2.4)}</button>`;
+  if (it) return `<button class="c-mas on" data-a="titulo" data-k="${esc(k)}" aria-label="${it.status === 'seen' ? 'Visto' : 'En Quiero ver'}">${it.status === 'seen' ? ico('check', 20, 2.4) : icoLleno('marca', 18)}</button>`;
+  return `<button class="c-mas" data-a="quiero" data-k="${esc(k)}" aria-label="Agregar ${esc(b.title)} a Quiero ver">${ico('mas', 20, 2.4)}</button>`;
+}
+const filaRes = (b) => filaTitulo(b, [b.year, K.typeLbl(b.type)].filter(Boolean).join(' · '), '', accionRes(b));
+function vistaBusqueda() {
+  let h = '';
+  if (busq.pick) h += `<div class="d-vidrio c-banda c-banda-fija"><span class="d-cuadro">${ico('lupa', 18)}</span><span class="d-texto"><strong>${esc(nfEtiqueta(busq.pick))}</strong><span>Del historial: ${esc(nfLinea(busq.pick))}. Busca y toca ✓ en el título correcto.</span></span></div>`;
+  if (!tmdbKey) return h + vacio('Falta la clave de TMDB', 'Sin ella no se puede buscar.', `<button class="d-boton" data-a="tmdb">Conectar TMDB</button>`);
+  const q = busq.q.trim();
+  if (!q) {
+    cargarPopulares();
+    if (busq.errorPop) return h + vacio('No se pudo cargar', busq.errorPop);
+    if (!busq.populares) return h + vacio('Cargando…', '');
+    return h + '<div class="d-seccion"><h2>Populares esta semana</h2></div><ul class="d-lista d-vidrio c-titulos">' + busq.populares.map(filaRes).join('') + '</ul>';
+  }
+  const propios = busq.pick ? [] : K.enListas(cart(), q).slice(0, 5);
+  if (propios.length) h += '<div class="d-seccion"><h2>En tus listas</h2></div><ul class="d-lista d-vidrio c-titulos">' + propios.map((it) => filaTitulo(it, [it.status === 'seen' ? 'Visto' + (it.seenAt ? ' el ' + diaCorto(it.seenAt) : '') : 'Quiero ver', K.typeLbl(it.type)].join(' · '))).join('') + '</ul>';
+  h += '<div class="d-seccion"><h2>En TMDB</h2></div>';
+  if (busq.cargando && !busq.res) return h + vacio('Buscando…', '');
+  if (busq.error) return h + vacio('No se pudo buscar', busq.error);
+  if (!busq.res || !busq.res.length) return h + vacio('Sin resultados', 'Prueba con el título original o con menos palabras.');
+  return h + '<ul class="d-lista d-vidrio c-titulos">' + busq.res.map(filaRes).join('') + '</ul>';
+}
+
+/* ---------- Cartelera: ficha de un título ---------- */
+function hojaTitulo(k) {
+  const it = itemDe(k), d = detalles[k], b = it || fichas[k] || d || { title: '', type: k.split(':')[0] };
+  const type = k.split(':')[0], id = k.split(':')[1];
+  pedirDetalle(k);
+  let h = `<div class="c-ficha">${posterHTML(b, 'w342')}<div class="c-ficha-txt"><span class="c-ante">${esc([b.year, K.typeLbl(type)].filter(Boolean).join(' · '))}</span><h2>${esc(b.title)}</h2>`;
+  if (d && d.orig && d.orig !== b.title) h += `<p class="c-sub">${esc(d.orig)}</p>`;
+  if (d && (d.extra || d.genres)) h += `<p class="c-sub">${esc([d.extra, d.genres].filter(Boolean).join(' · '))}</p>`;
+  if (d && d.vote) h += `<span class="c-puntaje">${icoLleno('estrella', 14)}${C.nf(d.vote, 1)} en TMDB</span>`;
+  h += '</div></div><div class="c-pila">';
+  if (busq.pick) h += `<button class="d-boton" data-a="nfElegir" data-k="${esc(k)}">${ico('check', 20)}Es este título</button>`;
+  else if (!it) h += `<button class="d-boton" data-a="quiero" data-k="${esc(k)}">${icoLleno('marca', 18)}Quiero ver</button><button class="d-boton d-boton--discreto" data-a="vista" data-k="${esc(k)}">${ico('check', 20)}Ya la vi</button>`;
+  else if (it.status === 'want') h += `<button class="d-boton" data-a="vista" data-k="${esc(k)}">${ico('check', 20)}Marcar como vista</button><button class="d-boton c-boton-peligro" data-a="quitarTitulo" data-k="${esc(k)}" data-confirmar="Toca de nuevo para quitarla">Quitar de Quiero ver</button>`;
+  h += '</div>';
+  if (it && it.status === 'seen') {
+    h += '<ul class="d-lista d-vidrio c-tabla c-visto">' +
+      `<li class="d-fila"><span class="d-texto"><strong>Vista el</strong></span><input class="c-fecha" type="date" name="vistaEl" data-k="${esc(k)}" value="${esc(it.seenAt || '')}" max="${hoy()}"></li>` +
+      (it.nf ? `<li class="d-fila"><span class="d-texto"><strong>En ${esc(it.nf.src || 'Netflix')}</strong><span>${esc([it.type === 'tv' && it.nf.eps ? nfPlural(it.nf.eps, 'episodio', 'episodios') : '', it.nf.first ? 'desde ' + nfMes(it.nf.first) : ''].filter(Boolean).join(' · ') || 'En el historial importado')}</span></span></li>` : '') +
+      `<li class="d-fila"><span class="d-texto"><strong>Tu nota</strong></span><span class="c-notas" role="group" aria-label="Tu nota">${[1, 2, 3, 4, 5].map((n) => `<button data-a="nota" data-k="${esc(k)}" data-n="${n}" class="${(it.rating || 0) >= n ? 'on' : ''}" aria-label="${n} de 5" aria-pressed="${it.rating === n}">${icoLleno('estrella', 26)}</button>`).join('')}</span></li></ul>` +
+      `<div class="c-pila"><button class="d-boton d-boton--discreto" data-a="quiero" data-k="${esc(k)}">${icoLleno('marca', 18)}Volver a ver</button><button class="d-boton c-boton-peligro" data-a="quitarTitulo" data-k="${esc(k)}" data-confirmar="Toca de nuevo para quitarla">Quitar de Vistos</button></div>`;
+  }
+  h += '<h3>Dónde ver en Chile</h3>';
+  if (d) {
+    const grupos = [['Incluido en', d.prov.stream], ['Gratis', d.prov.free], ['Arriendo', d.prov.rent], ['Compra', d.prov.buy]].filter((g) => g[1].length);
+    h += grupos.length ? grupos.map(([t, l]) => `<p class="c-plat-g">${t}</p><div class="c-plats">${l.map((p) => `<span class="c-plat">${plogo(p)}${esc(p.n)}</span>`).join('')}</div>`).join('') : '<p>No está en plataformas en Chile por ahora.</p>';
+    if (d.overview) h += `<h3>Sinopsis</h3><p>${esc(d.overview)}</p>`;
+  } else if (cargandoDet[k] && cargandoDet[k].error) h += `<p>${esc(cargandoDet[k].error)}</p>`;
+  else h += '<p>Cargando…</p>';
+  h += `<p class="c-pista">Datos de <a href="https://www.themoviedb.org/${type}/${esc(id)}" target="_blank" rel="noopener">TMDB</a>. Plataformas según JustWatch. Consulta usa la API de TMDB, pero no está respaldada ni certificada por TMDB.</p>`;
+  return h + '<div class="c-pila"><button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+}
+
+/* ---------- Cartelera: clave de TMDB ---------- */
+function hojaTmdb(msg) {
+  let h = '<h2>Conexión con TMDB</h2><p>TMDB entrega las fichas de cada título y las plataformas donde está en Chile. La clave queda guardada solo en este iPhone.</p>';
+  h += `<form data-f="tmdb"><label class="c-campo"><span>Token de acceso de lectura de la API</span><input type="password" name="clave" value="${esc(tmdbKey)}" placeholder="eyJhbGciOi…" autocomplete="off" autocapitalize="off" spellcheck="false"></label>` +
+    (msg ? `<p class="${msg.ok ? 'c-ok' : 'c-error'}" role="status">${esc(msg.text)}</p>` : '') +
+    '<div class="c-pila"><button class="d-boton">Guardar y probar</button>' + (tmdbKey ? '<button type="button" class="d-boton c-boton-peligro" data-a="quitarTmdb" data-confirmar="Toca de nuevo para quitar la clave">Quitar la clave</button>' : '') + '</div></form>';
+  h += '<h3>Dónde está la clave</h3><ol class="c-pasos c-pasos--hoja"><li>Si ya usas la app Cartelera: <b>Ajustes → Conexión con TMDB → Mostrar</b>, cópiala y pégala aquí.</li>' +
+    '<li>Si no: crea una cuenta gratis en <a href="https://www.themoviedb.org/signup" target="_blank" rel="noopener">themoviedb.org</a>, entra a <b>Configuración → API</b> y copia el «Token de acceso de lectura de la API» (el texto largo). También sirve la «Clave de la API» corta.</li></ol>';
+  return h + '<div class="c-pila"><button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+}
+
+/* ---------- Cartelera: respaldo de la app antigua ---------- */
+function hojaRespaldo(r) {
+  const d = cart(), nuevos = Object.keys(r.items).filter((k) => !d.items[k]);
+  const nv = nuevos.filter((k) => r.items[k].status === 'seen').length;
+  let h = '<h2>Respaldo de Cartelera</h2>';
+  h += `<div class="c-resumen-nf"><div><b>${(nuevos.length - nv).toLocaleString('es-CL')}</b><span>para Quiero ver</span></div><div><b>${nv.toLocaleString('es-CL')}</b><span>para Vistos</span></div></div>`;
+  h += `<p>El respaldo trae ${nfPlural(r.n, 'título', 'títulos')}.` + (r.n - nuevos.length ? ` ${nfPlural(r.n - nuevos.length, 'ya está', 'ya están')} en Consulta y no se cambia${r.n - nuevos.length === 1 ? '' : 'n'}.` : '') + '</p>';
+  if (!llave) h += '<p>Este iPhone aún no está conectado a GitHub: los títulos quedan aquí y se guardan en GitHub cuando lo conectes en Ajustes.</p>';
+  return h + `<div class="c-pila">${nuevos.length ? `<button class="d-boton" data-a="traerRespaldo">Agregar ${nfPlural(nuevos.length, 'título', 'títulos')}</button>` : ''}<button class="d-boton d-boton--discreto" data-a="cerrar">${nuevos.length ? 'Cancelar' : 'Cerrar'}</button></div>`;
+}
+async function exportarRespaldo() {
+  const nombre = 'cartelera-respaldo-' + hoy() + '.json';
+  const texto = JSON.stringify(K.respaldo(cart(), provs, new Date().toISOString()), null, 1);
+  const file = new File([texto], nombre, { type: 'application/json' });
+  try { if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'Respaldo de Cartelera' }); return; } } catch (e) { if (e.name === 'AbortError') return; }
+  const url = URL.createObjectURL(file), a = document.createElement('a');
+  a.href = url; a.download = nombre; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+  avisar('Respaldo descargado', nombre);
+}
+
+/* ---------- Cartelera: historial de Netflix y Prime Video ---------- */
+let nfOcupado = false, nfBorrador = null, tNfPintar = 0;
+function guardarNf() { guardarLS(CK.nf, nf); }
+function nfPintar() {
+  if (hoja && hoja.tipo === 'nf') repintarHoja();
+  else if (!hoja && ui.tab === 'cartelera' && !busq.activo && Date.now() - tNfPintar > 800) { tNfPintar = Date.now(); pintarCart(); }
+}
+function hojaNf(msg) {
+  let h = '<h2>Historial de Netflix y Prime Video</h2>';
+  if (nf.queue.length) {
+    const total = (nf.stats && nf.stats.total) || nf.queue.length, hecho = total - nf.queue.length;
+    h += `<p>${nfOcupado ? 'Identificando cada título en TMDB' : 'Importación en pausa'}: <b>${hecho.toLocaleString('es-CL')} de ${total.toLocaleString('es-CL')}</b>.</p>` +
+      `<div class="c-avance c-avance--grande" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${hecho}"><i style="width:${Math.round(hecho / Math.max(1, total) * 100)}%"></i></div>`;
+    if (!tmdbKey) h += '<p class="c-error">Conecta TMDB para seguir.</p>';
+    else if (nf.error) h += `<p class="c-error">${esc(nf.error)}</p><div class="c-pila"><button class="d-boton" data-a="nfSeguir">${ico('recargar', 20)}Reintentar</button></div>`;
+    else if (!nfOcupado) h += `<div class="c-pila"><button class="d-boton" data-a="nfSeguir">Seguir</button></div>`;
+    else h += '<p class="c-pista">Puedes cerrar esta hoja. La importación sigue mientras Consulta esté abierta, y los títulos se guardan en GitHub de a poco.</p>';
+    return h + '<div class="c-pila"><button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+  }
+  const st = nf.stats;
+  if (st && st.finishedAt) {
+    h += `<p><b>${nfPlural(st.added, 'título agregado', 'títulos agregados')} a Vistos.</b>`;
+    const extra = [];
+    if (st.merged) extra.push(nfPlural(st.merged, 'ya estaba', 'ya estaban') + ' en tus listas');
+    if (nf.pending.length) extra.push(nfPlural(nf.pending.length, 'quedó', 'quedaron') + ' sin identificar');
+    h += (extra.length ? ' ' + C.cap1(extra.join(' y ')) + '.' : '') + '</p>';
+  } else h += '<p>Importa el historial de Netflix o de Prime Video y todo lo que viste queda en Vistos, con la fecha de la última vez que lo viste.</p>';
+  if (msg) h += `<p class="c-error" role="status">${esc(msg)}</p>`;
+  if (!tmdbKey) h += '<p class="c-error">Primero conecta TMDB en Ajustes.</p>';
+  h += '<div class="c-pila">';
+  if (nf.pending.length) h += `<button class="d-boton d-boton--discreto" data-a="nfPend">${ico('lupa', 20)}Revisar ${nfPlural(nf.pending.length, 'sin identificar', 'sin identificar')}</button>`;
+  h += `<label class="d-boton c-archivo">${ico('bandeja', 20)}${st ? 'Importar otro archivo' : 'Elegir el archivo'}<input type="file" id="nfArchivo" accept=".csv,.txt,text/csv,text/comma-separated-values,text/plain"${tmdbKey ? '' : ' disabled'}></label></div>`;
+  h += '<h3>Cómo conseguir el archivo</h3><ol class="c-pasos c-pasos--hoja">' +
+    '<li><b>Netflix:</b> en Safari, entra a <a href="https://www.netflix.com/viewingactivity" target="_blank" rel="noopener">netflix.com/viewingactivity</a> con tu perfil, baja hasta el final y toca <b>Descargar todo</b>. Queda en Archivos → Descargas como NetflixViewingHistory.csv.</li>' +
+    '<li><b>Prime Video:</b> en el navegador, abre Configuración → Historial de visualización en <a href="https://www.primevideo.com" target="_blank" rel="noopener">primevideo.com</a>, baja hasta el final, copia todo el texto de la página y guárdalo como archivo .txt.</li>' +
+    '<li>Vuelve aquí, toca <b>Elegir el archivo</b> y elígelo.</li></ol>';
+  return h + '<div class="c-pila"><button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+}
+async function nfLeerArchivo(file) {
+  let parsed;
+  try { parsed = K.nfParse(K.nfDecode(new Uint8Array(await file.arrayBuffer()))); }
+  catch (e) { abrirHoja('nf', { msg: 'Ese archivo no parece un historial de Netflix ni de Prime Video. Usa el CSV de Netflix o el texto copiado del historial de Prime Video.' }); return; }
+  if (!parsed.plays.length) { abrirHoja('nf', { msg: 'El archivo no tiene reproducciones.' }); return; }
+  nfBorrador = { parsed, profile: parsed.profiles.length > 1 ? null : '*', movies: true };
+  abrirHoja('nfBorrador');
+}
+function nfGruposBorrador() {
+  const { parsed, profile } = nfBorrador;
+  return K.nfGroup(profile === '*' || !profile ? parsed.plays : parsed.plays.filter((p) => p.profile === profile));
+}
+function hojaNfBorrador() {
+  if (!nfBorrador) return hojaNf();
+  const { parsed, profile, movies } = nfBorrador;
+  let h = '<h2>Importar historial</h2>';
+  if (parsed.profiles.length > 1) {
+    h += '<h3>¿Cuál es tu perfil?</h3><p>El archivo trae la actividad de varios perfiles de la cuenta.</p><div class="c-plats">' +
+      parsed.profiles.map((p) => `<button class="c-filtro" data-a="nfPerfil" data-v="${esc(p.name)}" aria-pressed="${profile === p.name}">${esc(p.name)}<small>${p.count.toLocaleString('es-CL')}</small></button>`).join('') +
+      `<button class="c-filtro" data-a="nfPerfil" data-v="*" aria-pressed="${profile === '*'}">Todos</button></div>`;
+    if (profile === null) return h + '<div class="c-pila"><button class="d-boton d-boton--discreto" data-a="nfCancelar">Cancelar</button></div>';
+  }
+  const grupos = nfGruposBorrador(), tv = grupos.filter((g) => g.kind === 'tv'), mv = grupos.filter((g) => g.kind === 'movie');
+  const primeros = grupos.map((g) => g.first).filter(Boolean).sort(), ultimos = grupos.map((g) => g.last).filter(Boolean).sort();
+  const plays = grupos.reduce((a, g) => a + g.plays, 0), n = tv.length + (movies ? mv.length : 0);
+  h += `<div class="c-resumen-nf"><div><b>${tv.length.toLocaleString('es-CL')}</b><span>${tv.length === 1 ? 'serie' : 'series'}</span></div><div><b>${mv.length.toLocaleString('es-CL')}</b><span>${mv.length === 1 ? 'película' : 'películas'}</span></div></div>`;
+  const prime = parsed.format === 'prime' || grupos.every((g) => g.src === 'Prime Video');
+  h += `<p>${prime ? nfPlural(plays, 'entrada', 'entradas') + ' del historial de Prime Video' : nfPlural(plays, 'reproducción', 'reproducciones') + (grupos.every((g) => g.src === 'Netflix') ? ' en Netflix' : '')}${primeros.length ? ', desde ' + esc(nfMes(primeros[0])) + ' hasta ' + esc(nfMes(ultimos[ultimos.length - 1])) : ''}. Cada título queda en Vistos con la fecha de la última vez que lo viste.</p>`;
+  if (mv.length) h += `<label class="c-interruptor"><span>Incluir películas</span><input type="checkbox" name="nfPelis" ${movies ? 'checked' : ''}></label>`;
+  const recientes = grupos.filter((g) => movies || g.kind === 'tv').slice(0, 6);
+  if (recientes.length) h += '<h3>Lo más reciente</h3><ul class="d-lista d-vidrio c-titulos">' + recientes.map((g) => `<li class="d-fila">${posterHTML({ title: nfEtiqueta(g) })}<span class="d-texto"><strong>${esc(nfEtiqueta(g))}</strong><span>${esc(nfLinea(g))}</span></span></li>`).join('') + '</ul>';
+  return h + `<div class="c-pila"><button class="d-boton" data-a="nfEmpezar"${n ? '' : ' disabled'}>${ico('check', 20)}Agregar ${nfPlural(n, 'título', 'títulos')} a Vistos</button><button class="d-boton d-boton--discreto" data-a="nfCancelar">Cancelar</button></div>`;
+}
+function nfEmpezar() {
+  if (!nfBorrador) return;
+  const grupos = nfGruposBorrador().filter((g) => nfBorrador.movies || g.kind === 'tv');
+  const igual = (a, b) => a.kind === b.kind && K.nfFold(a.name) === K.nfFold(b.name);
+  nf.pending = nf.pending.filter((p) => !grupos.some((g) => igual(g, p)));
+  nf.queue = grupos;
+  nf.stats = { total: grupos.length, added: 0, merged: 0, unmatched: 0, run: Date.now() };
+  nf.error = ''; nf.lote = []; nf.loteN = 0;
+  nfBorrador = null;
+  guardarNf();
+  abrirHoja('nf');
+  nfCorrer();
+}
+async function nfLista(path, query) {
+  const r = await tmdb(path, { query, include_adult: 'false', page: '1' });
+  const type = path === '/search/tv' ? 'tv' : path === '/search/movie' ? 'movie' : '';
+  return (r.results || []).filter((x) => type || x.media_type === 'movie' || x.media_type === 'tv').map((x) => K.norm(x, type || x.media_type));
+}
+async function nfUno(e, tvFallback = true) {
+  for (const t of K.nfIntentos(e, tvFallback)) { const hit = K.nfBest(await nfLista(t.path, t.query), t.query, t.min); if (hit) return hit; }
+  return null;
+}
+// Pares [entrada, título]: un grupo sin «Temporada» que no resulta ser serie se separa en películas
+async function nfResolver(e) {
+  if (!e.name) return [[e, null]];
+  if (!e.weak) return [[e, await nfUno(e, !e.explicit)]];   // Prime Video ya dice si es película
+  for (const q of [e.name, ...(e.alts || [])]) { const hit = K.nfBest(await nfLista('/search/tv', q), q, 60); if (hit) return [[e, hit]]; }
+  const out = [], quedan = [];
+  for (const m of e.members || []) {
+    const me = { name: m.name, kind: 'movie', first: m.first, last: m.last, plays: m.plays, eps: 0 };
+    const hit = await nfUno(me, false);
+    if (hit) out.push([me, hit]); else quedan.push(m);
+  }
+  if (quedan.length) {
+    const f = quedan.map((m) => m.first).filter(Boolean).sort(), l = quedan.map((m) => m.last).filter(Boolean).sort();
+    out.push([{ name: e.name, kind: 'tv', first: f[0] || '', last: l[l.length - 1] || '', plays: quedan.reduce((a, m) => a + m.plays, 0), eps: quedan.length }, null]);
+  }
+  return out;
+}
+function nfPendiente(e) {
+  nf.pending.push({ name: e.name, kind: e.kind, first: e.first, last: e.last, plays: e.plays, eps: e.eps, src: e.src || 'Netflix', explicit: !!e.explicit });
+  if (nf.stats) nf.stats.unmatched++;
+}
+// Lo identificado se guarda en GitHub de a 40 títulos; el número del lote evita repetirlo si la app se cierra a medias
+function nfVaciar(run) {
+  if (!nf.lote.length) return;
+  const st = nf.stats, nuevos = new Set();
+  nf.lote.forEach(({ r }) => {
+    const k = K.keyOf(r), it = itemDe(k);
+    if (!st) return;
+    if (!it) { if (!nuevos.has(k)) { st.added++; nuevos.add(k); } }
+    else if (!(it.nf && it.nf.run === run)) st.merged++;
+  });
+  hacer({ id: 'h' + run + '-' + nf.loteN, tipo: 'historial', run, dia: hoy(), pares: nf.lote }, 'Historial: ' + nfPlural(nf.lote.length, 'título', 'títulos'));
+  nf.lote = []; nf.loteN++;
+  guardarNf();
+}
+async function nfCorrer() {
+  if (nfOcupado || !tmdbKey || !nf.queue.length) return;
+  nfOcupado = true; nf.error = ''; nfPintar();
+  const run = nf.stats ? nf.stats.run : Date.now();
+  nfVaciar(run);
+  while (nf.queue.length) {
+    const lote = nf.queue.slice(0, 4);
+    const out = await Promise.all(lote.map((e) => nfResolver(e).then((list) => ({ e, list }), (err) => ({ e, err }))));
+    let parar = false, lento = false;
+    for (const { e, list, err } of out) {
+      if (err && (err.code === 'auth' || err.code === 'net' || err.code === 'nokey')) { nf.error = err.message; parar = true; continue; }
+      if (err && err.code === 'rate') { lento = true; continue; }   // TMDB pide ir más lento: queda en la cola
+      const i = nf.queue.indexOf(e); if (i >= 0) nf.queue.splice(i, 1);
+      if (err) nfPendiente(e);
+      else for (const [x, r] of list) { if (r) nf.lote.push({ e: K.entradaCorta(x), r: K.tituloCorto(r) }); else nfPendiente(x); }
+    }
+    if (nf.lote.length >= 40 || parar || !nf.queue.length) nfVaciar(run);
+    guardarNf();
+    if (parar) break;
+    nfPintar();
+    await new Promise((ok) => setTimeout(ok, lento ? 2500 : 120));
+  }
+  const listo = !nf.queue.length;
+  if (listo && nf.stats) nf.stats.finishedAt = Date.now();
+  nfOcupado = false; guardarNf();
+  if (hoja && hoja.tipo === 'nf') repintarHoja(); else render();
+  if (listo && nf.stats) avisar('Historial importado', nfPlural(nf.stats.added, 'título nuevo', 'títulos nuevos') + ' en Vistos');
+}
+function hojaNfPend() {
+  let h = '<h2>Sin identificar</h2>';
+  if (!nf.pending.length) return h + '<p>No queda nada pendiente: todos los títulos del historial ya están en tus listas.</p><div class="c-pila"><button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+  h += '<p>Estos títulos no aparecieron en TMDB con el nombre que usa la plataforma. Toca la lupa para elegir el correcto o descártalos.</p>';
+  h += '<ul class="d-lista d-vidrio c-titulos">' + nf.pending.map((e, i) => `<li class="c-res c-res--dos"><div class="d-fila">${posterHTML({ title: nfEtiqueta(e) })}<span class="d-texto"><strong>${esc(nfEtiqueta(e))}</strong><span>${esc(nfLinea(e))}</span></span></div>` +
+    `<span class="c-acciones"><button class="c-mas" data-a="nfBuscar" data-i="${i}" aria-label="Buscar ${esc(nfEtiqueta(e))}">${ico('lupa', 18, 2.4)}</button><button class="c-mas c-mas--gris" data-a="nfDescartar" data-i="${i}" aria-label="Descartar ${esc(nfEtiqueta(e))}">${ico('cerrar', 16, 2.4)}</button></span></li>`).join('') + '</ul>';
+  return h + '<div class="c-pila"><button class="d-boton c-boton-peligro" data-a="nfDescartarTodo" data-confirmar="Toca de nuevo para descartar todos">Descartar todos</button><button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+}
+
+/* ---------- Cartelera: acciones ---------- */
+const ACC_CART = {
+  titulo(el) { const k = el.dataset.k; if (cargandoDet[k] && cargandoDet[k].error) delete cargandoDet[k]; abrirHoja('titulo', { k }); },
+  quiero(el) {
+    const k = el.dataset.k, b = baseDe(k); if (!b) return;
+    const antes = itemDe(k);
+    if (!hacer({ tipo: 'agregar', k, base: K.tituloCorto(b), estado: 'want', at: Date.now(), dia: hoy() }, 'Quiero ver: ' + b.title)) return;
+    if (!provs[k]) pedirDetalle(k);
+    avisar(antes && antes.status === 'seen' ? 'Otra vez en Quiero ver' : 'En Quiero ver', b.title);
+    if (hoja && hoja.tipo === 'titulo') repintarHoja(); else pintarCart();
+  },
+  vista(el) {
+    const k = el.dataset.k, b = baseDe(k); if (!b) return;
+    if (!hacer({ tipo: 'agregar', k, base: K.tituloCorto(b), estado: 'seen', at: Date.now(), dia: hoy() }, 'Vista: ' + b.title)) return;
+    avisar('En Vistos', b.title);
+    if (hoja && hoja.tipo === 'titulo') repintarHoja(); else pintarCart();
+  },
+  quitarTitulo(el) {
+    const k = el.dataset.k, it = itemDe(k); if (!it) return;
+    hacer({ tipo: 'quitar', k }, 'Quitar: ' + it.title);
+    avisar('Quitado de ' + (it.status === 'seen' ? 'Vistos' : 'Quiero ver'), it.title);
+    cerrarHoja(); render();
+  },
+  nota(el) {
+    const k = el.dataset.k, it = itemDe(k), n = +el.dataset.n; if (!it) return;
+    const v = it.rating === n ? 0 : n;
+    hacer({ tipo: 'nota', k, n: v }, 'Nota de ' + it.title + ': ' + v);
+    repintarHoja();
+  },
+  masVistos() { limiteVistos += 120; pintarCart(); },
+  borrarBusqueda() { const i = $('q'); if (i) { i.value = ''; i.focus(); } buscar(''); },
+  cancelarBusqueda() { cerrarBusqueda(); pintarCart(); },
+  tmdb() { abrirHoja('tmdb'); },
+  quitarTmdb() { tmdbKey = ''; guardarLS(CK.tmdb, null); busq.populares = null; repintarHoja(); render(); },
+  exportar() { exportarRespaldo(); },
+  traerRespaldo() {
+    const r = hoja && hoja.r; if (!r) return;
+    const d = cart(), nuevos = {};
+    Object.keys(r.items).forEach((k) => { if (!d.items[k]) nuevos[k] = r.items[k]; });
+    Object.keys(r.prov).forEach((k) => { if (!provs[k] || provs[k].at < r.prov[k].at) provs[k] = r.prov[k]; });
+    guardarLS(CK.prov, provs);
+    const n = Object.keys(nuevos).length;
+    if (n && !hacer({ tipo: 'importar', items: nuevos }, 'Respaldo de Cartelera: ' + nfPlural(n, 'título', 'títulos'))) return;
+    cerrarHoja();
+    ui.tab = 'cartelera'; guardarLS(CL.ui, ui); render();
+    avisar('Respaldo agregado', nfPlural(n, 'título', 'títulos'));
+    revisarPlataformas();
+  },
+  nf() { abrirHoja('nf'); },
+  nfPend() { abrirHoja('nfPend'); },
+  nfSeguir() { nf.error = ''; nfCorrer(); repintarHoja(); },
+  nfPerfil(el) { if (nfBorrador) { nfBorrador.profile = el.dataset.v; repintarHoja(); } },
+  nfCancelar() { nfBorrador = null; cerrarHoja(); },
+  nfEmpezar() { nfEmpezar(); },
+  nfDescartar(el) { nf.pending.splice(+el.dataset.i, 1); guardarNf(); repintarHoja(); },
+  nfDescartarTodo() { nf.pending = []; guardarNf(); repintarHoja(); },
+  nfBuscar(el) {
+    const e = nf.pending[+el.dataset.i]; if (!e) return;
+    cerrarHoja();
+    ui.tab = 'cartelera'; guardarLS(CL.ui, ui);
+    busq.pick = e; busq.activo = true; busq.q = e.name || ''; busq.res = null; busq.error = '';
+    render();
+    if (e.name) buscar(e.name); else { const i = $('q'); if (i) i.focus(); }   // sin nombre: se escribe el que se recuerde
+  },
+  nfElegir(el) {
+    const e = busq.pick, k = el.dataset.k, b = baseDe(k); if (!e || !b) return;
+    const i = nf.pending.findIndex((p) => p === e || (p.name === e.name && p.kind === e.kind && p.last === e.last));
+    if (i >= 0) nf.pending.splice(i, 1);
+    guardarNf();
+    hacer({ tipo: 'historial', run: 'manual-' + Date.now(), dia: hoy(), visto: true, pares: [{ e: K.entradaCorta(e), r: K.tituloCorto(b) }] }, 'Historial elegido a mano: ' + b.title);
+    cerrarBusqueda(); cerrarHoja();
+    avisar('En Vistos', b.title);
+    if (nf.pending.length) { render(); abrirHoja('nfPend'); } else { ui.cartSub = 'seen'; guardarLS(CL.ui, ui); render(); }
+  },
+  actualizar() { sincronizar(true).then(() => avisar(sync.error ? 'No se pudo actualizar' : 'Al día', sync.error || 'Cartelera leída de nuevo desde GitHub', !!sync.error)); },
+  desconectar() { llave = null; guardarLS(CK.llave, null); sync = { at: 0 }; guardarLS(CK.sync, sync); render(); avisar('iPhone desconectado', 'Los datos siguen en GitHub'); },
+};
+const FORMULARIOS = {
+  buscar() { const i = $('q'); if (i) { buscar(i.value); i.blur(); } },
+  async tmdb(f) {
+    const clave = String(f.clave.value || '').trim();
+    if (!clave) { abrirHoja('tmdb', { msg: { ok: false, text: 'Pega la clave antes de guardar.' } }); return; }
+    const b = f.querySelector('.d-boton'); b.disabled = true; b.textContent = 'Probando…';
+    try {
+      await tmdb('/configuration', {}, clave);
+      tmdbKey = clave; guardarLS(CK.tmdb, clave);
+      busq.populares = null;
+      abrirHoja('tmdb', { msg: { ok: true, text: 'Clave guardada: TMDB respondió bien.' } });
+      revisarPlataformas(); if (nf.queue.length) nfCorrer();
+      render();
+    } catch (e) { abrirHoja('tmdb', { msg: { ok: false, text: e.message } }); }
+  },
+  async conectar(f) {
+    const codigo = String(f.codigo.value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    const err = $('errConectar'), mostrar = (m) => { err.textContent = m; err.hidden = !m; };
+    if (codigo.length !== 8) { mostrar('El código tiene 8 letras y números.'); return; }
+    mostrar('');
+    const b = f.querySelector('button'); b.disabled = true; b.textContent = 'Conectando…';
+    try {
+      const r = await fetch(API + '/api/emparejar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ codigo }) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(d.error || 'Error ' + r.status);
+      if (d.tipo !== 'dispositivo') throw new Error('Ese código es de tipo «' + d.tipo + '». Crea uno de tipo «dispositivo».');
+      llave = { llave: d.llave, nombre: d.nombre, id: d.id }; guardarLS(CK.llave, llave);
+      sync = { at: 0 }; srv = {}; memo = null;
+      await sincronizar(true);
+      render();
+      avisar('iPhone conectado', sync.error || 'Cartelera se guarda en GitHub', !!sync.error);
+    } catch (e) {
+      mostrar(e.message === 'Failed to fetch' || e.message === 'Load failed' ? 'Sin conexión con domesticas-api. Revisa la señal e intenta de nuevo.' : e.message);
+      b.disabled = false; b.textContent = 'Conectar este iPhone';
+    }
+  },
+};
+function filaAj({ icono, titulo, sub, valor, a, attrs = '', chev, cls = '' }) {
+  const cuerpo = `${icono ? `<span class="d-cuadro">${ico(icono, 18)}</span>` : ''}<span class="d-texto"><strong>${titulo}</strong>${sub ? `<span>${sub}</span>` : ''}</span>${valor != null ? `<span class="d-valor">${valor}</span>` : ''}${chev ? `<span class="c-chev">${ico('chev', 18)}</span>` : ''}`;
+  return a ? `<li class="${cls}"><button class="d-fila c-fila" data-a="${a}" ${attrs}>${cuerpo}</button></li>` : `<li class="d-fila ${cls}">${cuerpo}</li>`;
+}
+function ajustesCartelera() {
+  const d = cart(), n = Object.keys(d.items).length;
+  let h = '<div class="d-seccion"><h2>Cartelera</h2></div><ul class="d-lista d-vidrio">' +
+    filaAj({ icono: 'llave', titulo: 'TMDB', sub: tmdbKey ? 'Conectado: busca títulos y plataformas en Chile' : 'Falta la clave para buscar', valor: tmdbKey ? '<span class="d-chip d-chip--positivo">Listo</span>' : '<span class="d-chip d-chip--aviso">Falta</span>', a: 'tmdb', chev: true }) +
+    `<li><label class="d-fila c-fila c-archivo"><span class="d-cuadro">${ico('bandeja', 18)}</span><span class="d-texto"><strong>Traer respaldo</strong><span>El archivo que exporta la app Cartelera en Ajustes → Respaldo → Exportar</span></span><span class="c-chev">${ico('chev', 18)}</span><input type="file" id="archivoRespaldo" accept="application/json,.json"></label></li>` +
+    filaAj({ icono: 'tv', titulo: 'Importar historial', sub: nf.queue.length ? 'Importación en curso' : nf.pending.length ? nfPlural(nf.pending.length, 'título sin identificar', 'títulos sin identificar') : 'De Netflix o Prime Video: lo visto queda en Vistos', a: 'nf', chev: true }) +
+    filaAj({ icono: 'compartir', titulo: 'Exportar respaldo', sub: nfPlural(n, 'título', 'títulos') + ', en el formato de la app Cartelera', a: 'exportar', chev: true }) + '</ul>';
+  h += '<div class="d-seccion"><h2>Conexión con GitHub</h2></div>';
+  if (!llave) {
+    h += '<div class="d-vidrio c-tarjeta"><form data-f="conectar"><label class="c-campo"><span>Código de 8 letras y números</span><input type="text" name="codigo" class="c-codigo" autocomplete="one-time-code" autocapitalize="characters" spellcheck="false" maxlength="9" placeholder="ABCD2345" required></label>' +
+      '<p class="c-error" id="errConectar" hidden></p><div style="display:grid;margin-top:14px"><button class="d-boton d-boton--ancho">Conectar este iPhone</button></div></form></div>' +
+      '<ol class="c-pasos"><li>Abre la tarea <a href="https://github.com/pablocarvallo/datos/actions/workflows/llaves.yml" target="_blank" rel="noopener"><b>Llaves</b></a> de pablocarvallo/datos y toca <b>Run workflow</b>.</li><li>Elige acción <b>crear</b>, tipo <b>dispositivo</b> y un nombre (por ejemplo, «iPhone Consulta»).</li><li>Abre la ejecución terminada: el código está en su resumen y vale 15 minutos.</li><li>Escríbelo aquí.</li></ol>' +
+      '<p class="c-nota">Sin conexión, Cartelera funciona igual y guarda los cambios en este iPhone hasta que lo conectes.</p>';
+  } else {
+    h += '<ul class="d-lista d-vidrio">' +
+      filaAj({ icono: 'nube', titulo: esc(llave.nombre || 'Este iPhone'), sub: sync.error ? esc(sync.error) : 'Conectado a pablocarvallo/datos' + (sync.at ? ' · ' + hace(sync.at) : '') + (llave.id ? ' · llave ' + esc(llave.id) : ''), valor: sync.error ? '<span class="d-chip d-chip--aviso">Revisar</span>' : '<span class="d-chip d-chip--positivo">Al día</span>' }) +
+      filaAj({ icono: 'recargar', titulo: 'Actualizar ahora', sub: cola.length ? cola.length + ' ' + C.plural(cola.length, 'cambio', 'cambios') + ' por guardar' : 'Trae lo último desde GitHub', a: 'actualizar', chev: true }) +
+      filaAj({ icono: 'llave', titulo: '<span class="c-peligro">Desconectar este iPhone</span>', sub: 'Los datos quedan en GitHub; para volver necesitas un código nuevo', a: 'desconectar', attrs: 'data-confirmar="Toca de nuevo para desconectar"' }) + '</ul>';
+  }
+  return h;
 }
 
 /* ---------- Ajustes ---------- */
@@ -687,6 +1496,7 @@ function vistaAjustes() {
   let html = '<div class="d-seccion"><h2>Destacado arriba</h2></div><div class="d-vidrio c-tarjeta">' + chips('hero', C.ORDER.map((k) => [k, corto(k)]), prefs.hero) + '</div>';
   html += '<div class="d-seccion"><h2>Gráfico de la portada</h2></div><div class="d-vidrio c-tarjeta">' + chips('grafico', C.ORDER.map((k) => [k, corto(k)]), prefs.grafico) + '</div>';
   const seg = (k, op) => `<div class="d-segmentos" role="group">${op.map(([v, t]) => `<button data-a="pref" data-k="${k}" data-v="${v}" aria-pressed="${prefs[k] === v}">${t}</button>`).join('')}</div>`;
+  html += ajustesCartelera();
   html += '<div class="d-seccion"><h2>Apariencia</h2></div><ul class="d-lista d-vidrio">' +
     `<li class="d-fila c-ajuste-seg"><span class="d-texto"><strong>Tema</strong></span>${seg('tema', [['auto', 'Automático'], ['claro', 'Claro'], ['oscuro', 'Oscuro']])}</li>` +
     `<li class="d-fila c-ajuste-seg"><span class="d-texto"><strong>Vidrio</strong></span>${seg('vidrio', [['claro', 'Claro'], ['tintado', 'Tintado']])}</li></ul>`;
@@ -774,7 +1584,11 @@ function hojaAyuda() {
     '<h3>Sin conexión</h3><p>Lo último que se leyó queda guardado en este iPhone. Los años cerrados se leen una vez; el actual y el anterior, cada 6 horas o al tocar Actualizar.</p>' +
     '<div class="c-pila"><button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
 }
-function contenidoHoja() { return hoja.tipo === 'ind' ? hojaIndicador(hoja.k) : hojaAyuda(); }
+function contenidoHoja() {
+  const t = hoja.tipo;
+  return t === 'ind' ? hojaIndicador(hoja.k) : t === 'titulo' ? hojaTitulo(hoja.k) : t === 'tmdb' ? hojaTmdb(hoja.msg) : t === 'respaldo' ? hojaRespaldo(hoja.r)
+    : t === 'nf' ? hojaNf(hoja.msg) : t === 'nfBorrador' ? hojaNfBorrador() : t === 'nfPend' ? hojaNfPend() : hojaAyuda();
+}
 function abrirHoja(tipo, extra) {
   hoja = Object.assign({ tipo }, extra || {});
   const el = $('hoja'), fondo = $('fondoHoja');
@@ -820,6 +1634,11 @@ const ACCIONES = {
   abrir(el) { window.open(el.dataset.url, '_blank', 'noopener'); },
   seg(el) {
     const n = el.dataset.seg, v = el.dataset.v;
+    if (n === 'cartSub' || n === 'cartTipo' || n === 'cartProv' || n === 'vistoTipo') {
+      ui[n] = n === 'cartProv' && ui.cartProv === v ? '' : v;
+      if (n === 'cartSub') limiteVistos = 60;
+      guardarLS(CL.ui, ui); pintarCart(); return;
+    }
     if (n === 'range') prefs.range = +v;
     if (n === 'ipc') prefs.ipc = v;
     if (n === 'imacec') prefs.imacec = v;
@@ -842,15 +1661,44 @@ const ACCIONES = {
   },
   pref(el) { prefs[el.dataset.k] = el.dataset.v; guardarPrefs(); aplicarPrefs(); render(); },
 };
+Object.assign(ACCIONES, ACC_CART);
 document.addEventListener('click', (ev) => {
   const el = ev.target.closest('[data-a]');
   if (!el) return;
   if (el.tagName === 'A') ev.preventDefault();
+  if (el.dataset.confirmar && !el.dataset.armado) {
+    el.dataset.armado = '1'; el.dataset.texto = el.innerHTML;
+    const strong = el.querySelector('strong');
+    if (strong) strong.textContent = el.dataset.confirmar; else el.textContent = el.dataset.confirmar;
+    setTimeout(() => { if (el.isConnected && el.dataset.armado) { el.innerHTML = el.dataset.texto; delete el.dataset.armado; } }, 4000);
+    return;
+  }
   const fn = ACCIONES[el.dataset.a];
   if (fn) fn(el, ev);
 });
+document.addEventListener('submit', (ev) => {
+  const f = ev.target.closest('form[data-f]');
+  if (!f) return;
+  ev.preventDefault();
+  const fn = FORMULARIOS[f.dataset.f];
+  if (fn) fn(f);
+});
+document.addEventListener('input', (ev) => { if (ev.target.id === 'q') buscar(ev.target.value); });
+document.addEventListener('focusin', (ev) => { if (ev.target.id === 'q' && !busq.activo) { busq.activo = true; pintarCart(); } });
 document.addEventListener('change', (ev) => {
   const t = ev.target;
+  if (t.id === 'archivoRespaldo' && t.files && t.files[0]) {
+    const f = t.files[0]; t.value = '';
+    f.text().then((txt) => { const r = K.leerRespaldo(txt); if (r.error) avisar('No se pudo leer', r.error, true); else abrirHoja('respaldo', { r }); });
+    return;
+  }
+  if (t.id === 'nfArchivo' && t.files && t.files[0]) { const f = t.files[0]; t.value = ''; nfLeerArchivo(f); return; }
+  if (t.name === 'nfPelis' && nfBorrador) { nfBorrador.movies = t.checked; repintarHoja(); return; }
+  if (t.name === 'vistaEl') {
+    const it = itemDe(t.dataset.k);
+    if (it && /^\d{4}-\d{2}-\d{2}$/.test(t.value) && t.value !== it.seenAt) hacer({ tipo: 'fechaVista', k: t.dataset.k, dia: t.value }, 'Fecha de ' + it.title + ': ' + t.value);
+    return;
+  }
   if (t.name === 'hero' || t.name === 'grafico') {
     prefs[t.name] = t.value; guardarPrefs();
     avisar(t.name === 'hero' ? 'Ahora arriba' : 'Gráfico de la portada', C.IND[t.value].name);
@@ -881,7 +1729,9 @@ window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() =
 /* ---------- Pintar ---------- */
 const PESTANAS = [['indicadores', 'barras', 'Indicadores'], ['lecturas', 'libro', 'Lecturas'], ['cartelera', 'tv', 'Cartelera'], ['ajustes', 'ajustes', 'Ajustes']];
 function cabecera() {
-  const t = { indicadores: [C.fechaLarga(hoy()), 'Consulta'], lecturas: ['Goodreads', 'Lecturas'], cartelera: ['Series y películas', 'Cartelera'], ajustes: ['Consulta ' + C.VERSION, 'Ajustes'] }[ui.tab];
+  let ante = 'Series y películas';
+  if (ui.tab === 'cartelera') { const d = cart(), q = K.itemsDe(d, 'want').length, v = K.itemsDe(d, 'seen').length; if (q || v) ante = q.toLocaleString('es-CL') + ' por ver · ' + v.toLocaleString('es-CL') + ' ' + (v === 1 ? 'visto' : 'vistos'); }
+  const t = { indicadores: [C.fechaLarga(hoy()), 'Consulta'], lecturas: ['Goodreads', 'Lecturas'], cartelera: [ante, 'Cartelera'], ajustes: ['Consulta ' + C.VERSION, 'Ajustes'] }[ui.tab];
   const acciones = ui.tab === 'indicadores'
     ? `<button class="d-boton-circular${cargando ? ' c-girando' : ''}" data-a="recargar" aria-label="Actualizar">${ico('recargar', 20, 2.4)}</button><button class="d-boton-circular" data-a="ayuda" aria-label="Ayuda">${ico('ayuda', 20)}</button>` : '';
   return `<div><span class="d-antetitulo">${esc(t[0])}</span><h1>${t[1]}</h1></div><div class="d-acciones">${acciones}</div>`;
@@ -889,7 +1739,8 @@ function cabecera() {
 function render() {
   if (!PESTANAS.some((p) => p[0] === ui.tab)) ui.tab = 'indicadores';
   $('cabecera').innerHTML = cabecera();
-  $('vista').innerHTML = ui.tab === 'indicadores' ? vistaIndicadores() : ui.tab === 'ajustes' ? vistaAjustes() : vistaPronto(ui.tab);
+  if (ui.tab === 'cartelera' && $('cartForm')) { pintarCart(); } else
+  $('vista').innerHTML = ui.tab === 'indicadores' ? vistaIndicadores() : ui.tab === 'ajustes' ? vistaAjustes() : ui.tab === 'cartelera' ? vistaCartelera() : vistaPronto();
   if (ui.tab === 'indicadores') dibujar($('graficoPortada'), C.detail(S, prefs.grafico, prefs, hoy()), 170);
   $('barraSup').textContent = { indicadores: 'Consulta', lecturas: 'Lecturas', cartelera: 'Cartelera', ajustes: 'Ajustes' }[ui.tab];
   $('pestanas').innerHTML = PESTANAS.map(([id, ic, t]) => `<button data-a="tab" data-t="${id}"${ui.tab === id ? ' aria-current="page"' : ''}>${ico(ic)}${t}</button>`).join('');
@@ -926,13 +1777,17 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', aplicarPre
 render();
 refresh(false);
 buscarVersionNueva();
+// Cartelera: lo último de GitHub, las plataformas de Quiero ver y la importación que haya quedado a medias
+if (llave) sincronizar(true).then(() => revisarPlataformas()); else revisarPlataformas();
+if (nf.queue.length) nfCorrer();
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState !== 'visible') return;
   render(); if (hoja) llenarHoja();
   if (Date.now() - ultimaLectura > 30 * 60000) refresh(false);
+  releerSiHaceFalta(); revisarPlataformas();
   buscarVersionNueva();
 });
-setInterval(() => { if (document.visibilityState === 'visible' && !hoja && ui.tab !== 'indicadores') render(); }, 60000);
+setInterval(() => { if (document.visibilityState === 'visible' && !hoja && ui.tab === 'ajustes') render(); }, 60000);
 let verBarra = false;
 window.addEventListener('scroll', () => { const v = window.scrollY > 46; if (v !== verBarra) { $('barraSup').classList.toggle('ver', v); verBarra = v; } }, { passive: true });
 ['gesturestart', 'gesturechange', 'gestureend'].forEach((t) => document.addEventListener(t, (e) => e.preventDefault(), { passive: false }));
