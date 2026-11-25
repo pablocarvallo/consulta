@@ -468,6 +468,70 @@ button { -webkit-tap-highlight-color: transparent; }
 .d-fila .d-texto .c-logos-mas { display: inline; font: 600 12px/16px var(--font-sans); }
 .d-fila .d-texto .c-estrellas { display: inline-flex; color: var(--acento); }
 
+/* Lecturas */
+.c-heroe-lec .c-heroe-fila { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.c-heroe-lec .d-cifra-grande small { font: 600 22px/1 var(--font-rounded); opacity: .72; letter-spacing: 0; }
+.c-anillo { flex: none; display: block; }
+.c-anillo .pista { fill: none; stroke: currentColor; opacity: .18; }
+.c-anillo .relleno { fill: none; stroke: currentColor; stroke-linecap: round; }
+.c-libro { margin: 12px 16px 0; padding: 14px; }
+.c-libro-btn { appearance: none; border: 0; background: none; padding: 0; display: flex; gap: 14px; width: 100%; text-align: left; color: var(--tinta); font: inherit; cursor: pointer; }
+.c-portada { flex: none; position: relative; width: 72px; height: 108px; border-radius: 6px; overflow: hidden; display: grid; place-items: center;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--acento-relleno) 35%, var(--relleno)), var(--relleno)); box-shadow: 0 2px 8px rgba(10, 18, 40, .16), inset 0 0 0 .5px var(--vidrio-borde); }
+.c-portada img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.c-portada > span { padding: 6px; font: 600 10px/13px var(--font-sans); color: var(--tinta-2); text-align: center; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; word-break: break-word; }
+.c-portada--fila { width: 50px; height: 75px; border-radius: 5px; }
+.c-portada--fila > span { font-size: 9px; line-height: 11px; -webkit-line-clamp: 5; padding: 4px; }
+.c-portada--grande { width: 108px; height: 162px; border-radius: 8px; }
+.c-libro-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.c-libro-txt strong { font: 600 17px/22px var(--font-sans); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.c-serie { font: 400 13px/18px var(--font-sans); color: var(--tinta-2); }
+.c-autor { margin-top: 2px; font: 400 15px/20px var(--font-sans); color: var(--tinta-2); }
+.c-barra { display: block; height: 6px; margin-top: auto; border-radius: 3px; background: var(--relleno); overflow: hidden; }
+.c-libro-txt .c-barra { margin-top: 14px; }
+.c-barra i { display: block; height: 100%; border-radius: 3px; background: var(--c-serie); }
+.c-avance-fila { display: flex; justify-content: space-between; gap: 8px; margin-top: 6px; font: 400 13px/18px var(--font-sans); color: var(--tinta-2); }
+.c-avance-fila b { color: var(--tinta); font-weight: 600; }
+.c-libro-acc { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.c-libro-acc a { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; border-radius: var(--radius-capsula); background: var(--relleno); color: var(--acento); font: 600 15px/20px var(--font-sans); text-decoration: none; }
+.c-estante { display: flex; gap: 12px; overflow-x: auto; padding: 4px 16px 6px; margin-top: 10px; scrollbar-width: none; scroll-snap-type: x proximity; scroll-padding: 0 16px; -webkit-overflow-scrolling: touch; }
+.c-estante::-webkit-scrollbar { display: none; }
+.c-estante-item { flex: none; width: 92px; appearance: none; border: 0; background: none; padding: 0; text-align: left; color: var(--tinta); font: inherit; cursor: pointer; scroll-snap-align: start; }
+.c-estante-item .c-portada { width: 92px; height: 138px; border-radius: 7px; }
+.c-estante-item > b { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-top: 6px; font: 600 13px/17px var(--font-sans); }
+.c-estrellas-l { display: inline-flex; gap: 1px; margin-top: 3px; font: 400 13px/1 var(--font-sans); }
+.c-est { position: relative; display: inline-block; color: color-mix(in srgb, var(--tinta-3) 55%, transparent); }
+.c-est i { position: absolute; left: 0; top: 0; overflow: hidden; white-space: nowrap; font-style: normal; color: var(--acento); }
+.c-cifras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 12px 16px 0; }
+.c-cifra { padding: 12px 14px; }
+.c-cifra small { display: block; font: 600 12px/16px var(--font-sans); color: var(--tinta-2); }
+.c-cifra b { display: block; margin-top: 2px; font: 700 24px/28px var(--font-rounded); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.c-anos .d-fila { gap: 12px; }
+.c-ano-n { flex: none; width: 48px; font: 700 20px/24px var(--font-rounded); font-variant-numeric: tabular-nums; }
+.c-anos .c-barra { margin-top: 6px; }
+.c-anos .d-chip svg { margin-right: 2px; }
+.c-lec-meta { display: flex !important; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 4px; font: 400 13px/18px var(--font-sans) !important; }
+.c-genero { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--radius-capsula); background: var(--relleno); font: 600 12px/16px var(--font-sans); color: var(--tinta-2); }
+.c-desc { white-space: pre-line; }
+.c-desc--corta { display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; overflow: hidden; }
+.c-mas-texto { appearance: none; border: 0; background: none; padding: 0; margin-top: 4px; color: var(--acento); font: 600 15px/20px var(--font-sans); cursor: pointer; }
+.c-ano-hoja { position: relative; display: grid; place-items: center; margin-top: 10px; color: var(--c-serie); }
+.c-ano-centro { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; color: var(--tinta); }
+.c-ano-centro b { font: 700 40px/44px var(--font-rounded); font-variant-numeric: tabular-nums; }
+.c-ano-centro span { font: 400 13px/18px var(--font-sans); color: var(--tinta-2); }
+.c-centro { text-align: center; }
+.c-rejilla-libros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 12px; margin-top: 16px; }
+.c-rejilla-libros .c-estante-item { width: auto; }
+.c-rejilla-libros .c-portada { width: 100%; height: auto; aspect-ratio: 2 / 3; }
+.c-filtros--envolver { flex-wrap: wrap; overflow: visible; }
+.c-hoja a.d-boton { display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+.d-fila .d-texto .c-estrellas-l { display: inline-flex; }
+.d-fila .d-texto .c-est { display: inline-block; font: inherit; }
+.d-fila .d-texto .c-barra { display: block; }
+.c-visto .d-cuadro { flex: none; width: 30px; height: 30px; border-radius: var(--radius-s); display: grid; place-items: center; color: #fff; background: linear-gradient(150deg, var(--acento-hi), var(--acento-lo)); }
+
+a.d-fila, a.d-fila:visited { color: inherit; text-decoration: none; }
+.c-lec-meta .d-chip { min-height: 22px; padding: 0 8px; font-size: 12px; line-height: 16px; }
 @media (prefers-reduced-motion: reduce) {
   .c-hoja, .c-fondo-hoja, .c-toast, .c-barra-sup, .c-heroe, .c-tile { transition: none; }
   .c-girando svg { animation: none; }
@@ -492,9 +556,9 @@ button { -webkit-tap-highlight-color: transparent; }
 <script type="module">
 import * as C from './calculos.js';
 import * as K from './cartelera.js';
+import * as L from './lecturas.js';
 
 const CL = { prefs: 'con27.prefs', ui: 'con27.ui', lectura: 'con27.lectura', dato: 'con27.ind:' };
-const LECTURAS = 'https://lecturas-beta.vercel.app';
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 function leerLS(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
@@ -519,13 +583,14 @@ const I = {
   check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
   bandeja: '<path d="M4 13l2.5-8h11L20 13v6H4z"/><path d="M4 13h4.5l1.5 2.5h4l1.5-2.5H20"/>',
   compartir: '<path d="M12 15V4M8 8l4-4 4 4"/><path d="M6 12v7.5h12V12"/>',
+  lapiz: '<path d="M4.5 19.5h3.8L19 8.8 15.2 5 4.5 15.7v3.8Z"/><path d="m13.2 7 3.8 3.8"/>',
   llave: '<circle cx="8" cy="15" r="3.5"/><path d="M10.5 12.5L19 4M16 7l2.5 2.5M14 9l2 2"/>',
 };
 const ico = (n, t = 24, g = 2) => `<svg viewBox="0 0 24 24" width="${t}" height="${t}" fill="none" stroke="currentColor" stroke-width="${g}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
 
 /* ---------- Estado ---------- */
 let prefs = C.prefsIniciales(leerLS(CL.prefs, {}));
-let ui = Object.assign({ tab: 'indicadores', cartSub: 'want', cartTipo: 'all', cartProv: '', vistoTipo: 'all' }, leerLS(CL.ui, {}));
+let ui = Object.assign({ tab: 'indicadores', cartSub: 'want', cartTipo: 'all', cartProv: '', vistoTipo: 'all', lecSub: 'leyendo', lecOrden: 'recent' }, leerLS(CL.ui, {}));
 let hoja = null;
 const hoy = () => C.dayKey(new Date());
 function guardarPrefs() { guardarLS(CL.prefs, prefs); }
@@ -789,13 +854,6 @@ function segmentos(nombre, ops, val, etq) {
 }
 
 /* ---------- Lecturas y Cartelera (próxima versión) ---------- */
-function vistaPronto() {
-  return `<section class="d-vidrio c-pronto"><span class="d-cuadro">${ico('libro')}</span><h2>Lecturas llega en la próxima versión</h2>` +
-    '<p>Aquí van a estar el desafío del año, lo que estás leyendo, <b>Quiero leer</b> y el buscador de Goodreads.</p>' +
-    '<p>Mientras tanto, sigue usando la app <b>Lecturas</b>. Sus datos vienen de Goodreads, así que también se puede abrir en Safari.</p>' +
-    `<button class="d-boton d-boton--discreto" data-a="abrir" data-url="${LECTURAS}">${ico('enlace', 20)}Abrir Lecturas en Safari</button></section>`;
-}
-
 /* ---------- Cartelera: listas en GitHub a través de domesticas-api ---------- */
 const API = 'https://domesticas-api.vercel.app';
 const CK = { llave: 'con27.llave', datos: 'con27.datos', cola: 'con27.cola', sync: 'con27.sync', prov: 'con27.cart.prov', tmdb: 'con27.cart.tmdb', nf: 'con27.cart.nf' };
@@ -1428,6 +1486,7 @@ const ACC_CART = {
 };
 const FORMULARIOS = {
   buscar() { const i = $('q'); if (i) { buscar(i.value); i.blur(); } },
+  buscarLibros() { const i = $('qLec'); if (i) { buscarLibros(i.value, true); i.blur(); } },
   async tmdb(f) {
     const clave = String(f.clave.value || '').trim();
     if (!clave) { abrirHoja('tmdb', { msg: { ok: false, text: 'Pega la clave antes de guardar.' } }); return; }
@@ -1455,7 +1514,7 @@ const FORMULARIOS = {
       llave = { llave: d.llave, nombre: d.nombre, id: d.id }; guardarLS(CK.llave, llave);
       sync = { at: 0 }; srv = {}; memo = null;
       await sincronizar(true);
-      render();
+      render(); cargarLecturas();
       avisar('iPhone conectado', sync.error || 'Cartelera se guarda en GitHub', !!sync.error);
     } catch (e) {
       mostrar(e.message === 'Failed to fetch' || e.message === 'Load failed' ? 'Sin conexión con domesticas-api. Revisa la señal e intenta de nuevo.' : e.message);
@@ -1489,6 +1548,271 @@ function ajustesCartelera() {
   return h;
 }
 
+/* ---------- Lecturas: Goodreads a través de domesticas-api ---------- */
+const LK = { datos: 'con27.lec', recientes: 'con27.lec.recientes' };
+const lec = { data: leerLS(LK.datos, null), cargando: false, error: '', extra: new Map(), idx: null, pendiente: 0 };
+lec.idx = L.indice(lec.data);
+const lbus = { activo: false, q: '', res: null, cargando: false, error: '', recientes: leerLS(LK.recientes, []) };
+async function apiLec(params) {
+  if (!llave) throw falla('nollave', 'Conecta este iPhone en Ajustes para ver Lecturas.');
+  let r;
+  try { r = await fetch(API + '/api/lecturas?' + new URLSearchParams(params), { headers: { Authorization: 'Bearer ' + llave.llave }, cache: 'no-store' }); }
+  catch (e) { throw falla('net', 'Sin conexión.'); }
+  const d = await r.json().catch(() => ({}));
+  if (r.status === 401) throw falla('auth', 'La llave de este iPhone ya no es válida. Conéctalo de nuevo en Ajustes.');
+  if (!r.ok) throw falla('http', d.error || 'Goodreads no respondió (' + r.status + ').');
+  return d;
+}
+async function cargarLecturas(manual, nuevo) {
+  if (lec.cargando || !llave) return;
+  lec.cargando = true; lec.error = '';
+  pintarLecEstado();
+  try {
+    const d = await apiLec(Object.assign({ vista: 'biblioteca' }, manual || nuevo ? { nuevo: '1' } : {}));
+    lec.data = d; lec.idx = L.indice(d);
+    if (!guardarLS(LK.datos, d)) guardarLS(LK.datos, null);
+    if (manual) avisar('Lecturas al día', 'Leído de nuevo desde Goodreads');
+  } catch (e) {
+    lec.error = e.message;
+    if (manual) avisar('No se pudo actualizar', e.message, true);
+  }
+  lec.cargando = false;
+  if (ui.tab === 'lecturas' && !hoja) render(); else pintarLecEstado();
+}
+function lecturasViejas() { return !lec.data || Date.now() - Date.parse(lec.data.updatedAt || 0) > 15 * 60000; }
+function pintarLecEstado() {
+  const b = document.querySelector('[data-a="lecRecargar"]'); if (b) b.classList.toggle('c-girando', lec.cargando);
+  const e = $('estadoLec'); if (e) e.outerHTML = estadoLec();
+}
+function estadoLec() {
+  let punto = '', txt;
+  if (lec.cargando) txt = lec.data ? 'Actualizando desde Goodreads…' : 'Conectando con Goodreads…';
+  else if (lec.error) { punto = 'aviso'; txt = lec.error + (lec.data ? ' · se muestra lo último que se leyó' : ''); }
+  else txt = lec.data ? 'Goodreads · actualizado ' + hace(Date.parse(lec.data.updatedAt)) : 'Goodreads';
+  return `<p class="c-estado" id="estadoLec"><span class="c-punto${punto ? ' c-punto--aviso' : ''}"></span>${esc(txt)}</p>`;
+}
+const libroDe = (id) => (lec.idx.get(id) || {}).book || (lbus.res || []).find((b) => b.id === id) || lec.extra.get(id) || null;
+
+/* ---------- Lecturas: piezas ---------- */
+function portadaHTML(b, cls) {
+  return `<span class="c-portada${cls ? ' ' + cls : ''}">${b && b.cover ? `<img src="${esc(b.cover)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">` : ''}<span>${esc((b && b.title) || '')}</span></span>`;
+}
+const estrellasL = (n) => (n ? `<span class="c-estrellas-l" aria-label="${String(n).replace('.', ',')} de 5">${L.estrellas(n).map((f) => `<span class="c-est">★<i style="width:${Math.round(f * 100)}%">★</i></span>`).join('')}</span>` : '');
+function anillo(pct, t, g) {
+  const r = (t - g) / 2, c = 2 * Math.PI * r, p = Math.max(0, Math.min(1, pct || 0));
+  return `<svg class="c-anillo" width="${t}" height="${t}" viewBox="0 0 ${t} ${t}" aria-hidden="true"><circle class="pista" cx="${t / 2}" cy="${t / 2}" r="${r}" stroke-width="${g}"/>` +
+    (p > 0.005 ? `<circle class="relleno" cx="${t / 2}" cy="${t / 2}" r="${r}" stroke-width="${g}" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${(c * (1 - p)).toFixed(1)}" transform="rotate(-90 ${t / 2} ${t / 2})"/>` : '') + '</svg>';
+}
+function heroeDesafio(ch) {
+  const r = L.ritmo(ch, hoy()), pct = ch.goal ? ch.read / ch.goal : 0, faltan = ch.goal ? Math.max(0, ch.goal - ch.read) : 0;
+  const pie = [];
+  if (r) pie.push(['Ritmo', r.text]);
+  if (ch.goal && faltan) pie.push(['Faltan', L.plural(faltan, 'libro', 'libros') + ' · ' + L.plural(L.diasQuedan(ch.year, hoy()), 'día', 'días')]);
+  else if (ch.goal) pie.push(['Meta', L.fmtNum(Math.round(pct * 100)) + ' %']);
+  else pie.push(['Meta', 'Sin meta en Goodreads']);
+  return `<button class="d-heroe c-heroe c-heroe-lec" data-a="lecAno" data-ano="${ch.year}"><span class="d-etiqueta">Desafío ${ch.year}</span>` +
+    `<span class="c-heroe-fila"><span class="d-cifra-grande">${L.fmtNum(ch.read)}<small>${ch.goal ? ' de ' + L.fmtNum(ch.goal) : ' ' + (ch.read === 1 ? 'libro' : 'libros')}</small></span>${anillo(pct, 64, 8)}</span>` +
+    `<div class="d-pie">${pie.map(([a, b]) => `<div>${esc(a)}<b>${esc(b)}</b></div>`).join('')}</div></button>`;
+}
+function estanteHTML(libros) {
+  return `<div class="c-estante">${libros.map((b) => `<button class="c-estante-item" data-a="lecLibro" data-id="${esc(b.id)}">${portadaHTML(b)}<b>${esc(b.title)}</b>${estrellasL(b.userRating)}</button>`).join('')}</div>`;
+}
+const urlLibro = (b) => b.url || 'https://www.goodreads.com/book/show/' + b.id;
+// Goodreads no deja escribir desde otras apps: estos botones abren el libro en Goodreads
+const accionesGR = (b) => `<div class="c-libro-acc"><a href="${esc(urlLibro(b))}" target="_blank" rel="noopener" data-sinc="1">${ico('lapiz', 18)}Actualizar avance</a><a href="${esc(urlLibro(b))}" target="_blank" rel="noopener" data-sinc="1">${ico('check', 18)}Terminé</a></div>`;
+function avanceHTML(b) {
+  const pr = b.progress;
+  if (!pr || pr.percent == null) return '<span class="c-avance-fila"><span>Sin avance registrado</span></span>';
+  const der = pr.page ? `Pág. ${L.fmtNum(pr.page)} de ${L.fmtNum(pr.of)}` : pr.updatedAt ? 'Actualizado ' + L.fmtFecha(pr.updatedAt, hoy()) : '';
+  return `<span class="c-barra"><i style="width:${pr.percent}%"></i></span><span class="c-avance-fila"><b>${pr.percent} %</b><span>${esc(der)}</span></span>`;
+}
+function filaLibro(b, insignia) {
+  const meta = [b.avgRating ? '★ ' + L.fmtPromedio(b.avgRating) : '', b.pages ? L.fmtNum(b.pages) + ' págs.' : '', b.published || ''].filter(Boolean).join(' · ');
+  return `<li><button class="d-fila c-fila" data-a="lecLibro" data-id="${esc(b.id)}">${portadaHTML(b, 'c-portada--fila')}<span class="d-texto"><strong>${esc(b.title)}</strong><span>${esc(b.author || '')}</span>` +
+    (meta || insignia ? `<span class="c-lec-meta">${esc(meta)}${insignia || ''}</span>` : '') + `</span><span class="c-chev">${ico('chev', 18)}</span></button></li>`;
+}
+function insigniaDe(id) {
+  const s = lec.idx.get(id);
+  if (!s) return '';
+  return s.shelf === 'read' ? '<span class="d-chip d-chip--positivo">Leído</span>' : s.shelf === 'reading' ? '<span class="d-chip">Leyendo</span>' : '<span class="d-chip">Quiero leer</span>';
+}
+
+/* ---------- Lecturas: pantalla ---------- */
+function vistaLecturas() {
+  return `<form class="c-buscar" id="lecForm" data-f="buscarLibros" role="search"><label class="d-vidrio c-buscar-campo">${ico('lupa', 18, 2.2)}` +
+    `<input type="search" id="qLec" placeholder="Títulos, autores o ISBN" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search" value="${esc(lbus.q)}">` +
+    `<button type="button" class="c-borrar" data-a="lecBorrar" aria-label="Borrar"${lbus.q ? '' : ' hidden'}>${ico('cerrar', 12, 3)}</button></label>` +
+    `<button type="button" class="c-cancelar" data-a="lecCancelar"${lbus.activo ? '' : ' hidden'}>Cancelar</button></form><div id="lecOut">${lecOut()}</div>`;
+}
+function pintarLec() {
+  const out = $('lecOut');
+  if (!out || ui.tab !== 'lecturas') return;
+  out.innerHTML = lecOut();
+  const f = $('lecForm');
+  if (f) { f.querySelector('.c-cancelar').hidden = !lbus.activo; f.querySelector('.c-borrar').hidden = !lbus.q; }
+  $('cabecera').innerHTML = cabecera();
+}
+function lecOut() {
+  if (lbus.activo) return vistaLecBusqueda();
+  if (!llave) return `<section class="d-vidrio c-pronto"><span class="d-cuadro">${ico('libro')}</span><h2>Conecta este iPhone</h2><p>Lecturas lee tus estantes y desafíos de Goodreads a través de domesticas-api, con la misma llave que Cartelera.</p><button class="d-boton" data-a="tab" data-t="ajustes">Ir a Ajustes</button></section>`;
+  if (!lec.data) {
+    if (lec.cargando || !lec.error) return vacio('Conectando con Goodreads…', '') + estadoLec();
+    return vacio('No hay conexión con Goodreads', lec.error, `<button class="d-boton" data-a="lecRecargar">${ico('recargar', 20)}Reintentar</button>`);
+  }
+  let h = `<div class="d-segmentos c-cart-seg" role="group" aria-label="Sección">` + [['leyendo', 'Leyendo'], ['desafios', 'Desafíos'], ['quiero', 'Quiero leer']]
+    .map(([v, t]) => `<button data-a="seg" data-seg="lecSub" data-v="${v}" aria-pressed="${ui.lecSub === v}">${t}</button>`).join('') + '</div>';
+  h += ui.lecSub === 'desafios' ? vistaDesafios() : ui.lecSub === 'quiero' ? vistaQuiereLeer() : vistaLeyendo();
+  return h + estadoLec();
+}
+function vistaLeyendo() {
+  const d = lec.data, ch = L.desafio(d, +hoy().slice(0, 4)), leyendo = d.reading || [], recientes = (d.read || []).slice(0, 12);
+  let h = heroeDesafio(ch);
+  h += `<div class="d-seccion"><h2>Leyendo ahora</h2></div>`;
+  h += leyendo.length ? leyendo.map((b) => `<div class="d-vidrio c-libro"><button class="c-libro-btn" data-a="lecLibro" data-id="${esc(b.id)}">${portadaHTML(b)}<span class="c-libro-txt"><strong>${esc(b.title)}</strong>` +
+    (b.series ? `<span class="c-serie">${esc(b.series)}</span>` : '') + `<span class="c-autor">${esc(b.author || '')}</span>${avanceHTML(b)}</span></button>${accionesGR(b)}</div>`).join('')
+    : vacio('No tienes libros en lectura', 'Lo que marques como «Leyendo» en Goodreads aparece aquí.');
+  if (recientes.length) h += '<div class="d-seccion"><h2>Leídos recientemente</h2></div>' + estanteHTML(recientes);
+  return h;
+}
+function cifrasHTML(ano, leidos, enHoja) {
+  const c = L.cifrasAno(lec.data, ano, leidos, hoy());
+  const f1 = (n) => n.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const cel = [['Libros', L.fmtNum(c.libros)], ['Por mes', c.porMes ? f1(c.porMes) : '—'], ['Tu nota', c.nota ? f1(c.nota) + ' ★' : '—']];
+  return enHoja ? `<div class="c-stats">${cel.map(([a, b]) => `<div class="c-stat"><small>${a}</small><b>${b}</b></div>`).join('')}</div>`
+    : `<div class="c-cifras">${cel.map(([a, b]) => `<div class="d-vidrio c-cifra"><small>${a}</small><b>${b}</b></div>`).join('')}</div>`;
+}
+function vistaDesafios() {
+  const d = lec.data, ano = +hoy().slice(0, 4), ch = L.desafio(d, ano), pasados = (d.challenges || []).filter((c) => c.year !== ano);
+  const conMeta = (d.challenges || []).filter((c) => c.goal), cumplidos = conMeta.filter((c) => c.read >= c.goal).length;
+  let h = heroeDesafio(ch) + cifrasHTML(ano, ch.read);
+  if ((ch.books || []).length) h += `<div class="d-seccion"><h2>Leídos en ${ano}</h2><a href="#" data-a="lecAno" data-ano="${ano}">Ver todos</a></div>` + estanteHTML(ch.books.slice(0, 12));
+  if (pasados.length) {
+    h += `<div class="d-seccion"><h2>Años anteriores</h2></div>` + (conMeta.length ? `<p class="c-nota">${cumplidos} de ${L.plural(conMeta.length, 'desafío cumplido', 'desafíos cumplidos')}.</p>` : '') +
+      '<ul class="d-lista d-vidrio c-anos">' + pasados.map((c) => {
+        const ok = c.goal && c.read >= c.goal, p = c.goal ? Math.min(100, c.read / c.goal * 100) : 0;
+        return `<li><button class="d-fila c-fila" data-a="lecAno" data-ano="${c.year}"><span class="c-ano-n">${c.year}</span><span class="d-texto"><strong>${c.goal ? L.fmtNum(c.read) + ' de ' + L.fmtNum(c.goal) : L.plural(c.read, 'libro', 'libros')}</strong>` +
+          (c.goal ? `<span class="c-barra"><i style="width:${p}%"></i></span>` : '<span>Sin meta</span>') + `</span>` +
+          (ok ? `<span class="d-chip d-chip--positivo">${ico('check', 14, 2.6)}${Math.round(c.read / c.goal * 100)} %</span>` : c.goal ? `<span class="d-valor">${Math.round(c.read / c.goal * 100)} %</span>` : '') + `<span class="c-chev">${ico('chev', 18)}</span></button></li>`;
+      }).join('') + '</ul>';
+  }
+  return h;
+}
+function vistaQuiereLeer() {
+  const lista = L.ordenarQuiero(lec.data.toRead, ui.lecOrden), paginas = lista.reduce((s, b) => s + (b.pages || 0), 0);
+  let h = '<div class="c-filtros">' + [['recent', 'Recientes'], ['title', 'Título'], ['author', 'Autor']].map(([v, t]) => `<button class="c-filtro" data-a="seg" data-seg="lecOrden" data-v="${v}" aria-pressed="${ui.lecOrden === v}">${t}</button>`).join('') + '</div>';
+  if (!lista.length) return h + vacio('Tu lista está vacía', 'Los libros que marques como «Quiero leer» en Goodreads aparecen aquí.');
+  h += `<p class="c-nota">${L.plural(lista.length, 'libro', 'libros')}${paginas ? ' · ' + L.fmtNum(paginas) + ' páginas' : ''}${lec.data.counts && lec.data.counts.toRead > lista.length ? ' (se muestran los ' + L.fmtNum(lista.length) + ' más recientes de ' + L.fmtNum(lec.data.counts.toRead) + ')' : ''}.</p>`;
+  return h + '<ul class="d-lista d-vidrio c-titulos">' + lista.map((b) => filaLibro(b)).join('') + '</ul>';
+}
+let tLec = 0, nLec = 0;
+function buscarLibros(q, ya) {
+  lbus.q = q; clearTimeout(tLec);
+  const t = q.trim();
+  if (!t) { lbus.res = null; lbus.error = ''; lbus.cargando = false; pintarLec(); return; }
+  if (t.length < 3 && !ya) { pintarLec(); return; }
+  lbus.cargando = true; pintarLec();
+  tLec = setTimeout(async () => {
+    const n = ++nLec;
+    try {
+      const d = await apiLec({ vista: 'buscar', q: t });
+      if (n !== nLec) return;
+      lbus.res = d.results || []; lbus.error = '';
+      if (lbus.res.length || ya) { lbus.recientes = L.recordar(lbus.recientes, t); guardarLS(LK.recientes, lbus.recientes); }
+    } catch (e) { if (n !== nLec) return; lbus.res = null; lbus.error = e.message; }
+    lbus.cargando = false; pintarLec();
+  }, ya ? 0 : 500);
+}
+function vistaLecBusqueda() {
+  if (!llave) return vacio('Conecta este iPhone', 'La búsqueda en Goodreads pasa por domesticas-api.', '<button class="d-boton" data-a="tab" data-t="ajustes">Ir a Ajustes</button>');
+  const q = lbus.q.trim();
+  if (!q) {
+    if (!lbus.recientes.length) return vacio('Busca en Goodreads', 'Encuentra cualquier libro por su título, autor o ISBN.');
+    return '<div class="d-seccion"><h2>Recientes</h2><a href="#" data-a="lecOlvidar">Borrar</a></div><div class="c-filtros c-filtros--envolver">' +
+      lbus.recientes.map((x) => `<button class="c-filtro" data-a="lecReciente" data-q="${esc(x)}">${esc(x)}</button>`).join('') + '</div>';
+  }
+  if (lbus.cargando) return vacio('Buscando…', '');
+  if (lbus.error) return vacio('Búsqueda no disponible', lbus.error, `<button class="d-boton d-boton--discreto" data-a="lecReintentar">${ico('recargar', 20)}Reintentar</button>`);
+  if (!lbus.res) return vacio('Escribe al menos 3 letras', '');
+  if (!lbus.res.length) return vacio('Sin resultados', 'No se encontraron libros para «' + q + '».');
+  return `<p class="c-nota">${L.plural(lbus.res.length, 'resultado', 'resultados')} en Goodreads.</p><ul class="d-lista d-vidrio c-titulos">` + lbus.res.map((b) => filaLibro(b, insigniaDe(b.id))).join('') + '</ul>';
+}
+
+/* ---------- Lecturas: hojas ---------- */
+function hojaLibro(id) {
+  const b = libroDe(id);
+  if (!b) return '<p>No se encontró el libro.</p><div class="c-pila"><button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+  const st = lec.idx.get(id);
+  let h = `<div class="c-ficha">${portadaHTML(b, 'c-portada--grande')}<div class="c-ficha-txt"><h2>${esc(b.title)}</h2>` + (b.series ? `<p class="c-sub">${esc(b.series)}</p>` : '') + `<p class="c-sub">${esc(b.author || '')}</p>` +
+    (b.genres && b.genres.length ? `<div class="c-plats">${b.genres.map((g) => `<span class="c-genero">${esc(g)}</span>`).join('')}</div>` : '') + '</div></div>';
+  const hechos = [b.avgRating ? ['Promedio', '★ ' + L.fmtPromedio(b.avgRating)] : null, b.pages ? ['Páginas', L.fmtNum(b.pages)] : null, b.published ? ['Publicado', b.published] : null].filter(Boolean);
+  if (hechos.length) h += `<div class="c-stats">${hechos.map(([a, v]) => `<div class="c-stat"><small>${a}</small><b>${esc(v)}</b></div>`).join('')}</div>`;
+  if (st) {
+    let t = '', s = '';
+    if (st.shelf === 'reading') { const pr = b.progress; t = 'Leyendo' + (pr && pr.percent != null ? ' · ' + pr.percent + ' %' : ''); s = pr && pr.page ? `Página ${L.fmtNum(pr.page)} de ${L.fmtNum(pr.of)}` : pr && pr.updatedAt ? 'Actualizado el ' + L.fmtFecha(pr.updatedAt, hoy(), true) : 'Sin avance registrado'; }
+    else if (st.shelf === 'read') { t = 'Leído' + (b.year ? ' en ' + b.year : ''); s = b.userRating ? 'Tu nota: ' + String(b.userRating).replace('.', ',') + ' de 5' : 'Sin calificar'; }
+    else { t = 'En Quiero leer'; s = 'Está en tu lista de Goodreads'; }
+    h += `<ul class="d-lista d-vidrio c-visto"><li class="d-fila"><span class="d-cuadro">${ico(st.shelf === 'read' ? 'check' : st.shelf === 'reading' ? 'libro' : 'marca', 18)}</span><span class="d-texto"><strong>${esc(t)}</strong><span>${esc(s)}</span>` +
+      (st.shelf === 'read' && b.userRating ? estrellasL(b.userRating) : '') + (st.shelf === 'reading' && b.progress && b.progress.percent != null ? `<span class="c-barra"><i style="width:${b.progress.percent}%"></i></span>` : '') + '</span></li></ul>';
+  }
+  if (st && st.shelf === 'reading') h += accionesGR(b) + '<p class="c-pista">Se abre el libro en Goodreads. Al volver, Lecturas se actualiza sola.</p>';
+  const desc = b.description || '';
+  if (desc) h += `<h3>Sinopsis</h3><p class="c-desc${desc.length > 320 ? ' c-desc--corta' : ''}" id="lecDesc">${esc(desc)}</p>` + (desc.length > 320 ? '<button class="c-mas-texto" data-a="lecMas">Más</button>' : '');
+  else if (b._cargando) h += '<p>Cargando la ficha…</p>';
+  h += '<div class="c-pila">' + (st && st.shelf === 'reading' ? '' : `<a class="d-boton d-boton--discreto" href="${esc(urlLibro(b))}" target="_blank" rel="noopener" data-sinc="1">${ico('enlace', 20)}Abrir en Goodreads</a>`) +
+    '<button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+  return h;
+}
+async function completarLibro(id) {
+  const b = libroDe(id);
+  if (!b || b._listo || (b.description && b.pages && !b.descriptionTruncated)) return;
+  b._cargando = true;
+  try {
+    const x = await apiLec({ vista: 'libro', id });
+    for (const k of ['description', 'pages', 'avgRating', 'published', 'genres', 'cover', 'series']) {
+      if (x[k] && (!b[k] || (k === 'description' && b.descriptionTruncated))) b[k] = x[k];
+    }
+  } catch (e) { /* queda lo que hay */ }
+  b._listo = true; b._cargando = false;
+  if (!lec.idx.has(id) && !lec.extra.has(id)) lec.extra.set(id, b);
+  if (hoja && hoja.tipo === 'libro' && hoja.id === id) repintarHoja();
+}
+function hojaAno(ano) {
+  const ch = L.desafio(lec.data, ano), libros = ch.books || [], pct = ch.goal ? ch.read / ch.goal : 0, r = L.ritmo(ch, hoy());
+  let h = `<div class="c-ano-hoja">${anillo(pct, 132, 13)}<div class="c-ano-centro"><b>${L.fmtNum(ch.read)}</b><span>${ch.goal ? 'de ' + L.plural(ch.goal, 'libro', 'libros') : ch.read === 1 ? 'libro' : 'libros'}</span></div></div>`;
+  h += `<h2 class="c-centro">Desafío ${ano}</h2><p class="c-centro">${esc(r ? r.text : 'Sin meta definida')}</p>`;
+  h += cifrasHTML(ano, ch.read, true);
+  if (libros.length) {
+    h += '<div class="c-rejilla-libros">' + libros.map((b) => `<button class="c-estante-item" data-a="lecLibro" data-id="${esc(b.id)}">${portadaHTML(b)}<b>${esc(b.title)}</b>${estrellasL(b.userRating)}</button>`).join('') + '</div>';
+    if (libros.length < ch.read) h += `<p class="c-pista c-centro">Se muestran ${L.fmtNum(libros.length)} de ${L.fmtNum(ch.read)} libros.</p>`;
+  } else h += `<p class="c-centro">No hay libros registrados en ${ano}.</p>`;
+  return h + '<div class="c-pila">' + (ch.url ? `<a class="d-boton d-boton--discreto" href="${esc(ch.url)}" target="_blank" rel="noopener">${ico('enlace', 20)}Ver el desafío en Goodreads</a>` : '') + '<button class="d-boton d-boton--discreto" data-a="cerrar">Cerrar</button></div>';
+}
+
+/* ---------- Lecturas: acciones y ajustes ---------- */
+const ACC_LEC = {
+  lecLibro(el) { const id = el.dataset.id; abrirHoja('libro', { id }); completarLibro(id); },
+  lecAno(el) { if (lec.data) abrirHoja('lecAno', { ano: +el.dataset.ano }); },
+  lecRecargar() { cargarLecturas(true); },
+  lecMas(el) { const d = $('lecDesc'); if (d) d.classList.remove('c-desc--corta'); el.remove(); },
+  lecBorrar() { const i = $('qLec'); if (i) { i.value = ''; i.focus(); } buscarLibros(''); },
+  lecCancelar() { lbus.activo = false; lbus.q = ''; lbus.res = null; lbus.error = ''; nLec++; clearTimeout(tLec); const i = $('qLec'); if (i) { i.value = ''; i.blur(); } pintarLec(); },
+  lecReciente(el) { const i = $('qLec'); if (i) i.value = el.dataset.q; buscarLibros(el.dataset.q, true); },
+  lecReintentar() { buscarLibros(lbus.q, true); },
+  lecOlvidar() { lbus.recientes = []; guardarLS(LK.recientes, []); pintarLec(); },
+};
+function ajustesLecturas() {
+  const d = lec.data, u = (d && d.user) || {};
+  let h = '<div class="d-seccion"><h2>Lecturas</h2></div><ul class="d-lista d-vidrio">';
+  if (!llave) h += filaAj({ icono: 'libro', titulo: 'Goodreads', sub: 'Conecta este iPhone a GitHub (más abajo) para ver Lecturas' });
+  else {
+    const c = (d && d.counts) || {};
+    h += filaAj({ icono: 'libro', titulo: esc(u.name || 'Goodreads'), sub: d ? `${L.fmtNum(c.read || 0)} leídos · ${L.fmtNum(c.reading || 0)} leyendo · ${L.fmtNum(c.toRead || 0)} quiero leer` : 'Aún sin leer Goodreads' });
+    h += filaAj({ icono: 'recargar', titulo: 'Actualizar Lecturas', sub: d ? 'Actualizado ' + hace(Date.parse(d.updatedAt)) : 'Leer ahora desde Goodreads', a: 'lecRecargar', chev: true });
+    h += `<li><a class="d-fila c-fila" href="${esc(u.url || 'https://www.goodreads.com/user/show/90308354')}" target="_blank" rel="noopener"><span class="d-cuadro">${ico('enlace', 18)}</span><span class="d-texto"><strong>Perfil en Goodreads</strong><span>Para anotar avances, notas y estantes</span></span><span class="c-chev">${ico('chev', 18)}</span></a></li>`;
+  }
+  return h + '</ul>';
+}
+
 /* ---------- Ajustes ---------- */
 const chips = (nombre, ops, val) => `<div class="c-chips">${ops.map(([v, t]) => `<input type="radio" name="${nombre}" id="${nombre}-${v}" value="${v}"${String(val) === String(v) ? ' checked' : ''}><label for="${nombre}-${v}">${t}</label>`).join('')}</div>`;
 const corto = (k) => esc(C.IND[k].short || C.IND[k].name);
@@ -1496,6 +1820,7 @@ function vistaAjustes() {
   let html = '<div class="d-seccion"><h2>Destacado arriba</h2></div><div class="d-vidrio c-tarjeta">' + chips('hero', C.ORDER.map((k) => [k, corto(k)]), prefs.hero) + '</div>';
   html += '<div class="d-seccion"><h2>Gráfico de la portada</h2></div><div class="d-vidrio c-tarjeta">' + chips('grafico', C.ORDER.map((k) => [k, corto(k)]), prefs.grafico) + '</div>';
   const seg = (k, op) => `<div class="d-segmentos" role="group">${op.map(([v, t]) => `<button data-a="pref" data-k="${k}" data-v="${v}" aria-pressed="${prefs[k] === v}">${t}</button>`).join('')}</div>`;
+  html += ajustesLecturas();
   html += ajustesCartelera();
   html += '<div class="d-seccion"><h2>Apariencia</h2></div><ul class="d-lista d-vidrio">' +
     `<li class="d-fila c-ajuste-seg"><span class="d-texto"><strong>Tema</strong></span>${seg('tema', [['auto', 'Automático'], ['claro', 'Claro'], ['oscuro', 'Oscuro']])}</li>` +
@@ -1587,7 +1912,8 @@ function hojaAyuda() {
 function contenidoHoja() {
   const t = hoja.tipo;
   return t === 'ind' ? hojaIndicador(hoja.k) : t === 'titulo' ? hojaTitulo(hoja.k) : t === 'tmdb' ? hojaTmdb(hoja.msg) : t === 'respaldo' ? hojaRespaldo(hoja.r)
-    : t === 'nf' ? hojaNf(hoja.msg) : t === 'nfBorrador' ? hojaNfBorrador() : t === 'nfPend' ? hojaNfPend() : hojaAyuda();
+    : t === 'nf' ? hojaNf(hoja.msg) : t === 'nfBorrador' ? hojaNfBorrador() : t === 'nfPend' ? hojaNfPend()
+    : t === 'libro' ? hojaLibro(hoja.id) : t === 'lecAno' ? hojaAno(hoja.ano) : hojaAyuda();
 }
 function abrirHoja(tipo, extra) {
   hoja = Object.assign({ tipo }, extra || {});
@@ -1626,7 +1952,7 @@ function avisar(titulo, sub, error) {
 
 /* ---------- Acciones ---------- */
 const ACCIONES = {
-  tab(el) { ui.tab = el.dataset.t; guardarLS(CL.ui, ui); window.scrollTo(0, 0); render(); },
+  tab(el) { ui.tab = el.dataset.t; guardarLS(CL.ui, ui); window.scrollTo(0, 0); render(); if (ui.tab === 'lecturas' && lecturasViejas()) cargarLecturas(); },
   detalle(el) { abrirHoja('ind', { k: el.dataset.k }); },
   ayuda() { abrirHoja('ayuda'); },
   cerrar() { cerrarHoja(); },
@@ -1634,6 +1960,7 @@ const ACCIONES = {
   abrir(el) { window.open(el.dataset.url, '_blank', 'noopener'); },
   seg(el) {
     const n = el.dataset.seg, v = el.dataset.v;
+    if (n === 'lecSub' || n === 'lecOrden') { ui[n] = v; guardarLS(CL.ui, ui); pintarLec(); return; }
     if (n === 'cartSub' || n === 'cartTipo' || n === 'cartProv' || n === 'vistoTipo') {
       ui[n] = n === 'cartProv' && ui.cartProv === v ? '' : v;
       if (n === 'cartSub') limiteVistos = 60;
@@ -1661,8 +1988,9 @@ const ACCIONES = {
   },
   pref(el) { prefs[el.dataset.k] = el.dataset.v; guardarPrefs(); aplicarPrefs(); render(); },
 };
-Object.assign(ACCIONES, ACC_CART);
+Object.assign(ACCIONES, ACC_CART, ACC_LEC);
 document.addEventListener('click', (ev) => {
+  if (ev.target.closest && ev.target.closest('[data-sinc]')) lec.pendiente = Date.now();   // se abrió Goodreads: al volver se relee
   const el = ev.target.closest('[data-a]');
   if (!el) return;
   if (el.tagName === 'A') ev.preventDefault();
@@ -1683,8 +2011,11 @@ document.addEventListener('submit', (ev) => {
   const fn = FORMULARIOS[f.dataset.f];
   if (fn) fn(f);
 });
-document.addEventListener('input', (ev) => { if (ev.target.id === 'q') buscar(ev.target.value); });
-document.addEventListener('focusin', (ev) => { if (ev.target.id === 'q' && !busq.activo) { busq.activo = true; pintarCart(); } });
+document.addEventListener('input', (ev) => { if (ev.target.id === 'q') buscar(ev.target.value); else if (ev.target.id === 'qLec') buscarLibros(ev.target.value); });
+document.addEventListener('focusin', (ev) => {
+  if (ev.target.id === 'q' && !busq.activo) { busq.activo = true; pintarCart(); }
+  if (ev.target.id === 'qLec' && !lbus.activo) { lbus.activo = true; pintarLec(); }
+});
 document.addEventListener('change', (ev) => {
   const t = ev.target;
   if (t.id === 'archivoRespaldo' && t.files && t.files[0]) {
@@ -1731,16 +2062,17 @@ const PESTANAS = [['indicadores', 'barras', 'Indicadores'], ['lecturas', 'libro'
 function cabecera() {
   let ante = 'Series y películas';
   if (ui.tab === 'cartelera') { const d = cart(), q = K.itemsDe(d, 'want').length, v = K.itemsDe(d, 'seen').length; if (q || v) ante = q.toLocaleString('es-CL') + ' por ver · ' + v.toLocaleString('es-CL') + ' ' + (v === 1 ? 'visto' : 'vistos'); }
-  const t = { indicadores: [C.fechaLarga(hoy()), 'Consulta'], lecturas: ['Goodreads', 'Lecturas'], cartelera: [ante, 'Cartelera'], ajustes: ['Consulta ' + C.VERSION, 'Ajustes'] }[ui.tab];
+  const t = { indicadores: [C.fechaLarga(hoy()), 'Consulta'], lecturas: [lec.data && lec.data.user && lec.data.user.name !== 'Lector' ? 'Goodreads · ' + lec.data.user.name : 'Goodreads', 'Lecturas'], cartelera: [ante, 'Cartelera'], ajustes: ['Consulta ' + C.VERSION, 'Ajustes'] }[ui.tab];
   const acciones = ui.tab === 'indicadores'
-    ? `<button class="d-boton-circular${cargando ? ' c-girando' : ''}" data-a="recargar" aria-label="Actualizar">${ico('recargar', 20, 2.4)}</button><button class="d-boton-circular" data-a="ayuda" aria-label="Ayuda">${ico('ayuda', 20)}</button>` : '';
+    ? `<button class="d-boton-circular${cargando ? ' c-girando' : ''}" data-a="recargar" aria-label="Actualizar">${ico('recargar', 20, 2.4)}</button><button class="d-boton-circular" data-a="ayuda" aria-label="Ayuda">${ico('ayuda', 20)}</button>`
+    : ui.tab === 'lecturas' && llave ? `<button class="d-boton-circular${lec.cargando ? ' c-girando' : ''}" data-a="lecRecargar" aria-label="Actualizar Lecturas">${ico('recargar', 20, 2.4)}</button>` : '';
   return `<div><span class="d-antetitulo">${esc(t[0])}</span><h1>${t[1]}</h1></div><div class="d-acciones">${acciones}</div>`;
 }
 function render() {
   if (!PESTANAS.some((p) => p[0] === ui.tab)) ui.tab = 'indicadores';
   $('cabecera').innerHTML = cabecera();
-  if (ui.tab === 'cartelera' && $('cartForm')) { pintarCart(); } else
-  $('vista').innerHTML = ui.tab === 'indicadores' ? vistaIndicadores() : ui.tab === 'ajustes' ? vistaAjustes() : ui.tab === 'cartelera' ? vistaCartelera() : vistaPronto();
+  if (ui.tab === 'cartelera' && $('cartForm')) { pintarCart(); } else if (ui.tab === 'lecturas' && $('lecForm')) { pintarLec(); } else
+  $('vista').innerHTML = ui.tab === 'indicadores' ? vistaIndicadores() : ui.tab === 'ajustes' ? vistaAjustes() : ui.tab === 'cartelera' ? vistaCartelera() : vistaLecturas();
   if (ui.tab === 'indicadores') dibujar($('graficoPortada'), C.detail(S, prefs.grafico, prefs, hoy()), 170);
   $('barraSup').textContent = { indicadores: 'Consulta', lecturas: 'Lecturas', cartelera: 'Cartelera', ajustes: 'Ajustes' }[ui.tab];
   $('pestanas').innerHTML = PESTANAS.map(([id, ic, t]) => `<button data-a="tab" data-t="${id}"${ui.tab === id ? ' aria-current="page"' : ''}>${ico(ic)}${t}</button>`).join('');
@@ -1779,12 +2111,17 @@ refresh(false);
 buscarVersionNueva();
 // Cartelera: lo último de GitHub, las plataformas de Quiero ver y la importación que haya quedado a medias
 if (llave) sincronizar(true).then(() => revisarPlataformas()); else revisarPlataformas();
+if (llave && lecturasViejas()) cargarLecturas();
 if (nf.queue.length) nfCorrer();
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState !== 'visible') return;
   render(); if (hoja) llenarHoja();
   if (Date.now() - ultimaLectura > 30 * 60000) refresh(false);
   releerSiHaceFalta(); revisarPlataformas();
+  if (lec.pendiente) {   // vuelve de Goodreads: se relee enseguida y otra vez al minuto (los estantes tardan en cambiar)
+    lec.pendiente = 0; cerrarHoja();
+    setTimeout(() => cargarLecturas(false, true), 800); setTimeout(() => cargarLecturas(false, true), 60000);
+  } else if (llave && ui.tab === 'lecturas' && lecturasViejas()) cargarLecturas();
   buscarVersionNueva();
 });
 setInterval(() => { if (document.visibilityState === 'visible' && !hoja && ui.tab === 'ajustes') render(); }, 60000);
