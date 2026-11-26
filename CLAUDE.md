@@ -10,8 +10,9 @@ Ver README.md; el plan y el catálogo están en pablocarvallo/casa (plan/plan-5-
   clave de TMDB quedan solo en el iPhone. Nunca escribir la clave de TMDB ni llaves en el código.
 - Lecturas lee Goodreads con `/api/lecturas` de domesticas-api (lector en `api/lib/goodreads.js`) y la llave del iPhone;
   no llama a Goodreads ni a lecturas-beta.vercel.app desde la página.
-- Diseño Domésticas 27: los bloques `D27:TOKENS` y `D27:COMP` se copian desde `casa/diseno27/` con
-  `casa/herramientas/aplicar-diseno27.py`; lo propio de la app va entre `/*APP:START*/` y `/*APP:END*/`.
+- Diseño Domésticas 27: los bloques `D27:TOKENS`, `D27:COMP` y `D27:SKINS` (este último al final, después de APP) se
+  copian desde `casa/diseno27/` con `casa/herramientas/aplicar-diseno27.py`; lo propio de la app va entre
+  `/*APP:START*/` y `/*APP:END*/`. Los skins (Ajustes → Apariencia → Skin, `<html data-skin>`) solo cambian el aspecto.
 - Los datos del Banco Central vienen de la tarea del repositorio pablocarvallo/indicadores (`datos/*.json`); no moverlos
   sin cambiar `BCCH_REPO` en `calculos.js`.
 - Todo cambio de reglas va con su prueba en `pruebas/` (`TZ=America/Santiago node --test pruebas/*.test.js`).

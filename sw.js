@@ -1,7 +1,7 @@
 // Consulta · guarda la app para abrirla sin conexión. Siempre intenta primero la versión más nueva (red primero), así
 // index.html y calculos.js llegan juntos; sin señal usa la copia guardada. Los datos de los indicadores vienen de otros
 // orígenes (findic.cl, mindicador.cl, GitHub) y no pasan por aquí: la app guarda su propia copia.
-const CACHE = 'con27-v4';
+const CACHE = 'con27-v5';
 const ARCHIVOS = ['./', 'index.html', 'calculos.js', 'cartelera.js', 'lecturas.js', 'manifest.webmanifest', 'icons/icon.svg', 'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {
