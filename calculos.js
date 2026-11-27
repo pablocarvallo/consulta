@@ -1,7 +1,7 @@
 // Consulta · cálculos sin pantalla (con pruebas en pruebas/). Indicadores: lectura de las fuentes, series derivadas
 // (IPC, Imacec mensual), resumen de cada indicador y datos de los gráficos. La lógica viene sin cambios de la app
 // Indicadores (pablocarvallo/indicadores); aquí recibe la fecha de hoy («AAAA-MM-DD») para poder probarla.
-export const VERSION = '1.3.0';
+export const VERSION = '1.4.0';
 
 export const MES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
 export const MESL = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
@@ -24,16 +24,21 @@ export const IND = {
   imacec: { name: 'Imacec', src: 'mi', kind: 'bar' },
   cobre: { name: 'Precio del cobre', short: 'Cobre', src: 'mi', kind: 'line' },
   petroleo: { name: 'Precio del petróleo', short: 'Petróleo', src: 'bcch', kind: 'line' },
+  dolarcobre: { name: 'Dólar y cobre', src: 'mi', kind: 'par' },
 };
 export const ORDER = ['uf', 'dolar', 'ipc', 'tpm', 'imacec', 'cobre', 'petroleo'];
+// Gráfico combinado del dólar y el cobre: no es un indicador más (no tiene tarjeta ni puede ir destacado), pero sí
+// puede ser el gráfico de la portada.
+export const PAR = 'dolarcobre';
+export const GRAFICOS = ORDER.concat([PAR]);
 // Fuentes de cada indicador. IPC: el oficial del Banco Central, el de findic.cl por si llega antes y el de la UF como respaldo.
-export const SOURCE = { uf: ['uf'], dolar: ['dolar'], ipc: ['uf', 'ipcm', 'ipc12', 'ipc'], tpm: ['tpm'], imacec: ['imacec', 'imacecde'], cobre: ['cobre'], petroleo: ['brent', 'wti'] };
+export const SOURCE = { uf: ['uf'], dolar: ['dolar'], ipc: ['uf', 'ipcm', 'ipc12', 'ipc'], tpm: ['tpm'], imacec: ['imacec', 'imacecde'], cobre: ['cobre'], petroleo: ['brent', 'wti'], dolarcobre: ['dolar', 'cobre'] };
 
 export function prefsIniciales(p) {
   const x = Object.assign({ range: 5, ipc: '12m', imacec: '12m', crudo: 'wti', hero: 'uf', grafico: 'dolar', tema: 'auto', vidrio: 'claro' }, p || {});
   if (RANGOS.indexOf(x.range) < 0) x.range = 5;
   if (ORDER.indexOf(x.hero) < 0) x.hero = 'uf';
-  if (ORDER.indexOf(x.grafico) < 0) x.grafico = 'dolar';
+  if (GRAFICOS.indexOf(x.grafico) < 0) x.grafico = 'dolar';
   if (x.crudo !== 'brent') x.crudo = 'wti';
   if (x.ipc !== 'm') x.ipc = '12m';
   if (x.imacec !== 'm') x.imacec = '12m';
@@ -285,11 +290,41 @@ export function detail(S, k, prefs, hoy) {
     const mo = bcchMonthly(S, prefs.crudo);
     return { pts: since(bcchSeries(S, prefs.crudo, from), range, hoy), kind: 'line', fmt: (v) => usd(v), xfmt: mo ? monFmt : dayFmt, ax: (v, d) => nf(v, d), diff: 'pct', monthly: mo };
   }
+  if (k === PAR) return { pts: parSeries(S, range, hoy), kind: 'par', series: PAR_SERIES, fmt: (v) => nf(v, 1), xfmt: dayFmt, ax: (v, d) => nf(v, d), diff: 'pct' };
   return null;
+}
+// Dólar y cobre en un mismo gráfico, sin dos escalas: los dos como índice, 100 el primer día del periodo con dato de ambos.
+// Solo los días con dato de los dos (el cobre no se transa en los feriados de Londres, ni el dólar en los de Chile).
+// Cada punto: [fecha, índice del dólar, índice del cobre, dólar, cobre].
+export const PAR_SERIES = [{ k: 'dolar', nombre: 'Dólar', fmt: (v) => pesos(v) }, { k: 'cobre', nombre: 'Cobre', fmt: (v) => usd(v) }];
+export function parSeries(S, range, hoy) {
+  const from = +hoy.slice(0, 4) - range, cu = {};
+  since(series(S, 'cobre', from, hoy), range, hoy).forEach((p) => { cu[p[0]] = p[1]; });
+  const pares = since(series(S, 'dolar', from, hoy), range, hoy).filter((p) => p[0] in cu && p[1] > 0 && cu[p[0]] > 0);
+  if (pares.length < 2) return [];
+  const d0 = pares[0][1], c0 = cu[pares[0][0]];
+  return pares.map((p) => [p[0], (p[1] / d0) * 100, (cu[p[0]] / c0) * 100, p[1], cu[p[0]]]);
+}
+// Correlación de las variaciones diarias de dos series (columnas a y b de cada punto). Con menos de 10 días, no hay.
+export function correlacion(pts, a, b) {
+  const x = [], y = [];
+  for (let i = 1; i < pts.length; i++) { x.push(pts[i][a] / pts[i - 1][a] - 1); y.push(pts[i][b] / pts[i - 1][b] - 1); }
+  const n = x.length;
+  if (n < 10) return null;
+  const mx = x.reduce((t, v) => t + v, 0) / n, my = y.reduce((t, v) => t + v, 0) / n;
+  let sxy = 0, sxx = 0, syy = 0;
+  for (let i = 0; i < n; i++) { const dx = x[i] - mx, dy = y[i] - my; sxy += dx * dy; sxx += dx * dx; syy += dy * dy; }
+  return sxx > 0 && syy > 0 ? sxy / Math.sqrt(sxx * syy) : null;
 }
 // Mínimo, máximo y cambio (o promedio) del periodo graficado
 export function stats(d, range) {
   if (!d || !d.pts.length) return null;
+  if (d.kind === 'par') {
+    // Cambio de cada uno en el periodo y correlación de sus variaciones diarias
+    const a = d.pts[0], b = d.pts[d.pts.length - 1], r = correlacion(d.pts, 3, 4), en = 'en ' + (range === 1 ? '1 año' : range + ' años');
+    return { par: true, cambios: d.series.map((s, j) => ({ k: s.k, nombre: s.nombre, v: signed((b[3 + j] / a[3 + j] - 1) * 100, 1, PCT), en })),
+      correl: r == null ? null : { v: nf(r, 2), en: 'día a día' } };
+  }
   let mn = d.pts[0], mx = d.pts[0];
   d.pts.forEach((p) => { if (p[1] < mn[1]) mn = p; if (p[1] > mx[1]) mx = p; });
   const a = d.pts[0][1], b = d.pts[d.pts.length - 1][1];

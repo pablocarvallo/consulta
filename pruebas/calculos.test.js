@@ -126,6 +126,51 @@ test('Estadísticas del periodo graficado', () => {
 test('Preferencias inválidas vuelven a su valor de siempre', () => {
   const p = C.prefsIniciales({ range: 3, hero: 'x', grafico: 'y', crudo: 'z' });
   assert.deepEqual([p.range, p.hero, p.grafico, p.crudo, p.tema], [5, 'uf', 'dolar', 'wti', 'auto']);
+  // Dólar y cobre puede ir en el gráfico de la portada, pero no como destacado
+  const q = C.prefsIniciales({ grafico: C.PAR, hero: C.PAR });
+  assert.deepEqual([q.grafico, q.hero], ['dolarcobre', 'uf']);
+});
+
+test('Dólar y cobre: índice 100 al inicio, solo días con dato de ambos', () => {
+  // El dólar sube 1 % cada día; el cobre baja 1 % y no tiene dato los domingos
+  const dolar = diario('2025-11-20', HOY, (k, i) => 900 * Math.pow(1.01, i));
+  const cobre = diario('2025-11-20', HOY, (k, i) => (new Date(C.utcOf(k)).getUTCDay() === 0 ? null : 5 * Math.pow(0.99, C.utcOf(k) / 86400000 - C.utcOf('2025-11-20') / 86400000)));
+  const S = { dolar: porAno(dolar), cobre: porAno(cobre) };
+  const d = C.detail(S, C.PAR, C.prefsIniciales({ range: 1 }), HOY);
+  assert.equal(d.kind, 'par');
+  assert.equal(d.pts[0][0], '2025-11-24');                       // desde un año antes de hoy
+  assert.deepEqual([d.pts[0][1], d.pts[0][2]], [100, 100]);
+  assert.ok(d.pts.every((p) => new Date(C.utcOf(p[0])).getUTCDay() !== 0));   // sin domingos
+  const u = d.pts[d.pts.length - 1], a = d.pts[0];
+  assert.equal(u[0], HOY);
+  assert.ok(Math.abs(u[1] - (u[3] / a[3]) * 100) < 1e-9 && Math.abs(u[2] - (u[4] / a[4]) * 100) < 1e-9);
+  assert.equal(d.series[0].fmt(u[3]), C.pesos(u[3]));
+  assert.equal(d.series[1].fmt(u[4]), C.usd(u[4]));
+  // Cambio de cada uno y correlación de las variaciones diarias
+  const st = C.stats(d, 1);
+  assert.equal(st.par, true);
+  assert.deepEqual(st.cambios.map((x) => [x.nombre, x.en]), [['Dólar', 'en 1 año'], ['Cobre', 'en 1 año']]);
+  assert.equal(st.cambios[0].v, C.signed((u[3] / a[3] - 1) * 100, 1, C.PCT));
+  assert.match(st.cambios[1].v, /^−/);
+  // Los últimos valores traen ambos
+  assert.deepEqual(C.recientes(d)[0], u);
+  // Sin días en común, no hay gráfico
+  assert.deepEqual(C.detail({ dolar: porAno(dolar) }, C.PAR, C.prefsIniciales({ range: 1 }), HOY).pts, []);
+});
+
+test('Correlación de las variaciones diarias', () => {
+  const pts = [], pts2 = [];
+  let a = 100, b = 50, c = 50;
+  for (let i = 0; i < 30; i++) {
+    const r = ((i * 7) % 5 - 2) / 100;                            // variaciones que suben y bajan
+    a *= 1 + r; b *= 1 - r; c *= 1 + 2 * r;
+    pts.push(['d' + i, 0, 0, a, b]); pts2.push(['d' + i, 0, 0, a, c]);
+  }
+  assert.ok(Math.abs(C.correlacion(pts, 3, 4) + 1) < 1e-9);    // en sentido contrario: −1
+  assert.ok(Math.abs(C.correlacion(pts2, 3, 4) - 1) < 1e-9);   // juntos: 1
+  assert.equal(C.correlacion(pts.slice(0, 5), 3, 4), null);    // pocos días
+  const st = C.stats({ kind: 'par', series: C.PAR_SERIES, pts }, 5);
+  assert.equal(st.correl.v, '−1,00');
 });
 
 test('Gráficos: marcas del eje y puntos reducidos', () => {
